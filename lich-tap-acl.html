@@ -279,6 +279,11 @@
   .gym-routine span{display:block; color:var(--ink-soft); font-size:12px; line-height:1.45;}
   .gym-rules{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:5px 18px; margin:14px 0 0; padding:0 0 0 18px;}
   .gym-rules li{font-size:12.5px; color:var(--ink-soft); line-height:1.5; margin:0;}
+  .gym-visuals{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:16px;}
+  .gym-visual{margin:0; overflow:hidden; border:1px solid rgba(21,36,32,0.12); border-radius:12px; background:rgba(255,255,255,0.72);}
+  .gym-visual img{display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover;}
+  .gym-visual figcaption{padding:8px 10px 10px; font-size:11.5px; line-height:1.45; color:var(--ink-soft);}
+  .gym-visual figcaption strong{display:block; color:var(--pitch-dark); font-size:12px; margin-bottom:2px;}
 
   footer{
     max-width:1040px; margin:10px auto 40px; padding:0 20px; font-size:12px; color:var(--ink-faint);
@@ -371,6 +376,20 @@
         <div class="gym-routine"><strong>T6 · C — Vai + tay</strong><span>Shoulder press tựa tường · W raise không tạ · curl · triceps</span></div>
         <div class="gym-routine"><strong>T3 · T5 · T7 — Hồi phục</strong><span>Không gym; chỉ rehab chân theo lịch KTV</span></div>
         <div class="gym-routine"><strong>CN — Nghỉ gym</strong><span>Không thêm bài; ưu tiên hồi phục và theo dõi sưng</span></div>
+      </div>
+      <div class="gym-visuals" aria-label="Hình minh họa các buổi gym tại nhà">
+        <figure class="gym-visual">
+          <img src="assets/gym-push.jpg" alt="Minh họa bốn bài ngực và tay sau trên thảm" loading="lazy">
+          <figcaption><strong>T2 · Buổi A</strong>Thứ tự hình: floor press · squeeze press · pullover · triceps extension.</figcaption>
+        </figure>
+        <figure class="gym-visual">
+          <img src="assets/gym-pull.jpg" alt="Minh họa bốn bài lưng và tay trước trên thảm" loading="lazy">
+          <figcaption><strong>T4 · Buổi B</strong>Thứ tự hình: prone row · pullover · curl · hammer curl.</figcaption>
+        </figure>
+        <figure class="gym-visual">
+          <img src="assets/gym-shoulders-core.jpg" alt="Minh họa bốn bài vai, tay sau và core trên thảm" loading="lazy">
+          <figcaption><strong>T6 · Buổi C</strong>Thứ tự hình: shoulder press · W raise · triceps extension · dead bug.</figcaption>
+        </figure>
       </div>
       <ul class="gym-rules">
         <li>Hạ tạ 2–3 giây, không quăng tạ; nghỉ 60–90 giây giữa hiệp.</li>
@@ -807,6 +826,21 @@
       </tbody>
       </table>
       <p>→ <strong>3 buổi gym chính + 3 ngày không gym + 1 ngày nghỉ gym</strong>, trong khi rehab chân vẫn chạy nền theo lịch riêng.</p>
+      <h3>Hình minh họa theo buổi</h3>
+      <div class="gym-visuals" aria-label="Hình minh họa các buổi gym tại nhà">
+        <figure class="gym-visual">
+          <img src="assets/gym-push.jpg" alt="Minh họa buổi A: bốn bài ngực và tay sau trên thảm" loading="lazy">
+          <figcaption><strong>Buổi A</strong>Floor press · squeeze press · pullover · triceps extension.</figcaption>
+        </figure>
+        <figure class="gym-visual">
+          <img src="assets/gym-pull.jpg" alt="Minh họa buổi B: bốn bài lưng và tay trước trên thảm" loading="lazy">
+          <figcaption><strong>Buổi B</strong>Prone row · pullover · curl · hammer curl.</figcaption>
+        </figure>
+        <figure class="gym-visual">
+          <img src="assets/gym-shoulders-core.jpg" alt="Minh họa buổi C: vai, tay sau và core trên thảm" loading="lazy">
+          <figcaption><strong>Buổi C</strong>Shoulder press · W raise · triceps extension · dead bug.</figcaption>
+        </figure>
+      </div>
       <h3>Hướng dẫn bài tập gym</h3>
       <p><strong>1. DB Floor Press — đẩy ngực trên thảm:</strong> Nằm ngửa, co gối thoải mái, bàn chân đặt nhẹ. Hạ khuỷu xuống sàn ở góc 30–45° rồi đẩy tạ lên trên ngực. Không dùng chân đạp sàn để nâng hông. <strong>3–4 × 8–15</strong>.</p>
       <p><strong>2. DB Squeeze Press — ép hai tạ:</strong> Ép hai tạ chạm nhau trên ngực; giữ lực ép khi hạ chậm rồi đẩy lên. Vai không nhún, chân mổ chỉ đặt thoải mái. <strong>3 × 10–15</strong>.</p>
