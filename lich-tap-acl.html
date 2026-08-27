@@ -264,6 +264,22 @@
     padding:7px 10px; margin:0; line-height:1.5; display:flex; gap:6px;
   }
 
+  .gym-plan{
+    background:linear-gradient(135deg, rgba(232,163,61,0.15), rgba(255,255,255,0.92));
+    border:1px solid rgba(185,121,28,0.28); border-radius:var(--radius);
+    padding:18px 18px 16px; margin-bottom:18px; box-shadow:var(--shadow);
+  }
+  .gym-plan-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  .gym-plan-kicker{font-size:10.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--tape-dark);}
+  .gym-plan h2{font-size:20px; margin:3px 0 0; color:var(--pitch-dark);}
+  .gym-plan p{font-size:13px; line-height:1.55; color:var(--ink-soft); margin:9px 0 0;}
+  .gym-routines{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:9px; margin-top:14px;}
+  .gym-routine{padding:11px 12px; border-radius:11px; background:rgba(255,255,255,0.72); border:1px solid rgba(21,36,32,0.09);}
+  .gym-routine strong{display:block; color:var(--pitch-dark); font-size:13px; margin-bottom:4px;}
+  .gym-routine span{display:block; color:var(--ink-soft); font-size:12px; line-height:1.45;}
+  .gym-rules{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:5px 18px; margin:14px 0 0; padding:0 0 0 18px;}
+  .gym-rules li{font-size:12.5px; color:var(--ink-soft); line-height:1.5; margin:0;}
+
   footer{
     max-width:1040px; margin:10px auto 40px; padding:0 20px; font-size:12px; color:var(--ink-faint);
     text-align:center; line-height:1.6;
@@ -302,6 +318,7 @@
       <span class="meta-chip">Gập hiện tại: 100–110°, +5°/tuần</span>
       <span class="meta-chip">Duỗi: giữ 0° tuyệt đối</span>
       <span class="meta-chip">Đã bỏ nạng: đủ 6 tuần (19/08/2026)</span>
+      <span class="meta-chip">Dụng cụ gym: thảm + 2 tạ 5kg</span>
       <span class="meta-chip">Nghỉ đá bóng: 1 năm</span>
     </div>
     <p class="disclaimer">Đây là tài liệu tham khảo tổng hợp từ trao đổi trước đó, không thay thế chỉ định trực tiếp của bác sĩ mổ và KTV vật lý trị liệu. Luôn ưu tiên hướng dẫn của họ nếu có khác biệt, và dừng lại nếu gối sưng/đau tăng.</p>
@@ -339,6 +356,30 @@
 
   <!-- ================= TAB 2: LIBRARY ================= -->
   <section id="panel-library" class="panel">
+    <div class="gym-plan">
+      <div class="gym-plan-head">
+        <div>
+          <div class="gym-plan-kicker">GYM TẠI NHÀ · 2 TẠ 5KG + THẢM</div>
+          <h2>Buổi nào làm bài nào?</h2>
+        </div>
+        <span class="ex-sets">RPE 6–7/10 · còn dư 3–4 reps</span>
+      </div>
+      <p>Đây là phần thân trên bổ sung, không thay cho rehab chân. Làm rehab chân trước; sau đó nghỉ ít nhất 2–3 giờ rồi tập gym. Chọn bài nằm/ngồi, chân mổ thả lỏng, không dùng chân đẩy hông và không xoay trên chân trụ.</p>
+      <div class="gym-routines">
+        <div class="gym-routine"><strong>T2 · A — Ngực + tay sau</strong><span>Floor press · squeeze press · pullover · triceps extension</span></div>
+        <div class="gym-routine"><strong>T3 · B — Lưng + tay trước</strong><span>Prone row · pullover · curl · hammer curl</span></div>
+        <div class="gym-routine"><strong>T4 · Nhẹ / hồi phục</strong><span>Đấm tay khi ngồi, không tạ · 12–15 phút hoặc nghỉ</span></div>
+        <div class="gym-routine"><strong>T5 · C — Vai + tay</strong><span>Shoulder press tựa tường · W raise không tạ · curl · triceps</span></div>
+        <div class="gym-routine"><strong>T6 · D — Upper nhẹ</strong><span>Floor press · prone row · pullover, giảm 1 hiệp</span></div>
+        <div class="gym-routine"><strong>T7 · Tùy chọn</strong><span>Tay + core nhẹ 20–25 phút nếu gối yên, không sưng</span></div>
+      </div>
+      <ul class="gym-rules">
+        <li>Hạ tạ 2–3 giây, không quăng tạ; nghỉ 60–90 giây giữa hiệp.</li>
+        <li>5 kg quá nặng ở bài vai/tay: đổi sang 1 tạ, giảm reps hoặc tập không tạ.</li>
+        <li>Gối sưng/ấm hơn, đau tăng hoặc dáng đi xấu sau buổi: bỏ gym buổi kế tiếp và báo KTV nếu không lắng.</li>
+        <li>Không thêm squat, lunge, deadlift, nhảy hoặc bài đứng có tạ vào phần gym hiện tại.</li>
+      </ul>
+    </div>
     <div class="chips" id="chipRow"></div>
     <div class="ex-grid" id="exGrid"></div>
   </section>
@@ -740,68 +781,46 @@
       <p>📌 Các Giai đoạn 3–7 giữ nguyên nội dung và <strong>tiêu chí</strong>, chỉ dời mốc thời gian theo tiến độ thực tế. Luôn tiến theo tiêu chí, không theo lịch.</p>
       </blockquote>
       <hr />
-      <h2>🏋️ Kết hợp với lịch tập gym thân trên (bóng đá tạm nghỉ 1 năm)</h2>
-      <p><strong>Lịch gym cũ:</strong> T2 Ngực/Vai/Tay sau · T3 Lưng/Tay trước nhẹ · T4 đá bóng · T5 Chân/Mông/Tay trước nặng · T6 đá bóng · T7 Forearms/Calves/Abs · CN đá bóng.</p>
-      <p><strong>Nguyên tắc ghép:</strong>
-      1. <strong>Rehab chân là cố định, làm mỗi ngày không trừ ngày nào</strong> (buổi chính theo lịch rehab của từng giai đoạn) — không thay bằng bài gym khác.
-      2. <strong>Bỏ hẳn phần chân/mông/bắp chân kiểu gym có tải</strong> (squat nặng, leg press, deadlift, hip thrust tạ, máy nhón gót có tải) cho tới khi KTV/bác sĩ cho phép ở giai đoạn sau — chân đã có bài riêng trong rehab, thêm vào là quá tải. Mông (bridge bodyweight) và nhón gót (bodyweight) đã có sẵn trong rehab, không cần thêm bản có tạ.
-      3. <strong>Tay, ngực, lưng, vai, forearms, abs (không xoay/vặn hông mạnh)</strong> — tập bình thường như cũ.
-      4. <strong>Thứ tự trong ngày:</strong> làm rehab chân trước (cần tỉnh táo, kỹ thuật chính xác), gym thân trên sau hoặc cách vài giờ.
-      5. <strong>3 ngày đá bóng cũ được giải phóng</strong> → dùng 1 ngày làm <strong>nghỉ hoàn toàn</strong>, còn lại linh hoạt cho cardio nhẹ/gym phụ.</p>
+      <h2>🏋️ Lịch tập gym tại nhà — chỉ có thảm và 2 tạ 5 kg</h2>
+      <p>Phần gym dưới đây là <strong>thân trên + core nhẹ</strong>, được thiết kế để bạn có thể tập tại nhà mà không bắt chân phải làm trụ. Nó <strong>không thay cho rehab chân</strong>. Ở tuần 7 sau mổ, chỉ bắt đầu/tăng các bài đứng hoặc chịu lực khi bác sĩ/KTV đã cho phép; mốc tuần không tự động đồng nghĩa với được tập mọi bài.</p>
+      <p><strong>Nguyên tắc ghép:</strong></p>
+      <ol>
+      <li><strong>Rehab chân là cố định</strong>, làm trước; gym làm sau hoặc cách ít nhất 2–3 giờ.</li>
+      <li>Trong phần gym hiện tại, <strong>không thêm squat, lunge, deadlift, hip thrust có tạ, nhảy, chạy hoặc bài đứng xoay người</strong>. Các bài chịu lực chân vẫn theo riêng chương trình KTV.</li>
+      <li>Chọn tư thế <strong>nằm trên thảm hoặc ngồi tựa tường</strong>. Chân mổ thả lỏng, không dùng chân đẩy hông, không xoay trên chân trụ.</li>
+      <li>Mức gắng sức khoảng <strong>RPE 6–7/10</strong>, luôn còn dư 3–4 lần lặp. Hạ tạ trong 2–3 giây, không quăng tạ; nghỉ 60–90 giây giữa hiệp.</li>
+      <li>5 kg quá nặng ở bài vai/tay: dùng <strong>1 tạ</strong>, giảm số lần hoặc đổi sang bài không tạ.</li>
+      <li>Gối sưng/ấm hơn, đau tăng, mất duỗi hoặc dáng đi xấu sau buổi → <strong>bỏ buổi gym kế tiếp</strong>, kê cao/chườm lạnh theo hướng dẫn và báo KTV nếu không lắng.</li>
+      </ol>
       <p><strong>Lịch tuần đề xuất:</strong></p>
       <table>
       <thead>
-      <tr>
-      <th>Ngày</th>
-      <th>Gym thân trên</th>
-      <th>Ghi chú</th>
-      </tr>
+      <tr><th>Ngày</th><th>Buổi tại nhà</th><th>Bài chính</th></tr>
       </thead>
       <tbody>
-      <tr>
-      <td>Thứ 2</td>
-      <td>Ngực, Vai, Tay sau</td>
-      <td>Như cũ</td>
-      </tr>
-      <tr>
-      <td>Thứ 3</td>
-      <td>Lưng, Tay trước nhẹ</td>
-      <td>Như cũ</td>
-      </tr>
-      <tr>
-      <td>Thứ 4</td>
-      <td>Cardio nhẹ thân trên (tay quay) hoặc nghỉ tích cực</td>
-      <td><em>(trước là đá bóng)</em></td>
-      </tr>
-      <tr>
-      <td>Thứ 5</td>
-      <td>Tay trước nặng + vai/lưng phụ</td>
-      <td><strong>Bỏ phần chân/mông kiểu gym</strong></td>
-      </tr>
-      <tr>
-      <td>Thứ 6</td>
-      <td>Ngực/vai nhẹ, hoặc gộp Forearms/Abs</td>
-      <td><em>(trước là đá bóng)</em></td>
-      </tr>
-      <tr>
-      <td>Thứ 7</td>
-      <td>Forearms, Abs/Core</td>
-      <td>Bỏ <strong>bắp chân tải nặng</strong></td>
-      </tr>
-      <tr>
-      <td>Chủ nhật</td>
-      <td><strong>NGHỈ HOÀN TOÀN</strong></td>
-      <td><em>(trước là đá bóng)</em>; chỉ rehab nhẹ</td>
-      </tr>
+      <tr><td>Thứ 2</td><td><strong>A — Ngực + tay sau</strong></td><td>Floor press, squeeze press, pullover, triceps extension</td></tr>
+      <tr><td>Thứ 3</td><td><strong>B — Lưng + tay trước</strong></td><td>Prone row, pullover, curl, hammer curl</td></tr>
+      <tr><td>Thứ 4</td><td><strong>Nhẹ / hồi phục</strong></td><td>Seated punch không tạ 12–15 phút hoặc nghỉ</td></tr>
+      <tr><td>Thứ 5</td><td><strong>C — Vai + tay</strong></td><td>Shoulder press tựa tường, W raise, curl, triceps extension</td></tr>
+      <tr><td>Thứ 6</td><td><strong>D — Upper nhẹ</strong></td><td>Floor press, prone row, pullover, dead bug; giảm 1 hiệp</td></tr>
+      <tr><td>Thứ 7</td><td><strong>Tùy chọn</strong></td><td>Tay + core nhẹ 20–25 phút nếu gối yên</td></tr>
+      <tr><td>Chủ nhật</td><td><strong>Nghỉ gym</strong></td><td>Chỉ rehab nhẹ theo KTV</td></tr>
       </tbody>
       </table>
-      <p>→ <strong>5 buổi gym thân trên/tuần + 1 ngày cardio nhẹ + 1 ngày nghỉ hẳn</strong>, rehab chân chạy nền mỗi ngày.</p>
-      <p><strong>Lưu ý khi tập gym sau mốc bỏ nạng:</strong>
-      - Ưu tiên bài <strong>ngồi/có tựa</strong> nếu dáng đi chưa ổn hoặc chưa kiểm soát tốt chân mổ khi đứng.
-      - Core tránh xoay/vặn hông mạnh hoặc nâng chân nặng (bỏ Russian twist, leg raise nặng) — dùng plank, dead bug.
-      - <strong>Tín hiệu chung:</strong> gối sưng/ấm hơn dù không đổi bài chân → tổng tải cả ngày (gym + rehab) hơi nhiều, giảm bớt gym hôm đó, không phải giảm rehab.</p>
+      <p>→ <strong>4 buổi gym chính + 1 buổi tùy chọn + 1 ngày hồi phục + 1 ngày nghỉ</strong>, trong khi rehab chân vẫn chạy nền theo lịch riêng.</p>
+      <h3>Hướng dẫn bài tập gym</h3>
+      <p><strong>1. DB Floor Press — đẩy ngực trên thảm:</strong> Nằm ngửa, co gối thoải mái, bàn chân đặt nhẹ. Hạ khuỷu xuống sàn ở góc 30–45° rồi đẩy tạ lên trên ngực. Không dùng chân đạp sàn để nâng hông. <strong>3–4 × 8–15</strong>.</p>
+      <p><strong>2. DB Squeeze Press — ép hai tạ:</strong> Ép hai tạ chạm nhau trên ngực; giữ lực ép khi hạ chậm rồi đẩy lên. Vai không nhún, chân mổ chỉ đặt thoải mái. <strong>3 × 10–15</strong>.</p>
+      <p><strong>3. DB Pullover — kéo tạ qua đầu:</strong> Nằm ngửa, hai tay giữ một đầu tạ ở trên ngực, khuỷu hơi cong. Đưa tạ ra sau đầu đến khi vai căng vừa phải rồi kéo về. Không ưỡn lưng. <strong>3 × 10–15</strong>.</p>
+      <p><strong>4. DB Prone Row — kéo lưng nằm sấp:</strong> Nằm sấp, trán tựa khăn, kéo khuỷu về phía hông, siết bả vai 1 giây rồi hạ trong 2–3 giây. Cổ trung lập, không giật tạ. <strong>4 × 8–15</strong>.</p>
+      <p><strong>5. Prone W Raise — chữ W không tạ:</strong> Nằm sấp, gập khuỷu tạo chữ W. Nhấc khuỷu/bàn tay khỏi thảm một chút, kéo bả vai xuống–về sau rồi hạ. Không cần tạ. <strong>3 × 10–15</strong>.</p>
+      <p><strong>6. DB Shoulder Press — đẩy vai tựa tường:</strong> Ngồi trên thảm, lưng tựa tường, chân mổ thả lỏng. Giữ tạ ngang vai, đẩy lên rồi hạ chậm. Nếu không vững hoặc 5 kg quá nặng, dùng 1 tạ bằng hai tay hoặc bỏ bài. <strong>3 × 8–12</strong>.</p>
+      <p><strong>7. Curl và Hammer Curl — tay trước ngồi:</strong> Ngồi tựa tường; curl dùng lòng bàn tay hướng lên, hammer curl hướng vào nhau. Cuốn bằng khuỷu, không ngả người lấy đà; hạ chậm. Mỗi bài <strong>3 × 10–15</strong>.</p>
+      <p><strong>8. DB Triceps Extension — tay sau nằm:</strong> Nằm ngửa, giữ một tạ trên ngực. Gập khuỷu đưa tạ gần trán/sau đầu rồi duỗi lên; chỉ cẳng tay chuyển động, khuỷu không xòe. <strong>3 × 10–15</strong>.</p>
+      <p><strong>9. Dead bug — core trên thảm:</strong> Gồng nhẹ bụng, giữ lưng dưới gần sát thảm. Duỗi tay đối bên với chân theo đúng mức KTV cho phép rồi trở về. Nếu gối khó chịu, chỉ làm phần tay hoặc gồng bụng tĩnh. <strong>3 × 6–10 mỗi bên</strong>.</p>
+      <p><strong>10. Seated punch — cardio nhẹ khi ngồi:</strong> Ngồi tựa tường, chân mổ thả lỏng. Đấm thẳng luân phiên ở tốc độ vừa, không đứng và không xoay hông. <strong>30 giây làm / 30 giây nghỉ × 8–10 vòng</strong>.</p>
       <blockquote>
-      <p>Khi các giai đoạn sau cho phép squat/hip thrust có tải, chạy, v.v. — phần chân/mông kiểu gym sẽ <strong>quay lại dần theo tiêu chí KTV cho</strong>, ghép tiếp vào lịch này.</p>
+      <p>Khi các giai đoạn sau cho phép squat/hip thrust có tải, chạy, v.v. — phần chân/mông kiểu gym sẽ <strong>quay lại dần theo tiêu chí KTV cho</strong>, không tự thêm chỉ vì đã bỏ nạng.</p>
       </blockquote>
       <hr />
       <h2>GIAI ĐOẠN 3 — Tuần 6–12</h2>
@@ -1165,6 +1184,60 @@ const EXERCISES = [
     highlight:{cx:100,cy:96,rx:16,ry:22}, arrows:[{d:'M100,110 L100,84'}],
     how:'Đứng vịn bàn/ghế, hai chân chịu lực đều. Nhón gót lên cao rồi hạ chậm xuống.',
     sets:'12–15 cái × 2–3 hiệp', cue:'Chỉ làm khi % chịu lực đủ và không đau.' }
+  ,{ id:'gym-floor-press', name:'DB Floor Press — đẩy ngực trên thảm', cat:'Gym · Ngực', pose:'supine',
+    highlight:{cx:52,cy:118,rx:22,ry:12}, arrows:[{d:'M56,126 L56,102', both:true}],
+    how:'Nằm ngửa, co gối ở mức thoải mái và đặt bàn chân nhẹ trên thảm. Mỗi tay giữ một tạ, khuỷu mở khoảng 30–45° so với thân. Hạ khuỷu tới chạm sàn nhẹ, rồi đẩy tạ lên thẳng.',
+    sets:'3–4 hiệp × 8–15 cái · nghỉ 60–90s', cue:'Không dùng chân đạp sàn để nâng hông; giữ lưng và gối yên.' },
+
+  { id:'gym-squeeze-press', name:'DB Squeeze Press — ép tạ', cat:'Gym · Ngực', pose:'supine',
+    highlight:{cx:54,cy:116,rx:20,ry:13}, arrows:[{d:'M54,126 L54,101', both:true}],
+    how:'Nằm ngửa, ép hai quả tạ chạm nhau trên ngực. Vừa giữ chúng ép vào nhau vừa hạ chậm về ngực, sau đó đẩy lên.',
+    sets:'3 hiệp × 10–15 cái · nghỉ 60–90s', cue:'Biên độ vừa phải, vai không nhún lên tai; chân mổ chỉ nghỉ thoải mái.' },
+
+  { id:'gym-pullover', name:'DB Pullover — kéo tạ qua đầu', cat:'Gym · Ngực/Lưng', pose:'supine',
+    highlight:{cx:39,cy:128,rx:22,ry:10}, arrows:[{d:'M52,112 Q30,120 20,132', both:true}],
+    how:'Nằm ngửa, hai tay giữ một đầu tạ ở trên ngực. Giữ khuỷu hơi cong, đưa tạ ra sau đầu đến khi vai căng vừa phải rồi kéo về trên ngực.',
+    sets:'3 hiệp × 10–15 cái · nghỉ 60–90s', cue:'Không ưỡn lưng; dừng trước khi vai hoặc lưng khó chịu.' },
+
+  { id:'gym-prone-row', name:'DB Prone Row — kéo lưng nằm sấp', cat:'Gym · Lưng', pose:'prone',
+    highlight:{cx:55,cy:100,rx:28,ry:15}, arrows:[{d:'M72,96 L52,82', both:true}],
+    how:'Nằm sấp, trán tựa khăn mỏng, hai tay duỗi xuống và cầm tạ. Kéo khuỷu về phía hông, siết hai bả vai, giữ 1 giây rồi hạ tạ chậm.',
+    sets:'4 hiệp × 8–15 cái · nghỉ 60–90s', cue:'Cổ trung lập, không giật tạ và không nhấc hông khỏi thảm.' },
+
+  { id:'gym-prone-w', name:'Prone W Raise — chữ W không tạ', cat:'Gym · Vai sau', pose:'prone',
+    highlight:{cx:54,cy:101,rx:30,ry:15}, arrows:[{d:'M64,96 Q54,84 43,96', both:true}],
+    how:'Nằm sấp, gập khuỷu tạo chữ W, lòng bàn tay hướng xuống hoặc vào nhau. Nhấc khuỷu và bàn tay khỏi thảm một chút, kéo bả vai xuống–về sau rồi hạ.',
+    sets:'3 hiệp × 10–15 cái · nghỉ 45–60s', cue:'Không cần tạ; chất lượng chuyển động quan trọng hơn tải.' },
+
+  { id:'gym-shoulder-press', name:'DB Shoulder Press — đẩy vai tựa tường', cat:'Gym · Vai', pose:'sitting',
+    highlight:{cx:48,cy:53,rx:22,ry:16}, arrows:[{d:'M53,74 L53,45', both:true}],
+    how:'Ngồi trên thảm, lưng tựa tường, hai chân đặt thoải mái và không dùng để đẩy. Giữ tạ ngang vai, lòng bàn tay hướng vào nhau; đẩy lên rồi hạ chậm.',
+    sets:'3 hiệp × 8–12 cái · nghỉ 75–90s', cue:'Nếu ngồi không vững hoặc 5kg quá nặng, dùng 1 tạ bằng hai tay hoặc bỏ bài.' },
+
+  { id:'gym-curl', name:'DB Curl — cuốn tay trước ngồi', cat:'Gym · Tay trước', pose:'sitting',
+    highlight:{cx:54,cy:72,rx:18,ry:18}, arrows:[{d:'M56,88 Q45,76 54,63', both:true}],
+    how:'Ngồi tựa tường trên thảm, hai tay duỗi gần thẳng, lòng bàn tay hướng lên. Cuốn tạ lên bằng cách gập khuỷu, giữ bắp tay sát thân rồi hạ chậm.',
+    sets:'3 hiệp × 10–15 cái · nghỉ 60s', cue:'Không ngả người lấy đà; luân phiên từng tay nếu 2 tạ cùng lúc quá nặng.' },
+
+  { id:'gym-hammer', name:'Hammer Curl — cuốn búa ngồi', cat:'Gym · Tay trước', pose:'sitting',
+    highlight:{cx:54,cy:72,rx:18,ry:18}, arrows:[{d:'M57,88 Q46,76 55,63', both:true}],
+    how:'Ngồi tựa tường, lòng bàn tay hướng vào nhau như cầm búa. Cuốn tạ lên mà không xoay cổ tay, siết nhẹ ở trên rồi hạ chậm.',
+    sets:'3 hiệp × 10–15 cái · nghỉ 60s', cue:'Vai thả lỏng, khuỷu giữ gần thân.' },
+
+  { id:'gym-triceps', name:'DB Triceps Extension — duỗi tay sau nằm', cat:'Gym · Tay sau', pose:'supine',
+    highlight:{cx:53,cy:111,rx:20,ry:13}, arrows:[{d:'M57,101 L57,128', both:true}],
+    how:'Nằm ngửa, hai tay giữ một tạ ở trên ngực. Gập khuỷu đưa tạ về gần trán hoặc sau đầu trong biên độ thoải mái, sau đó duỗi khuỷu đưa tạ lên.',
+    sets:'3 hiệp × 10–15 cái · nghỉ 60–90s', cue:'Chỉ cử động cẳng tay; giữ khuỷu hướng lên, không xòe sang hai bên.' },
+
+  { id:'gym-deadbug', name:'Dead bug — core trên thảm', cat:'Gym · Core', pose:'supine',
+    highlight:{cx:94,cy:108,rx:28,ry:15}, arrows:[{d:'M112,98 L134,84', both:true}],
+    how:'Nằm ngửa, gồng nhẹ bụng và giữ lưng dưới gần sát thảm. Nâng tay và chân theo mức KTV cho phép, từ từ duỗi tay đối bên với chân rồi trở về.',
+    sets:'3 hiệp × 6–10 mỗi bên · nghỉ 45–60s', cue:'Không để lưng ưỡn; nếu gối khó chịu, chỉ làm tay hoặc đổi sang gồng bụng tĩnh.' },
+
+  { id:'gym-seated-punch', name:'Seated Punch — đấm tay khi ngồi', cat:'Gym · Cardio nhẹ', pose:'sitting',
+    highlight:{cx:58,cy:70,rx:26,ry:18}, arrows:[{d:'M61,71 L92,58'},{d:'M61,78 L92,89'}],
+    how:'Ngồi tựa tường trên thảm, chân mổ thả lỏng. Đấm thẳng luân phiên ở tốc độ vừa, thu tay về bảo vệ mặt; không đứng lên và không xoay hông.',
+    sets:'30 giây làm / 30 giây nghỉ × 8–10 vòng', cue:'Dừng nếu gối sưng/ấm hơn hoặc bạn phải dùng chân để giữ thăng bằng.' }
 ];
 
 /* ============================================================
@@ -1176,6 +1249,12 @@ const REHAB_MIDDAY = ['Trượt gót gấp gối 12–15 cái × 2–3 hiệp','
 const REHAB_MAIN = ['Khởi động 5 phút: bơm cổ chân + 1 hiệp quad set + ép duỗi nhẹ','Quad set kê khăn sau đùi 10 cái × 2 hiệp','★ Squat bám bàn/ghế 8–10 cái × 2–3 hiệp','Dồn trọng lượng qua lại 10 lần mỗi bên × 2 hiệp','Mini-squat 0–45° có tay vịn 10 cái × 2–3 hiệp','Cầu mông 2 chân 12–15 cái × 3 hiệp','Nhón gót 2 chân có tay vịn 12–15 cái × 2–3 hiệp','Dạng hông nằm nghiêng 12–15 cái × 3 hiệp','Khép hông nằm nghiêng 12–15 cái × 3 hiệp','Duỗi hông nằm sấp 12–15 cái × 3 hiệp','Hamstring curl nằm sấp 10–12 cái × 2–3 hiệp','Lật ngoài cổ chân (dây) 15 cái × 3 hiệp','Cổ chân 4 hướng (dây) 15 mỗi hướng × 2 hiệp','Chườm lạnh + kê cao 15–20 phút'];
 const REHAB_EVENING = ['Quad set 10 cái (1 kiểu)','Ép duỗi 8–10 phút','Bơm cổ chân 20 cái'];
 const REHAB_NIGHT = ['Trượt gót gấp gối 12 cái × 2 hiệp','Ép duỗi 0° lần cuối ngày — 8–10 phút','Quad set nhẹ 1 hiệp','Kê cao chân nếu còn sưng'];
+
+const GYM_PUSH = ['A1 · DB floor press: 3–4 hiệp × 8–15','A2 · DB squeeze press: 3 hiệp × 10–15','A3 · DB pullover: 3 hiệp × 10–15','A4 · DB triceps extension: 3 hiệp × 10–15','Nghỉ 60–90s; còn dư 3–4 reps, không dùng chân đẩy hông'];
+const GYM_PULL = ['B1 · DB prone row: 4 hiệp × 8–15','B2 · DB pullover: 3 hiệp × 10–15','B3 · Curl ngồi: 3 hiệp × 10–15','B4 · Hammer curl ngồi: 3 hiệp × 10–15','Nghỉ 60–90s; nằm/ngồi ổn định trên thảm, không giật tạ'];
+const GYM_SHOULDERS = ['C1 · DB shoulder press tựa tường: 3 hiệp × 8–12','C2 · Prone W raise không tạ: 3 hiệp × 10–15','C3 · Curl ngồi: 3 hiệp × 10–15','C4 · DB triceps extension: 3 hiệp × 10–15','Nếu 5kg quá nặng ở vai/tay: dùng 1 tạ hoặc giảm reps'];
+const GYM_UPPER_LIGHT = ['D1 · DB floor press: 3 hiệp × 12','D2 · DB prone row: 3 hiệp × 12','D3 · DB pullover: 2–3 hiệp × 12','D4 · Dead bug: 3 hiệp × 6–10 mỗi bên','Giảm 1 hiệp so với T2/T3; mục tiêu là duy trì, không cố kiệt sức'];
+const GYM_OPTIONAL = ['Curl ngồi: 2–3 hiệp × 12–15','Hammer curl ngồi: 2–3 hiệp × 12–15','DB triceps extension: 2–3 hiệp × 12–15','Dead bug: 2–3 hiệp × 6–10 mỗi bên','Chỉ làm nếu gối yên, không sưng và dáng đi không xấu hơn'];
 
 function rehabBlocks(){
   return [
@@ -1196,28 +1275,28 @@ function withGym(blocks, gymBlock){
 
 const WEEK = [
   { code:'T2', label:'Thứ 2', tagType:'gym', tag:'Gym', blocks: withGym(rehabBlocks(), {
-      time:'17:00–18:15', title:'GYM: Ngực · Vai · Tay sau', gym:true,
-      note:'Tập theo bài quen thuộc của bạn.', items:['Ưu tiên bài ngồi/có tựa nếu dáng đi chưa ổn','Không cần chỉnh gì thêm cho phần này']
+      time:'17:00–18:00', title:'GYM TẠI NHÀ A: Ngực · Tay sau', gym:true,
+      note:'Chỉ dùng 2 tạ 5kg + thảm. Xem thẻ bài trong tab Hướng dẫn bài tập.', items:GYM_PUSH.slice()
     }) },
   { code:'T3', label:'Thứ 3', tagType:'gym', tag:'Gym', blocks: withGym(rehabBlocks(), {
-      time:'17:00–18:00', title:'GYM: Lưng · Tay trước nhẹ', gym:true,
-      note:'Tập theo bài quen thuộc của bạn.', items:['Tay trước giữ mức NHẸ như lịch cũ','Bài kéo lưng ngồi/có tựa ưu tiên hơn đứng tự do']
+      time:'17:00–18:00', title:'GYM TẠI NHÀ B: Lưng · Tay trước', gym:true,
+      note:'Không cần đứng; dùng tư thế nằm sấp/ngồi tựa tường.', items:GYM_PULL.slice()
     }) },
   { code:'T4', label:'Thứ 4', tagType:'light', tag:'Nhẹ', blocks: withGym(rehabBlocks(), {
       time:'17:00–17:30', title:'Cardio nhẹ / Nghỉ tích cực', gym:false,
-      note:'Trước đây là ngày đá bóng — nay là ngày phục hồi giữa tuần.', items:['Máy quay tay (arm ergometer) 15–20 phút, hoặc','Giãn cơ nhẹ + đi bộ trong nhà nếu không có máy']
+      note:'Trước đây là ngày đá bóng — nay là ngày phục hồi giữa tuần.', items:['Seated punch không tạ: 30s làm / 30s nghỉ × 8–10 vòng','Ngồi tựa tường, không đứng, không xoay hông','Nếu gối sưng/ấm hơn: nghỉ hoàn toàn, chỉ làm rehab nhẹ']
     }) },
   { code:'T5', label:'Thứ 5', tagType:'gym', tag:'Gym', blocks: withGym(rehabBlocks(), {
-      time:'17:00–18:00', title:'GYM: Tay trước nặng + Vai/Lưng phụ', gym:true,
-      note:'Giữ tay trước nặng như lịch cũ.', items:['⚠️ Bỏ hẳn phần chân/mông kiểu gym (squat, leg press, deadlift, hip thrust có tạ) — chân đã có bài riêng ở buổi chính 15h']
+      time:'17:00–18:00', title:'GYM TẠI NHÀ C: Vai · Tay', gym:true,
+      note:'Tập tựa tường hoặc nằm trên thảm để chân mổ không phải làm trụ.', items:GYM_SHOULDERS.slice()
     }) },
   { code:'T6', label:'Thứ 6', tagType:'gym', tag:'Gym nhẹ', blocks: withGym(rehabBlocks(), {
-      time:'17:00–17:45', title:'GYM: Ngực/Vai nhẹ (hoặc gộp Forearms · Abs)', gym:true,
-      note:'Trước đây là ngày đá bóng — linh hoạt theo thể trạng.', items:['Có thể đổi thành nghỉ nếu tuần đó thấy mỏi']
+      time:'17:00–17:45', title:'GYM TẠI NHÀ D: Upper nhẹ', gym:true,
+      note:'Buổi duy trì, giảm 1 hiệp và không tập đến kiệt sức.', items:GYM_UPPER_LIGHT.slice()
     }) },
   { code:'T7', label:'Thứ 7', tagType:'gym', tag:'Gym nhẹ', blocks: withGym(rehabBlocks(), {
-      time:'17:00–17:45', title:'GYM: Forearms · Abs/Core', gym:true,
-      note:'Tập theo bài quen thuộc của bạn.', items:['Bỏ bắp chân tải nặng (máy nhón gót có tạ) — nhón gót bodyweight đã có ở buổi chính','Core tránh xoay/vặn hông mạnh (bỏ Russian twist, leg raise nặng)']
+      time:'17:00–17:30', title:'GYM TÙY CHỌN: Tay · Core nhẹ', gym:true,
+      note:'Chỉ làm khi gối yên sau cả tuần; có thể nghỉ hoàn toàn.', items:GYM_OPTIONAL.slice()
     }) },
   { code:'CN', label:'Chủ nhật', tagType:'rest', tag:'Nghỉ', blocks: withGym(rehabBlocks(), {
       time:'—', title:'NGHỈ HOÀN TOÀN', gym:false,
