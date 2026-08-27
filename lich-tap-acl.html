@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lịch Phục Hồi ACL — GĐ2.5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch-dark:#0F2E1F;
+    --pitch:#1B4332;
+    --pitch-mid:#2D6A4F;
+    --pitch-line:rgba(255,255,255,0.16);
+    --chalk:#F3F5F0;
+    --card:#FFFFFF;
+    --ink:#152420;
+    --ink-soft:#54655C;
+    --ink-faint:#8A9A91;
+    --tape:#E8A33D;
+    --tape-dark:#B9791C;
+    --tape-tint:rgba(232,163,61,0.16);
+    --brick:#B33F32;
+    --brick-tint:rgba(179,63,50,0.10);
+    --hairline:rgba(21,36,32,0.12);
+    --shadow:0 10px 30px rgba(15,46,31,0.10);
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--chalk);
+    color:var(--ink);
+    font-family:'Be Vietnam Pro',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{font-family:'Be Vietnam Pro',system-ui,sans-serif; font-weight:900; letter-spacing:-0.01em;}
+  .num{font-family:'Anton',system-ui,sans-serif; font-weight:400; letter-spacing:0.02em;}
+
+  /* ---------- Header ---------- */
+  header.top{
+    position:relative;
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 40px, rgba(255,255,255,0) 40px 80px),
+      linear-gradient(180deg, var(--pitch-dark), var(--pitch) 70%, var(--pitch-mid));
+    color:var(--chalk);
+    padding:34px 20px 26px;
+    overflow:hidden;
+  }
+  header.top::after{
+    content:"";
+    position:absolute; left:50%; top:-90px; width:220px; height:220px;
+    border:2px solid var(--pitch-line); border-radius:50%;
+    transform:translateX(-50%);
+  }
+  .top-inner{position:relative; z-index:1; max-width:1040px; margin:0 auto;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--tape); font-weight:700; margin-bottom:10px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--tape);}
+  h1.page-title{
+    margin:0 0 6px; font-size:clamp(26px,4.4vw,40px); line-height:1.05;
+  }
+  .page-sub{
+    margin:0; color:rgba(243,245,240,0.78); font-size:14.5px; max-width:640px; line-height:1.55;
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:8px 10px; margin-top:16px;
+  }
+  .meta-chip{
+    font-size:12px; padding:6px 11px; border-radius:999px;
+    border:1px solid var(--pitch-line); color:rgba(243,245,240,0.9);
+    background:rgba(255,255,255,0.05);
+  }
+  .disclaimer{
+    max-width:1040px; margin:14px auto 0; font-size:12.5px; line-height:1.55;
+    color:rgba(243,245,240,0.68); border-top:1px dashed var(--pitch-line); padding-top:12px;
+  }
+
+  /* ---------- Tabs ---------- */
+  .tabs-wrap{
+    position:sticky; top:0; z-index:20;
+    background:var(--chalk);
+    border-bottom:1px solid var(--hairline);
+  }
+  .tabs{
+    max-width:1040px; margin:0 auto; display:flex; gap:4px; padding:10px 20px 0;
+  }
+  .tab-btn{
+    appearance:none; border:none; background:none; cursor:pointer;
+    font-family:inherit; font-weight:700; font-size:14.5px; color:var(--ink-soft);
+    padding:12px 16px 14px; border-radius:10px 10px 0 0; position:relative;
+    transition:color .15s ease;
+  }
+  .tab-btn:hover{color:var(--ink);}
+  .tab-btn.is-active{color:var(--pitch-dark);}
+  .tab-btn.is-active::after{
+    content:""; position:absolute; left:14px; right:14px; bottom:-1px; height:3px;
+    background:var(--tape); border-radius:3px 3px 0 0;
+  }
+
+  main{max-width:1040px; margin:0 auto; padding:22px 20px 70px;}
+  .panel{display:none;}
+  .panel.is-active{display:block; animation:fadeIn .25s ease;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);}}
+
+  /* ---------- Legend ---------- */
+  .legend{
+    display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center;
+    font-size:12.5px; color:var(--ink-soft); margin-bottom:18px;
+    background:var(--card); border:1px solid var(--hairline); border-radius:12px;
+    padding:12px 16px;
+  }
+  .legend b{color:var(--ink);}
+  .legend .swatch{display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:6px; vertical-align:middle;}
+
+  /* ---------- Day pills ---------- */
+  .day-row{
+    display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin-bottom:18px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .day-pill{
+    flex:0 0 auto; cursor:pointer; border:1px solid var(--hairline); background:var(--card);
+    border-radius:14px; padding:10px 14px; min-width:104px; text-align:left;
+    transition:border-color .15s ease, background .15s ease, transform .15s ease;
+  }
+  .day-pill:hover{transform:translateY(-1px);}
+  .day-pill .code{font-family:'Anton'; font-size:20px; color:var(--pitch-dark); display:block; line-height:1;}
+  .day-pill .lbl{font-size:11px; color:var(--ink-faint); display:block; margin:3px 0 6px;}
+  .day-pill .tag{
+    display:inline-block; font-size:10.5px; font-weight:700; padding:3px 7px; border-radius:6px;
+    background:var(--tape-tint); color:var(--tape-dark);
+  }
+  .day-pill.tag-rest .tag{background:var(--brick-tint); color:var(--brick);}
+  .day-pill.tag-light .tag{background:rgba(45,106,79,0.12); color:var(--pitch-mid);}
+  .day-pill.is-active{
+    background:var(--pitch-dark); border-color:var(--pitch-dark);
+  }
+  .day-pill.is-active .code{color:#fff;}
+  .day-pill.is-active .lbl{color:rgba(255,255,255,0.65);}
+  .day-pill.is-active .tag{background:rgba(255,255,255,0.16); color:#fff;}
+
+  /* ---------- Timeline ---------- */
+  .day-head{display:flex; align-items:baseline; gap:10px; margin-bottom:14px; flex-wrap:wrap;}
+  .day-head h2{margin:0; font-size:22px;}
+  .day-head .day-note{font-size:13px; color:var(--ink-soft);}
+
+  .timeline{position:relative; padding-left:26px;}
+  .timeline::before{
+    content:""; position:absolute; left:7px; top:6px; bottom:6px; width:2px;
+    background:linear-gradient(var(--pitch-mid), var(--hairline));
+  }
+  .block{position:relative; margin-bottom:16px;}
+  .block::before{
+    content:""; position:absolute; left:-26px; top:4px; width:14px; height:14px; border-radius:50%;
+    background:var(--card); border:3px solid var(--pitch-mid);
+  }
+  .block.is-gym::before{border-color:var(--tape);}
+  .block.is-rest::before{border-color:var(--brick);}
+  .block-card{
+    background:var(--card); border:1px solid var(--hairline); border-radius:var(--radius);
+    padding:14px 16px; box-shadow:var(--shadow);
+  }
+  .block.is-gym .block-card{border-left:4px solid var(--tape);}
+  .block.is-rest .block-card{border-left:4px solid var(--brick); background:var(--brick-tint);}
+  .block-top{display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:8px;}
+  .block-title{font-weight:800; font-size:15px;}
+  .block-time{font-family:'Anton'; font-size:13px; color:var(--pitch-mid); letter-spacing:.02em;}
+  .block.is-gym .block-time{color:var(--tape-dark);}
+  .block.is-rest .block-time{color:var(--brick);}
+  .block-note{font-size:12.5px; color:var(--ink-soft); margin:0 0 8px; line-height:1.5;}
+  .block ul{margin:0; padding-left:0; list-style:none;}
+  .block li{
+    font-size:13.5px; line-height:1.55; padding:5px 0 5px 18px; position:relative; color:var(--ink);
+    border-top:1px dashed var(--hairline);
+  }
+  .block li:first-child{border-top:none;}
+  .block li::before{content:"—"; position:absolute; left:0; color:var(--ink-faint);}
+  .block li.is-caution{color:var(--ink);}
+  .block li.is-caution::before{content:"★"; color:var(--tape-dark);}
+
+  /* ---------- Exercise library ---------- */
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;}
+  .chip{
+    cursor:pointer; border:1px solid var(--hairline); background:var(--card); color:var(--ink-soft);
+    font-size:12.5px; font-weight:600; padding:7px 13px; border-radius:999px;
+    transition:all .15s ease;
+  }
+  .chip:hover{border-color:var(--pitch-mid);}
+  .chip.is-active{background:var(--pitch-dark); color:#fff; border-color:var(--pitch-dark);}
+
+  .ex-grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(270px,1fr)); gap:16px;
+  }
+  .ex-card{
+    background:var(--card); border:1px solid var(--hairline); border-radius:var(--radius);
+    overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column;
+    transition:transform .15s ease; animation:fadeIn .25s ease;
+  }
+  .ex-card:hover{transform:translateY(-2px);}
+  .ex-illus{
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 22px, rgba(255,255,255,0) 22px 44px),
+      linear-gradient(180deg, var(--pitch), var(--pitch-mid));
+    padding:10px 8px 4px;
+  }
+  .illus-svg{width:100%; height:auto; display:block;}
+  .fx-floor{stroke:rgba(255,255,255,0.35); stroke-width:2; stroke-dasharray:4 4;}
+  .fx-limb{stroke:#F3F5F0; stroke-width:6; stroke-linecap:round;}
+  .fx-limb--soft{stroke:rgba(243,245,240,0.45); stroke-width:5; stroke-linecap:round;}
+  .fx-joint{fill:var(--tape);}
+  .fx-joint--soft{fill:rgba(232,163,61,0.55);}
+  .fx-head{fill:#F3F5F0;}
+  .fx-highlight{fill:rgba(232,163,61,0.38); stroke:var(--tape); stroke-width:1.5;}
+  .fx-arrow{fill:none; stroke:var(--tape-dark); stroke-width:2.6; stroke-linecap:round;}
+  .fx-prop{fill:#C97F1E; opacity:0.85;}
+  .fx-support{fill:rgba(243,245,240,0.55);}
+  .fx-anchor{fill:#F3F5F0;}
+  .fx-band{stroke:#F3F5F0; stroke-width:2; stroke-dasharray:3 3;}
+
+  .ex-body{padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .ex-cat{font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--tape-dark);}
+  .ex-name{font-size:16px; font-weight:800; margin:0; line-height:1.25;}
+  .ex-how{font-size:13px; color:var(--ink-soft); line-height:1.55; margin:0;}
+  .ex-sets{
+    font-size:12.5px; font-weight:700; color:var(--pitch-dark);
+    background:rgba(45,106,79,0.10); border-radius:8px; padding:6px 10px; display:inline-block; width:fit-content;
+  }
+  .ex-cue{font-size:12px; color:var(--ink-soft); font-style:italic; margin:0;}
+  .ex-caution{
+    font-size:12px; color:var(--brick); background:var(--brick-tint); border-radius:8px;
+    padding:7px 10px; margin:0; line-height:1.5; display:flex; gap:6px;
+  }
+
+  footer{
+    max-width:1040px; margin:10px auto 40px; padding:0 20px; font-size:12px; color:var(--ink-faint);
+    text-align:center; line-height:1.6;
+  }
+
+  @media (max-width:560px){
+    .ex-grid{grid-template-columns:1fr 1fr;}
+    header.top{padding:26px 16px 20px;}
+  }
+  @media (max-width:420px){
+    .ex-grid{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#B9791C"></path>
+    </marker>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="eyebrow"><span class="dot"></span> GĐ2.5 · TUẦN 5–7 · CHỊU LỰC 40% → 100%</div>
+    <h1 class="page-title display">Lịch phục hồi ACL &amp; hướng dẫn bài tập</h1>
+    <p class="page-sub">Ghép lịch rehab hằng ngày với lịch gym thân trên. Vị trí thi đấu: tiền vệ trung tâm / chạy cánh · Chân mổ: phải · Mảnh ghép: gân cơ mác (kỹ thuật all-inside).</p>
+    <div class="meta-row">
+      <span class="meta-chip">Gập hiện tại: 100–110°, +5°/tuần</span>
+      <span class="meta-chip">Duỗi: giữ 0° tuyệt đối</span>
+      <span class="meta-chip">Bỏ nạng dự kiến: ~tuần 7</span>
+      <span class="meta-chip">Nghỉ đá bóng: 1 năm</span>
+    </div>
+    <p class="disclaimer">Đây là tài liệu tham khảo tổng hợp từ trao đổi trước đó, không thay thế chỉ định trực tiếp của bác sĩ mổ và KTV vật lý trị liệu. Luôn ưu tiên hướng dẫn của họ nếu có khác biệt, và dừng lại nếu gối sưng/đau tăng.</p>
+  </div>
+</header>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn is-active" data-tab="schedule">📅 Lịch tuần</button>
+    <button class="tab-btn" data-tab="library">🩹 Hướng dẫn bài tập</button>
+  </div>
+</div>
+
+<main>
+
+  <!-- ================= TAB 1: SCHEDULE ================= -->
+  <section id="panel-schedule" class="panel is-active">
+    <div class="legend">
+      <span><span class="swatch" style="background:var(--pitch-mid)"></span><b>Xanh</b> = buổi rehab (chân)</span>
+      <span><span class="swatch" style="background:var(--tape)"></span><b>Cam</b> = buổi gym thân trên</span>
+      <span><span class="swatch" style="background:var(--brick)"></span><b>Đỏ</b> = ngày nghỉ / nhẹ</span>
+      <span>★ = cần KTV xác nhận trước khi làm</span>
+    </div>
+
+    <div class="day-row" id="dayRow"></div>
+
+    <div class="day-head">
+      <h2 id="dayTitle" class="display"></h2>
+      <span class="day-note" id="dayNote"></span>
+    </div>
+
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <!-- ================= TAB 2: LIBRARY ================= -->
+  <section id="panel-library" class="panel">
+    <div class="chips" id="chipRow"></div>
+    <div class="ex-grid" id="exGrid"></div>
+  </section>
+
+</main>
+
+<footer>
+  Tài liệu cá nhân hoá cho quá trình phục hồi ACL — không dùng để tự chẩn đoán hay thay thế thăm khám y tế.
+</footer>
+
+<script>
+/* ============================================================
+   POSE SKELETONS — toạ độ trong viewBox 0 0 200 140
+   ============================================================ */
+const POSES = {
+  supine:{ head:[28,100], shoulder:[46,108], elbow:[50,122], hand:[36,130],
+    hip:[92,108], knee:[140,108], ankle:[178,108], toe:[192,103], floorY:122 },
+  supineBridge:{ head:[26,116], shoulder:[46,120], elbow:[50,130], hand:[36,134],
+    hip:[100,92], knee:[135,112], ankle:[140,123], toe:[153,124], floorY:126 },
+  supineShortArc:{ head:[28,100], shoulder:[46,108], elbow:[50,122], hand:[36,130],
+    hip:[92,108], knee:[135,100], ankle:[176,88], toe:[187,82], floorY:122,
+    extra:[{type:'rect', x:118, y:104, w:26, h:9, rx:4}] },
+  supineHeelSlide:{ head:[28,100], shoulder:[46,108], elbow:[50,122], hand:[36,130],
+    hip:[92,108], knee:[122,80], ankle:[104,108], toe:[92,113], floorY:122 },
+  supineHeelProp:{ head:[28,100], shoulder:[46,108], elbow:[50,122], hand:[36,130],
+    hip:[92,108], knee:[140,108], ankle:[178,97], toe:[190,92], floorY:122,
+    extra:[{type:'rect', x:166, y:100, w:24, h:10, rx:4}] },
+  prone:{ head:[28,102], shoulder:[46,106], elbow:[58,98], hand:[70,94],
+    hip:[92,106], knee:[140,106], ankle:[178,106], toe:[188,112], floorY:120 },
+  proneHipExt:{ head:[28,102], shoulder:[46,106], elbow:[58,98], hand:[70,94],
+    hip:[92,106], knee:[142,92], ankle:[183,80], toe:[193,74], floorY:120 },
+  proneHamCurl:{ head:[28,102], shoulder:[46,106], elbow:[58,98], hand:[70,94],
+    hip:[92,106], knee:[140,106], ankle:[130,68], toe:[122,58], floorY:120 },
+  sideAbduction:{ head:[30,60], shoulder:[48,66], elbow:[40,80], hand:[30,92],
+    hip:[95,70], knee:[140,48], ankle:[178,32], toe:[188,26], floorY:90,
+    secondary:{ knee:[130,78], ankle:[160,80], toe:[170,84] } },
+  sideAdduction:{ head:[30,60], shoulder:[48,66], elbow:[40,80], hand:[30,92],
+    hip:[95,70], knee:[132,75], ankle:[155,60], toe:[165,55], floorY:90,
+    secondary:{ knee:[125,50], ankle:[100,42], toe:[90,38] } },
+  sitting:{ head:[30,38], shoulder:[45,54], elbow:[50,72], hand:[58,88],
+    hip:[68,80], knee:[112,86], ankle:[165,95], toe:[179,92], floorY:100,
+    extra:[{type:'anchor', x:196, y:96}] },
+  standing:{ head:[100,22], shoulder:[100,38], elbow:[126,58], hand:[138,70],
+    hip:[100,80], knee:[100,105], ankle:[100,122], toe:[111,126], floorY:128,
+    extra:[{type:'support', x:135, y:50, w:8, h:70}] },
+  standingSquat:{ head:[100,30], shoulder:[100,45], elbow:[126,62], hand:[138,74],
+    hip:[103,90], knee:[112,110], ankle:[100,122], toe:[112,126], floorY:128,
+    extra:[{type:'support', x:135, y:50, w:8, h:70}] },
+  standingHeelRaise:{ head:[100,20], shoulder:[100,36], elbow:[126,56], hand:[138,68],
+    hip:[100,76], knee:[100,100], ankle:[100,116], toe:[111,122], floorY:128,
+    extra:[{type:'support', x:135, y:48, w:8, h:70}] }
+};
+
+function fig(poseKey, opts){
+  opts = opts || {};
+  const p = POSES[poseKey];
+  const highlight = opts.highlight;
+  const arrows = opts.arrows || [];
+  const extra = (p.extra || []).concat(opts.extra || []);
+  let s = '<svg viewBox="0 0 200 140" class="illus-svg" aria-hidden="true">';
+  if(p.floorY) s += '<line class="fx-floor" x1="8" y1="'+p.floorY+'" x2="196" y2="'+p.floorY+'"/>';
+  extra.forEach(function(e){
+    if(e.type==='rect') s += '<rect class="fx-prop" x="'+e.x+'" y="'+e.y+'" width="'+e.w+'" height="'+e.h+'" rx="'+(e.rx||3)+'"/>';
+    if(e.type==='support') s += '<rect class="fx-support" x="'+e.x+'" y="'+e.y+'" width="'+e.w+'" height="'+e.h+'" rx="3"/>';
+    if(e.type==='anchor') s += '<circle class="fx-anchor" cx="'+e.x+'" cy="'+e.y+'" r="5"/><line class="fx-band" x1="'+e.x+'" y1="'+e.y+'" x2="'+p.toe[0]+'" y2="'+p.toe[1]+'"/>';
+  });
+  if(highlight) s += '<ellipse class="fx-highlight" cx="'+highlight.cx+'" cy="'+highlight.cy+'" rx="'+highlight.rx+'" ry="'+highlight.ry+'"/>';
+  if(p.secondary){
+    const sec = p.secondary;
+    s += '<line class="fx-limb fx-limb--soft" x1="'+p.hip[0]+'" y1="'+p.hip[1]+'" x2="'+sec.knee[0]+'" y2="'+sec.knee[1]+'"/>';
+    s += '<line class="fx-limb fx-limb--soft" x1="'+sec.knee[0]+'" y1="'+sec.knee[1]+'" x2="'+sec.ankle[0]+'" y2="'+sec.ankle[1]+'"/>';
+    s += '<line class="fx-limb fx-limb--soft" x1="'+sec.ankle[0]+'" y1="'+sec.ankle[1]+'" x2="'+sec.toe[0]+'" y2="'+sec.toe[1]+'"/>';
+    s += '<circle class="fx-joint fx-joint--soft" cx="'+sec.knee[0]+'" cy="'+sec.knee[1]+'" r="4"/>';
+    s += '<circle class="fx-joint fx-joint--soft" cx="'+sec.ankle[0]+'" cy="'+sec.ankle[1]+'" r="4"/>';
+  }
+  s += '<line class="fx-limb" x1="'+p.shoulder[0]+'" y1="'+p.shoulder[1]+'" x2="'+p.hip[0]+'" y2="'+p.hip[1]+'"/>';
+  s += '<line class="fx-limb" x1="'+p.shoulder[0]+'" y1="'+p.shoulder[1]+'" x2="'+p.elbow[0]+'" y2="'+p.elbow[1]+'"/>';
+  s += '<line class="fx-limb" x1="'+p.elbow[0]+'" y1="'+p.elbow[1]+'" x2="'+p.hand[0]+'" y2="'+p.hand[1]+'"/>';
+  s += '<line class="fx-limb" x1="'+p.hip[0]+'" y1="'+p.hip[1]+'" x2="'+p.knee[0]+'" y2="'+p.knee[1]+'"/>';
+  s += '<line class="fx-limb" x1="'+p.knee[0]+'" y1="'+p.knee[1]+'" x2="'+p.ankle[0]+'" y2="'+p.ankle[1]+'"/>';
+  s += '<line class="fx-limb" x1="'+p.ankle[0]+'" y1="'+p.ankle[1]+'" x2="'+p.toe[0]+'" y2="'+p.toe[1]+'"/>';
+  s += '<circle class="fx-head" cx="'+p.head[0]+'" cy="'+p.head[1]+'" r="10"/>';
+  [p.shoulder,p.elbow,p.hip,p.knee,p.ankle].forEach(function(j){
+    s += '<circle class="fx-joint" cx="'+j[0]+'" cy="'+j[1]+'" r="4.5"/>';
+  });
+  arrows.forEach(function(a){
+    const markerAttrs = a.both ? 'marker-start="url(#arrowhead)" marker-end="url(#arrowhead)"' : 'marker-end="url(#arrowhead)"';
+    s += '<path class="fx-arrow" d="'+a.d+'" '+markerAttrs+'/>';
+  });
+  s += '</svg>';
+  return s;
+}
+
+/* ============================================================
+   THƯ VIỆN BÀI TẬP
+   ============================================================ */
+const EXERCISES = [
+  { id:'pump', name:'Bơm cổ chân', cat:'Tầm vận động', pose:'supine',
+    highlight:{cx:178,cy:108,rx:16,ry:12}, arrows:[{d:'M170,96 Q158,108 170,120', both:true}],
+    how:'Nằm ngửa, chân thả lỏng. Gập mũi chân lên rồi duỗi mũi chân xuống hết cỡ, liên tục.',
+    sets:'20–30 cái, nhiều lần trong ngày', cue:'Giúp bơm dịch, chống ứ máu — làm bất cứ khi nào rảnh tay.' },
+
+  { id:'quad-hook', name:'Quad set — móc bàn chân', cat:'Kích hoạt cơ đùi', pose:'supine',
+    highlight:{cx:116,cy:104,rx:30,ry:14}, arrows:[{d:'M116,80 L116,100'}],
+    how:'Nằm ngửa chân duỗi thẳng. Kéo mũi chân về phía mình, đồng thời gồng chặt cơ đùi ép khoeo xuống mặt giường.',
+    sets:'10 cái, giữ 5–10 giây', cue:'Cảm nhận đùi trong sát gối cứng lại.' },
+
+  { id:'quad-point', name:'Quad set — xuôi bàn chân', cat:'Kích hoạt cơ đùi', pose:'supine',
+    highlight:{cx:116,cy:104,rx:30,ry:14}, arrows:[{d:'M116,80 L116,100'}],
+    how:'Tương tự bài trên nhưng duỗi mũi chân xuôi ra xa, vẫn gồng chặt cơ đùi ép khoeo xuống giường.',
+    sets:'10 cái, giữ 5–10 giây', cue:'Đổi vị trí cổ chân để đánh thức đùi ở nhiều góc khác nhau.' },
+
+  { id:'quad-vmo', name:'Quad set — ép 2 mắt cá (VMO)', cat:'Kích hoạt cơ đùi', pose:'supine',
+    highlight:{cx:112,cy:106,rx:28,ry:13}, arrows:[{d:'M188,100 L178,108'}],
+    how:'Móc bàn chân lên, đồng thời ép nhẹ hai mắt cá chân vào nhau (nếu chân lành ở gần) và gồng đùi.',
+    sets:'10 cái, giữ 5–10 giây', cue:'Kích hoạt thêm cơ rộng trong (VMO) — nhóm giữ xương bánh chè.' },
+
+  { id:'quad-shortarc', name:'Quad set kê khăn sau đùi', cat:'Kích hoạt cơ đùi', pose:'supineShortArc',
+    highlight:{cx:120,cy:100,rx:26,ry:13}, arrows:[{d:'M170,118 Q178,100 186,84'}],
+    how:'Kê khăn cuộn dưới đùi sát gối. Nâng cẳng chân lên, duỗi thẳng gối qua khăn rồi hạ chậm.',
+    sets:'10 cái × 2 hiệp', cue:'Chỉ GỒNG, không phải đá duỗi có kháng lực.',
+    caution:'Đúng theo chỉ định — không dùng máy đá đùi nặng ở giai đoạn này.' },
+
+  { id:'ext0', name:'Ép duỗi gối 0°', cat:'Tầm vận động', pose:'supineHeelProp',
+    highlight:{cx:150,cy:104,rx:22,ry:12}, arrows:[{d:'M140,86 L140,104'}],
+    how:'Kê gót lên khăn cuộn cho cẳng chân treo, thả lỏng đùi để trọng lực kéo gối duỗi thẳng dần.',
+    sets:'8–10 phút × 3–4 lần/ngày', cue:'Bác sĩ dặn phải lấy hết duỗi — đây là bài ưu tiên số một.' },
+
+  { id:'heelslide', name:'Trượt gót gấp gối', cat:'Tầm vận động', pose:'supineHeelSlide',
+    highlight:{cx:112,cy:96,rx:26,ry:16}, arrows:[{d:'M178,108 Q150,95 106,108'}],
+    how:'Nằm ngửa, kéo gót trượt về phía mông tới ngưỡng căng (không đau), giữ rồi trượt về. Dùng khăn hỗ trợ nếu cần.',
+    sets:'12–15 cái × 2–3 hiệp, giữ 5s cuối tầm', cue:'Tăng dần theo nhịp +5°/tuần bác sĩ cho.' },
+
+  { id:'patella', name:'Di động xương bánh chè', cat:'Tầm vận động', pose:'supine',
+    highlight:{cx:140,cy:104,rx:14,ry:10}, arrows:[{d:'M126,104 L154,104'},{d:'M140,92 L140,116', both:true}],
+    how:'Dùng ngón tay đẩy nhẹ xương bánh chè lên–xuống và sang hai bên.',
+    sets:'~1 phút mỗi hướng', cue:'Chống dính mô quanh khớp gối.' },
+
+  { id:'bridge', name:'Cầu mông (Glute bridge)', cat:'Hông & Mông', pose:'supineBridge',
+    highlight:{cx:105,cy:100,rx:24,ry:14}, arrows:[{d:'M100,118 L100,94'}],
+    how:'Nằm ngửa co gối, bàn chân đặt sát mông. Siết mông nâng hông lên thành đường thẳng vai–hông–gối, hạ chậm.',
+    sets:'12–15 cái × 3 hiệp', cue:'Siết đều 2 bên mông, không lệch hông.' },
+
+  { id:'hip-abd', name:'Dạng hông nằm nghiêng', cat:'Hông & Mông', pose:'sideAbduction',
+    highlight:{cx:150,cy:52,rx:26,ry:15}, arrows:[{d:'M100,68 Q140,45 180,30'}],
+    how:'Nằm nghiêng, chân mổ ở TRÊN. Chân dưới co nhẹ giữ thăng bằng. Nhấc chân trên thẳng lên cao rồi hạ chậm.',
+    sets:'12–15 cái × 3 hiệp', cue:'Giữ hông thẳng, không xoay người ra sau.' },
+
+  { id:'hip-add', name:'Khép hông nằm nghiêng', cat:'Hông & Mông', pose:'sideAdduction',
+    highlight:{cx:140,cy:70,rx:24,ry:14}, arrows:[{d:'M170,86 Q160,72 152,58'}],
+    how:'Nằm nghiêng, chân mổ ở DƯỚI, chân trên co lại bước ra trước tựa xuống sàn. Nhấc chân dưới thẳng lên hướng về chân trên.',
+    sets:'12–15 cái × 3 hiệp', cue:'Chân mổ luôn thẳng khi nhấc, không xoay.' },
+
+  { id:'hip-ext', name:'Duỗi hông nằm sấp', cat:'Hông & Mông', pose:'proneHipExt',
+    highlight:{cx:110,cy:100,rx:24,ry:14}, arrows:[{d:'M178,104 Q186,90 192,76'}],
+    how:'Nằm sấp, giữ gối thẳng. Siết mông nhấc cả chân ra sau lên khỏi mặt giường, hạ chậm.',
+    sets:'12–15 cái × 3 hiệp', cue:'Nâng bằng lực mông, không ưỡn lưng.' },
+
+  { id:'hamcurl', name:'Gập gối nằm sấp (Hamstring curl)', cat:'Gân kheo', pose:'proneHamCurl',
+    highlight:{cx:150,cy:92,rx:22,ry:16}, arrows:[{d:'M178,104 Q150,90 128,66'}],
+    how:'Nằm sấp, từ từ gập gối đưa gót chân về phía mông rồi hạ chậm trở lại.',
+    sets:'10–12 cái × 2–3 hiệp, chậm có kiểm soát', cue:'Bạn có lợi thế vì không lấy gân kheo — nhóm cơ này còn nguyên.' },
+
+  { id:'ankle-ever', name:'Lật ngoài cổ chân (dây kháng lực)', cat:'Cổ chân', pose:'sitting',
+    highlight:{cx:170,cy:93,rx:18,ry:12}, arrows:[{d:'M165,100 Q180,110 190,98'}],
+    how:'Ngồi, vòng dây kháng lực quanh bàn chân, cố định đầu kia. Đẩy bàn chân ra ngoài chống lại dây rồi về chậm.',
+    sets:'15 cái × 3 hiệp', cue:'Chăm nơi lấy gân cơ mác — đừng bỏ qua bài này.' },
+
+  { id:'ankle-4way', name:'Cổ chân 4 hướng (dây kháng lực)', cat:'Cổ chân', pose:'sitting',
+    highlight:{cx:170,cy:93,rx:18,ry:12}, arrows:[{d:'M170,80 L170,106', both:true},{d:'M155,93 L185,93', both:true}],
+    how:'Ngồi, dùng dây kháng lực đẩy bàn chân lần lượt 4 hướng: lên, xuống, vào trong, ra ngoài.',
+    sets:'15 cái mỗi hướng × 2 hiệp', cue:'Làm nhẹ nhàng, đều cả 4 hướng.' },
+
+  { id:'weightshift', name:'Dồn trọng lượng qua lại', cat:'Chịu lực đứng', pose:'standing',
+    highlight:{cx:100,cy:118,rx:32,ry:10}, arrows:[{d:'M72,118 L128,118', both:true}],
+    how:'Đứng vịn bàn/ghế, hai chân rộng bằng vai. Từ từ dồn trọng lượng sang chân mổ theo đúng % cho phép rồi về.',
+    sets:'10 lần mỗi bên × 2 hiệp', cue:'Dùng cân để canh đúng cảm giác % lực trước khi tập.' },
+
+  { id:'minisquat', name:'Mini-squat 0–45°', cat:'Chịu lực đứng', pose:'standingSquat',
+    highlight:{cx:106,cy:100,rx:22,ry:16}, arrows:[{d:'M100,70 L100,96', both:true}],
+    how:'Đứng vịn chắc, hai chân rộng bằng vai. Hơi khuỵu gối xuống trong biên độ nhỏ, gối theo hướng mũi chân, rồi đứng lên.',
+    sets:'10 cái × 2–3 hiệp', cue:'Chia đều lực hai chân, gối không đổ vào trong.' },
+
+  { id:'squat-support', name:'Squat bám bàn/ghế', cat:'Chịu lực đứng', pose:'standingSquat',
+    highlight:{cx:106,cy:100,rx:22,ry:16}, arrows:[{d:'M100,68 L100,98', both:true}],
+    how:'Đứng vịn bàn/ghế chắc chắn. Xuống dần như ngồi ghế tới mức không đau, tay vẫn bám, rồi đứng lên.',
+    sets:'8–10 cái × 2–3 hiệp', cue:'Gối luôn theo hướng mũi chân, chỉ xuống tới mức thoải mái.',
+    caution:'★ Cần KTV xác nhận đã cho làm bài này ở nhà trước khi tự tập.' },
+
+  { id:'heelraise', name:'Nhón gót 2 chân có tay vịn', cat:'Chịu lực đứng', pose:'standingHeelRaise',
+    highlight:{cx:100,cy:96,rx:16,ry:22}, arrows:[{d:'M100,110 L100,84'}],
+    how:'Đứng vịn bàn/ghế, hai chân chịu lực đều. Nhón gót lên cao rồi hạ chậm xuống.',
+    sets:'12–15 cái × 2–3 hiệp', cue:'Chỉ làm khi % chịu lực đủ và không đau.' }
+];
+
+/* ============================================================
+   LỊCH TUẦN
+   ============================================================ */
+const REHAB_WAKE = ['Bơm cổ chân 20–30 cái','Quad set (móc bàn chân) 10 cái, giữ 5–10s','Quad set (xuôi bàn chân) 10 cái, giữ 5–10s','Quad set + ép 2 mắt cá (VMO) 10 cái, giữ 5–10s','Ép duỗi 0°: kê gót, thả lỏng đùi — 8–10 phút'];
+const REHAB_MIDMORNING = ['Quad set 10 cái (1 kiểu bất kỳ)','Bơm cổ chân 20–30 cái','Canh cảm giác lực chịu chân bằng cân (theo % hiện tại)'];
+const REHAB_MIDDAY = ['Trượt gót gấp gối 12–15 cái × 2–3 hiệp','Di động bánh chè ~1 phút mỗi hướng','Đi lại có kiểm soát: gót → lăn bàn chân → mũi, không khập khiễng'];
+const REHAB_MAIN = ['Khởi động 5 phút: bơm cổ chân + 1 hiệp quad set + ép duỗi nhẹ','Quad set kê khăn sau đùi 10 cái × 2 hiệp','★ Squat bám bàn/ghế 8–10 cái × 2–3 hiệp','Dồn trọng lượng qua lại 10 lần mỗi bên × 2 hiệp','Mini-squat 0–45° có tay vịn 10 cái × 2–3 hiệp','Cầu mông 2 chân 12–15 cái × 3 hiệp','Nhón gót 2 chân có tay vịn 12–15 cái × 2–3 hiệp','Dạng hông nằm nghiêng 12–15 cái × 3 hiệp','Khép hông nằm nghiêng 12–15 cái × 3 hiệp','Duỗi hông nằm sấp 12–15 cái × 3 hiệp','Hamstring curl nằm sấp 10–12 cái × 2–3 hiệp','Lật ngoài cổ chân (dây) 15 cái × 3 hiệp','Cổ chân 4 hướng (dây) 15 mỗi hướng × 2 hiệp','Chườm lạnh + kê cao 15–20 phút'];
+const REHAB_EVENING = ['Quad set 10 cái (1 kiểu)','Ép duỗi 8–10 phút','Bơm cổ chân 20 cái'];
+const REHAB_NIGHT = ['Trượt gót gấp gối 12 cái × 2 hiệp','Ép duỗi 0° lần cuối ngày — 8–10 phút','Quad set nhẹ 1 hiệp','Kê cao chân nếu còn sưng'];
+
+function rehabBlocks(){
+  return [
+    {time:'6:30–7:15', title:'Đánh thức', items:REHAB_WAKE.slice()},
+    {time:'9:30', title:'Nhắc nhở', items:REHAB_MIDMORNING.slice()},
+    {time:'11:30', title:'Tầm vận động', items:REHAB_MIDDAY.slice()},
+    {time:'15:00–16:00', title:'BUỔI CHÍNH (rehab chân)', items:REHAB_MAIN.slice()},
+    {time:'18:30', title:'Nhắc nhở', items:REHAB_EVENING.slice()},
+    {time:'21:30', title:'Trước ngủ', items:REHAB_NIGHT.slice()}
+  ];
+}
+
+function withGym(blocks, gymBlock){
+  const b = blocks.map(function(x){return Object.assign({}, x);});
+  b.splice(4, 0, gymBlock);
+  return b;
+}
+
+const WEEK = [
+  { code:'T2', label:'Thứ 2', tagType:'gym', tag:'Gym', blocks: withGym(rehabBlocks(), {
+      time:'17:00–18:15', title:'GYM: Ngực · Vai · Tay sau', gym:true,
+      note:'Tập theo bài quen thuộc của bạn.', items:['Ưu tiên bài ngồi/có tựa nếu còn dùng nạng','Không cần chỉnh gì thêm cho phần này']
+    }) },
+  { code:'T3', label:'Thứ 3', tagType:'gym', tag:'Gym', blocks: withGym(rehabBlocks(), {
+      time:'17:00–18:00', title:'GYM: Lưng · Tay trước nhẹ', gym:true,
+      note:'Tập theo bài quen thuộc của bạn.', items:['Tay trước giữ mức NHẸ như lịch cũ','Bài kéo lưng ngồi/có tựa ưu tiên hơn đứng tự do']
+    }) },
+  { code:'T4', label:'Thứ 4', tagType:'light', tag:'Nhẹ', blocks: withGym(rehabBlocks(), {
+      time:'17:00–17:30', title:'Cardio nhẹ / Nghỉ tích cực', gym:false,
+      note:'Trước đây là ngày đá bóng — nay là ngày phục hồi giữa tuần.', items:['Máy quay tay (arm ergometer) 15–20 phút, hoặc','Giãn cơ nhẹ + đi bộ trong nhà nếu không có máy']
+    }) },
+  { code:'T5', label:'Thứ 5', tagType:'gym', tag:'Gym', blocks: withGym(rehabBlocks(), {
+      time:'17:00–18:00', title:'GYM: Tay trước nặng + Vai/Lưng phụ', gym:true,
+      note:'Giữ tay trước nặng như lịch cũ.', items:['⚠️ Bỏ hẳn phần chân/mông kiểu gym (squat, leg press, deadlift, hip thrust có tạ) — chân đã có bài riêng ở buổi chính 15h']
+    }) },
+  { code:'T6', label:'Thứ 6', tagType:'gym', tag:'Gym nhẹ', blocks: withGym(rehabBlocks(), {
+      time:'17:00–17:45', title:'GYM: Ngực/Vai nhẹ (hoặc gộp Forearms · Abs)', gym:true,
+      note:'Trước đây là ngày đá bóng — linh hoạt theo thể trạng.', items:['Có thể đổi thành nghỉ nếu tuần đó thấy mỏi']
+    }) },
+  { code:'T7', label:'Thứ 7', tagType:'gym', tag:'Gym nhẹ', blocks: withGym(rehabBlocks(), {
+      time:'17:00–17:45', title:'GYM: Forearms · Abs/Core', gym:true,
+      note:'Tập theo bài quen thuộc của bạn.', items:['Bỏ bắp chân tải nặng (máy nhón gót có tạ) — nhón gót bodyweight đã có ở buổi chính','Core tránh xoay/vặn hông mạnh (bỏ Russian twist, leg raise nặng)']
+    }) },
+  { code:'CN', label:'Chủ nhật', tagType:'rest', tag:'Nghỉ', blocks: withGym(rehabBlocks(), {
+      time:'—', title:'NGHỈ HOÀN TOÀN', gym:false,
+      note:'Trước đây là ngày đá bóng — nay là ngày nghỉ trọn vẹn.', items:['Không gym','Có thể giảm nhẹ phần chịu lực đứng ở buổi chính nếu thấy mỏi — vẫn giữ quad set, ép duỗi, tầm vận động']
+    }) }
+];
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+function renderDayPills(){
+  const row = document.getElementById('dayRow');
+  row.innerHTML = WEEK.map(function(d, i){
+    return '<button class="day-pill tag-'+d.tagType+'" data-idx="'+i+'">'+
+      '<span class="code num">'+d.code+'</span>'+
+      '<span class="lbl">'+d.label+'</span>'+
+      '<span class="tag">'+d.tag+'</span>'+
+    '</button>';
+  }).join('');
+  row.querySelectorAll('.day-pill').forEach(function(btn){
+    btn.addEventListener('click', function(){ showDay(parseInt(btn.dataset.idx,10)); });
+  });
+}
+
+function showDay(idx){
+  const day = WEEK[idx];
+  document.querySelectorAll('.day-pill').forEach(function(p,i){ p.classList.toggle('is-active', i===idx); });
+  document.getElementById('dayTitle').textContent = day.label;
+  document.getElementById('dayNote').textContent = 'Rehab chân cố định mỗi ngày · phần chiều thay đổi theo lịch gym';
+
+  const tl = document.getElementById('timeline');
+  tl.innerHTML = day.blocks.map(function(b){
+    const cls = b.gym ? 'is-gym' : (b.title.indexOf('NGHỈ')===0 ? 'is-rest' : '');
+    const note = b.note ? '<p class="block-note">'+b.note+'</p>' : '';
+    const items = b.items.map(function(it){
+      const caution = it.charAt(0)==='★';
+      const text = caution ? it.slice(1).trim() : it;
+      return '<li class="'+(caution?'is-caution':'')+'">'+text+'</li>';
+    }).join('');
+    return '<div class="block '+cls+'">'+
+      '<div class="block-card">'+
+        '<div class="block-top"><span class="block-title">'+b.title+'</span><span class="block-time num">'+b.time+'</span></div>'+
+        note+
+        '<ul>'+items+'</ul>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+}
+
+function renderChips(){
+  const cats = ['Tất cả'].concat(Array.from(new Set(EXERCISES.map(function(e){return e.cat;}))));
+  const row = document.getElementById('chipRow');
+  row.innerHTML = cats.map(function(c,i){
+    return '<button class="chip '+(i===0?'is-active':'')+'" data-cat="'+c+'">'+c+'</button>';
+  }).join('');
+  row.querySelectorAll('.chip').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      row.querySelectorAll('.chip').forEach(function(c){c.classList.remove('is-active');});
+      chip.classList.add('is-active');
+      filterExercises(chip.dataset.cat);
+    });
+  });
+}
+
+function renderExercises(){
+  const grid = document.getElementById('exGrid');
+  grid.innerHTML = EXERCISES.map(function(ex){
+    const illus = fig(ex.pose, {highlight:ex.highlight, arrows:ex.arrows});
+    const caution = ex.caution ? '<p class="ex-caution">⚠ '+ex.caution+'</p>' : '';
+    return '<div class="ex-card" data-cat="'+ex.cat+'">'+
+      '<div class="ex-illus">'+illus+'</div>'+
+      '<div class="ex-body">'+
+        '<span class="ex-cat">'+ex.cat+'</span>'+
+        '<h3 class="ex-name">'+ex.name+'</h3>'+
+        '<p class="ex-how">'+ex.how+'</p>'+
+        '<span class="ex-sets">'+ex.sets+'</span>'+
+        '<p class="ex-cue">'+ex.cue+'</p>'+
+        caution+
+      '</div>'+
+    '</div>';
+  }).join('');
+}
+
+function filterExercises(cat){
+  document.querySelectorAll('.ex-card').forEach(function(card){
+    card.style.display = (cat==='Tất cả' || card.dataset.cat===cat) ? '' : 'none';
+  });
+}
+
+/* ---- Tabs ---- */
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('is-active');});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('is-active');});
+    btn.classList.add('is-active');
+    document.getElementById('panel-'+btn.dataset.tab).classList.add('is-active');
+  });
+});
+
+/* ---- Init ---- */
+renderDayPills();
+showDay(0);
+renderChips();
+renderExercises();
+</script>
+</body>
+</html>
