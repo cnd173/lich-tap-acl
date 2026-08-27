@@ -358,10 +358,25 @@
   .gym-rules{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:5px 18px; margin:14px 0 0; padding:0 0 0 18px;}
   .gym-rules li{font-size:12.5px; color:var(--ink-soft); line-height:1.5; margin:0;}
   .gym-visuals{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:16px;}
-  .gym-visual{margin:0; overflow:hidden; border:1px solid rgba(21,36,32,0.12); border-radius:12px; background:rgba(255,255,255,0.72);}
-  .gym-visual img{display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover;}
+  .gym-visual{position:relative; margin:0; overflow:hidden; border:1px solid rgba(21,36,32,0.12); border-radius:12px; background:rgba(255,255,255,0.72);}
+  .gym-visual img{display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; cursor:zoom-in; transition:filter .15s ease, transform .15s ease;}
+  .gym-visual img:hover{filter:brightness(1.04); transform:scale(1.012);}
+  .gym-visual img:focus-visible{outline:3px solid var(--tape); outline-offset:-3px;}
+  .gym-visual::after{content:'Bấm để phóng to'; position:absolute; top:9px; right:9px; padding:4px 7px; border-radius:6px; color:#fff; background:rgba(15,46,31,0.78); font-size:10px; font-weight:700; pointer-events:none; opacity:.86;}
   .gym-visual figcaption{padding:8px 10px 10px; font-size:11.5px; line-height:1.45; color:var(--ink-soft);}
   .gym-visual figcaption strong{display:block; color:var(--pitch-dark); font-size:12px; margin-bottom:2px;}
+
+  /* ---------- Image lightbox ---------- */
+  .image-lightbox[hidden]{display:none;}
+  .image-lightbox{position:fixed; inset:0; z-index:100; display:grid; place-items:center; padding:22px; background:rgba(7,22,14,0.88);}
+  .lightbox-backdrop{position:absolute; inset:0; cursor:zoom-out;}
+  .lightbox-panel{position:relative; z-index:1; max-width:min(1200px,96vw); max-height:92vh; display:flex; flex-direction:column; align-items:center; gap:10px;}
+  .lightbox-panel img{display:block; max-width:94vw; max-height:82vh; width:auto; height:auto; border-radius:14px; box-shadow:0 18px 60px rgba(0,0,0,0.42);}
+  .lightbox-close{position:absolute; z-index:2; top:-15px; right:-15px; width:38px; height:38px; border:1px solid rgba(255,255,255,0.30); border-radius:50%; background:var(--pitch-dark); color:#fff; font:700 22px/1 system-ui,sans-serif; cursor:pointer; box-shadow:0 5px 18px rgba(0,0,0,0.26);}
+  .lightbox-close:hover{background:var(--tape); color:var(--pitch-dark);}
+  .lightbox-close:focus-visible{outline:3px solid var(--tape); outline-offset:2px;}
+  .lightbox-caption{max-width:760px; margin:0; color:rgba(243,245,240,0.84); font-size:12px; line-height:1.45; text-align:center;}
+  body.is-lightbox-open{overflow:hidden;}
 
   footer{
     max-width:1040px; margin:10px auto 40px; padding:0 20px; font-size:12px; color:var(--ink-faint);
@@ -413,6 +428,15 @@
     <button class="tab-btn is-active" data-tab="schedule">📅 Lịch tuần</button>
     <button class="tab-btn" data-tab="library">🩹 Hướng dẫn bài tập</button>
     <button class="tab-btn" data-tab="guide">📘 Lộ trình đầy đủ</button>
+  </div>
+</div>
+
+<div class="image-lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-label="Xem lớn hình hướng dẫn bài tập" hidden>
+  <div class="lightbox-backdrop" data-lightbox-close></div>
+  <div class="lightbox-panel">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Đóng hình lớn">×</button>
+    <img id="lightboxImage" src="" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
   </div>
 </div>
 
@@ -1588,6 +1612,49 @@ function renderExercises(){
   }).join('');
 }
 
+function setupGymLightbox(){
+  const lightbox = document.getElementById('imageLightbox');
+  const largeImage = document.getElementById('lightboxImage');
+  const caption = document.getElementById('lightboxCaption');
+  const closeButton = document.getElementById('lightboxClose');
+  let lastTrigger = null;
+
+  function closeLightbox(){
+    lightbox.hidden = true;
+    document.body.classList.remove('is-lightbox-open');
+    largeImage.removeAttribute('src');
+    if(lastTrigger) lastTrigger.focus();
+  }
+
+  function openLightbox(image){
+    lastTrigger = image;
+    largeImage.src = image.currentSrc || image.src;
+    largeImage.alt = image.alt;
+    caption.textContent = image.alt;
+    lightbox.hidden = false;
+    document.body.classList.add('is-lightbox-open');
+    closeButton.focus();
+  }
+
+  document.querySelectorAll('.gym-visual img').forEach(function(image){
+    image.setAttribute('tabindex','0');
+    image.setAttribute('role','button');
+    image.setAttribute('aria-label','Bấm để phóng to: '+image.alt);
+    image.addEventListener('click', function(){openLightbox(image);});
+    image.addEventListener('keydown', function(event){
+      if(event.key==='Enter' || event.key===' '){
+        event.preventDefault();
+        openLightbox(image);
+      }
+    });
+  });
+  closeButton.addEventListener('click', closeLightbox);
+  lightbox.querySelectorAll('[data-lightbox-close]').forEach(function(el){el.addEventListener('click', closeLightbox);});
+  document.addEventListener('keydown', function(event){
+    if(event.key==='Escape' && !lightbox.hidden) closeLightbox();
+  });
+}
+
 function filterExercises(cat){
   document.querySelectorAll('.ex-card').forEach(function(card){
     card.style.display = (cat==='Tất cả' || card.dataset.cat===cat) ? '' : 'none';
@@ -1609,6 +1676,7 @@ renderDayPills();
 showDay(getTodayIndex(), true);
 renderChips();
 renderExercises();
+setupGymLightbox();
 refreshRoadmap();
 window.setInterval(refreshTodayMarker, 60000);
 window.setInterval(refreshRoadmap, 3600000);
