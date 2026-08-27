@@ -307,7 +307,7 @@ Phần gym dưới đây là **thân trên + core nhẹ**, được thiết kế
 **Nguyên tắc ghép:**
 1. **Rehab chân là cố định**, làm trước; gym làm sau hoặc cách ít nhất 2–3 giờ.
 2. Trong phần gym hiện tại, **không thêm squat, lunge, deadlift, hip thrust có tạ, nhảy, chạy hoặc bài đứng xoay người**. Các bài chịu lực chân vẫn theo riêng chương trình KTV.
-3. Chọn tư thế **nằm trên thảm hoặc ngồi tựa tường**. Chân mổ thả lỏng, không dùng chân đẩy hông, không xoay trên chân trụ.
+3. Chọn tư thế **nằm trên thảm hoặc ngồi trên ghế chắc, có tựa lưng**. Ghế không có bánh, không trượt; chân mổ thả lỏng, không dùng chân đẩy hông và không xoay trên chân trụ. Vùng màu cam trong hình là nhóm cơ chính đang được tác động.
 4. Mức gắng sức khoảng **RPE 6–7/10**, luôn còn dư 3–4 lần lặp. Hạ tạ trong 2–3 giây, không quăng tạ; nghỉ 60–90 giây giữa hiệp.
 5. Nếu 5 kg quá nặng ở bài vai/tay: dùng **1 tạ**, giảm số lần hoặc đổi sang bài không tạ. Không cần cố dùng cả hai tạ trong mọi bài.
 6. Gối sưng/ấm hơn, đau tăng, mất duỗi hoặc dáng đi xấu sau buổi → **bỏ buổi gym kế tiếp**, kê cao/chườm lạnh theo hướng dẫn và báo KTV nếu không lắng.
@@ -316,11 +316,11 @@ Phần gym dưới đây là **thân trên + core nhẹ**, được thiết kế
 
 | Ngày | Buổi tại nhà | Bài chính |
 |---|---|---|
-| Thứ 2 | **A — Ngực + tay sau** | Floor press, squeeze press, pullover, triceps extension |
+| Thứ 2 | **A — Ngực + tay sau** | Floor press, squeeze press ngồi ghế, pullover, triceps extension ngồi ghế |
 | Thứ 3 | **Hồi phục** | Không gym; chỉ rehab chân theo lịch KTV |
-| Thứ 4 | **B — Lưng + tay trước** | Prone row, pullover, curl, hammer curl |
+| Thứ 4 | **B — Lưng + tay trước** | Prone row, pullover, curl ngồi ghế, hammer curl ngồi ghế |
 | Thứ 5 | **Hồi phục** | Không gym; chỉ rehab chân theo lịch KTV |
-| Thứ 6 | **C — Vai + tay** | Shoulder press tựa tường, W raise, curl, triceps extension |
+| Thứ 6 | **C — Vai + tay** | Shoulder press ngồi ghế, W raise, curl, triceps extension |
 | Thứ 7 | **Hồi phục** | Không gym; chỉ rehab chân theo lịch KTV |
 | Chủ nhật | **Nghỉ gym** | Không thêm bài; ưu tiên hồi phục và theo dõi sưng |
 
@@ -341,9 +341,9 @@ Phần gym dưới đây là **thân trên + core nhẹ**, được thiết kế
 - Hạ khuỷu xuống chạm sàn nhẹ, giữ cổ tay thẳng; đẩy tạ lên trên ngực. Không dùng chân đạp sàn để nâng hông.
 - **3–4 hiệp × 8–15 cái**, nghỉ 60–90 giây.
 
-**2. DB Squeeze Press — ép hai tạ**
-- Nằm ngửa, ép hai quả tạ chạm nhau trên ngực. Vừa giữ lực ép vừa hạ tạ chậm, sau đó đẩy lên.
-- Vai không nhún lên tai; chân mổ chỉ đặt thoải mái.
+**2. DB Squeeze Press — ép hai tạ ngồi ghế**
+- Ngồi trên ghế chắc có tựa lưng, hai bàn chân đặt nhẹ và không dùng chân đẩy. Ép hai quả tạ chạm nhau trước ngực; giữ lực ép khi đẩy lên rồi hạ chậm.
+- Nếu ghế không vững, đổi sang floor press. Vai không nhún lên tai; chân mổ chỉ đặt thoải mái.
 - **3 hiệp × 10–15 cái**, nghỉ 60–90 giây.
 
 **3. DB Pullover — kéo tạ qua đầu**
@@ -361,18 +361,18 @@ Phần gym dưới đây là **thân trên + core nhẹ**, được thiết kế
 - Không cần tạ; tập trung vào kiểm soát vai.
 - **3 hiệp × 10–15 cái**, nghỉ 45–60 giây.
 
-**6. DB Shoulder Press — đẩy vai tựa tường**
-- Ngồi trên thảm, lưng tựa tường, chân mổ thả lỏng và không dùng để đẩy. Giữ tạ ngang vai, lòng bàn tay hướng vào nhau.
+**6. DB Shoulder Press — đẩy vai ngồi ghế**
+- Ngồi sâu trên ghế chắc có tựa lưng, chân mổ thả lỏng và không dùng để đẩy. Giữ tạ ngang vai, lòng bàn tay hướng vào nhau.
 - Đẩy tạ lên, không khóa giật khuỷu; hạ chậm. Nếu ngồi không vững hoặc 5 kg quá nặng, dùng một tạ bằng hai tay hoặc bỏ bài.
 - **3 hiệp × 8–12 cái**, nghỉ 75–90 giây.
 
-**7. Curl và Hammer Curl — tay trước ngồi**
-- Ngồi tựa tường. Với **curl**, lòng bàn tay hướng lên; với **hammer curl**, lòng bàn tay hướng vào nhau.
+**7. Curl và Hammer Curl — tay trước ngồi ghế**
+- Ngồi sâu trên ghế chắc có tựa lưng. Với **curl**, lòng bàn tay hướng lên; với **hammer curl**, lòng bàn tay hướng vào nhau.
 - Cuốn tạ bằng khuỷu, giữ bắp tay sát thân, không ngả người lấy đà; hạ chậm.
 - Mỗi bài **3 hiệp × 10–15 cái**, nghỉ 60 giây. Có thể luân phiên từng tay.
 
-**8. DB Triceps Extension — tay sau nằm**
-- Nằm ngửa, giữ một tạ ở trên ngực. Gập khuỷu đưa tạ gần trán hoặc sau đầu trong biên độ thoải mái, rồi duỗi khuỷu đưa tạ lên.
+**8. DB Triceps Extension — tay sau ngồi ghế**
+- Ngồi trên ghế chắc có tựa lưng, giữ một tạ bằng hai tay trên đầu. Gập khuỷu đưa tạ ra sau đầu trong biên độ thoải mái, rồi duỗi khuỷu đưa tạ lên.
 - Chỉ cẳng tay chuyển động; khuỷu không xòe rộng.
 - **3 hiệp × 10–15 cái**, nghỉ 60–90 giây.
 
@@ -382,7 +382,7 @@ Phần gym dưới đây là **thân trên + core nhẹ**, được thiết kế
 - **3 hiệp × 6–10 mỗi bên**, nghỉ 45–60 giây.
 
 **10. Seated punch — cardio nhẹ khi ngồi**
-- Ngồi tựa tường, chân mổ thả lỏng. Đấm thẳng luân phiên ở tốc độ vừa, thu tay về bảo vệ mặt; không đứng và không xoay hông.
+- Ngồi trên ghế chắc hoặc tựa tường, chân mổ thả lỏng. Đấm thẳng luân phiên ở tốc độ vừa, thu tay về bảo vệ mặt; không đứng và không xoay hông.
 - **30 giây làm / 30 giây nghỉ × 8–10 vòng**. Dừng nếu gối phản ứng hoặc bạn phải dùng chân giữ thăng bằng.
 
 > Khi các giai đoạn sau cho phép squat/hip thrust có tải, chạy, v.v. — phần chân/mông kiểu gym sẽ **quay lại dần theo tiêu chí KTV cho**, không tự thêm chỉ vì đã bỏ nạng.
