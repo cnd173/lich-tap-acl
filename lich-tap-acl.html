@@ -188,12 +188,14 @@
     background:var(--card); border:3px solid var(--pitch-mid);
   }
   .block.is-gym::before{border-color:var(--tape);}
+  .block.is-mixed::before{border-color:var(--tape);}
   .block.is-rest::before{border-color:var(--brick);}
   .block-card{
     background:var(--card); border:1px solid var(--hairline); border-radius:var(--radius);
     padding:14px 16px; box-shadow:var(--shadow);
   }
   .block.is-gym .block-card{border-left:4px solid var(--tape);}
+  .block.is-mixed .block-card{border-left:4px solid var(--tape); background:linear-gradient(135deg, rgba(232,163,61,0.10), var(--card));}
   .block.is-rest .block-card{border-left:4px solid var(--brick); background:var(--brick-tint);}
   .block-top{display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:8px;}
   .block-title{font-weight:800; font-size:15px;}
@@ -370,7 +372,7 @@
         </div>
         <span class="ex-sets">RPE 6–7/10 · còn dư 3–4 reps</span>
       </div>
-      <p>Đây là phần thân trên bổ sung, không thay cho rehab chân. Làm rehab chân trước; sau đó nghỉ ít nhất 2–3 giờ rồi tập gym. Mỗi buổi chỉ làm 3 bài chính, khoảng 20–30 phút. Chọn bài nằm trên thảm, ngồi trên ghế chắc có tựa lưng hoặc hít đất dốc; chân mổ thả lỏng, không dùng chân đẩy hông và không xoay trên chân trụ. Màu cam trong hình là vùng cơ chính đang được tác động.</p>
+      <p>Đây là phần thân trên bổ sung, không thay cho rehab chân. Vào ngày gym, gộp rehab chính và gym trong cùng một khung chiều: làm phần chân trước, nghỉ chuyển tiếp 10–15 phút nếu gối ổn rồi mới làm 3 bài thân trên. Các mốc buổi sáng/tối chỉ là duy trì tầm vận động và tuần hoàn, không xem là buổi tập riêng. Chọn bài nằm trên thảm, ngồi trên ghế chắc có tựa lưng hoặc hít đất dốc; chân mổ thả lỏng, không dùng chân đẩy hông và không xoay trên chân trụ. Màu cam trong hình là vùng cơ chính đang được tác động.</p>
       <div class="gym-routines">
         <div class="gym-routine"><strong>T2 · A — Ngực + tay sau</strong><span>Hít đất dốc hoặc floor press · pullover · triceps extension ngồi ghế</span></div>
         <div class="gym-routine"><strong>T4 · B — Lưng + tay trước</strong><span>Prone row · W raise không tạ · curl hoặc hammer curl ngồi ghế</span></div>
@@ -747,21 +749,15 @@
       <blockquote>
       <p>Nguyên tắc như cũ: <strong>không đau khi tập, không sưng thêm sau tập.</strong> Tempo: hạ/thả chậm 3 giây. Nghỉ 45–60s giữa hiệp. Bài đánh dấu <strong>(*)</strong> cần KTV xác nhận đã cho làm.</p>
       </blockquote>
-      <p><strong>① ~6:30–7:15 · Đánh thức (20–25′) — trên giường</strong>
+      <p><strong>① ~6:30–7:00 · Kích hoạt nhẹ (10–15′)</strong>
       - Bơm cổ chân 20–30 cái.
-      - Quad set (móc bàn chân + gồng): 10 cái, giữ 5–10s.
-      - Quad set (xuôi bàn chân + gồng): 10 cái, giữ 5–10s.
-      - Quad set + ép 2 mắt cá vào nhau (VMO): 10 cái, giữ 5–10s.
-      - Ép duỗi 0°: kê gót, thả lỏng đùi, <strong>8–10 phút</strong>.</p>
-      <p><strong>② ~9:30 · Nhắc ngắn (8–10′)</strong>
-      - Quad set (1 kiểu bất kỳ trong 3 kiểu trên): 10 cái.
-      - Bơm cổ chân 20–30 cái.
-      - Cân canh lực 40% (hoặc mức hiện tại): ấn thử vài lần cho quen cảm giác.</p>
-      <p><strong>③ ~11:30 · Tầm vận động (10–15′)</strong>
-      - Trượt gót gấp gối: 12–15 cái × 2–3 hiệp (mục tiêu tiến dần 110→120°+, theo nhịp +5°/tuần).
+      - Quad set (chọn 1 kiểu): 10 cái, giữ 5–10s.
+      - Ép duỗi 0°: kê gót, thả lỏng đùi, <strong>8–10 phút</strong> (có thể tranh thủ lúc ăn sáng).</p>
+      <p><strong>② ~11:30 · Tầm vận động (10–15′)</strong>
+      - Trượt gót gấp gối: 12–15 cái × 2–3 hiệp (mục tiêu tiến dần theo KTV).
       - Di động bánh chè ~1 phút mỗi hướng.
-      - Đi lại có kiểm soát trong nhà theo đúng % chịu lực cho phép, chú ý dáng đi (gót→lăn bàn chân→mũi, không khập khiễng).</p>
-      <p><strong>④ ~15:00–16:00 · BUỔI CHÍNH (50–60′)</strong>
+      - Đi lại có kiểm soát trong nhà, chú ý dáng đi (gót→lăn bàn chân→mũi, không khập khiễng).</p>
+      <p><strong>③ ~15:00–16:30 · BUỔI CHÍNH (rehab chân + gym nếu là ngày gym)</strong>
       - <em>Khởi động (5′):</em> bơm cổ chân + 1 hiệp quad set + ép duỗi nhẹ.
       - <em>Kích hoạt cơ đùi (từ KTV):</em>
         - Quad set kê khăn sau đùi (gối hơi gập, không duỗi): 10 cái × 2 hiệp, giữ 5–10s.
@@ -779,21 +775,15 @@
       - <em>Cổ chân:</em>
         - Lật ngoài cổ chân (dây): 15 × 3.
         - Cổ chân 4 hướng (dây): 15 mỗi hướng × 2.
-      - <em>Thân trên + cơ lõi (10–15′):</em> 3–4 bài thân trên × 3 × 10–15; dead bug 3×10/bên; plank 3×20–30s.
-      - <em>Tim mạch (10′):</em> xe đạp tại chỗ kháng lực rất nhẹ nếu gập đủ ~110° và KTV đồng ý, hoặc máy quay tay.
+      - <strong>Ngày gym T2/T4/T6:</strong> nghỉ chuyển tiếp 10–15 phút nếu gối không sưng/đau, sau đó làm đúng 3 bài gym ở tab bên dưới; không mở thêm một buổi riêng.
       - <em>Kết:</em> <strong>chườm lạnh + kê cao 15–20 phút.</strong></p>
-      <p><strong>⑤ ~18:30 · Nhắc nhở (8–10′)</strong>
-      - Quad set (1 kiểu): 10 cái.
-      - Ép duỗi 8–10 phút.
-      - Bơm cổ chân 20 cái.</p>
-      <p><strong>⑥ ~21:30 · Trước ngủ (12–15′)</strong>
+      <p><strong>④ ~21:30 · Trước ngủ (8–10′)</strong>
       - Trượt gót gấp gối: 12 × 2.
       - Ép duỗi 0° lần cuối ngày: 8–10 phút.
-      - Quad set nhẹ 1 hiệp.
       - Kê cao chân nếu còn sưng.</p>
-      <p><strong>Tổng ngày:</strong> quad set (3 kiểu xen kẽ) ~5–6 lần · ép duỗi ~4 lần · tầm vận động ~3 lần · 1 buổi chính có squat/cầu mông/hamstring curl.</p>
+      <p><strong>Tổng ngày:</strong> 2 mốc rehab nhẹ + 1 khung chính + 1 mốc tối rất nhẹ. Ngày gym chỉ có <strong>một lần bắt đầu tập chính vào buổi chiều</strong>, vì gym được gộp ngay sau rehab chân.</p>
       <blockquote>
-      <p><strong>Ngày nhẹ (1–2 ngày/tuần):</strong> giữ ①②③⑤⑥ nguyên vẹn, buổi chính bỏ phần squat/mini-squat/nhón gót (phần chịu lực mới, dễ gây phản ứng), chỉ giữ quad set + hông + cổ chân + thân trên/cơ lõi nhẹ.</p>
+      <p><strong>Ngày không gym (T3/T5/T7):</strong> vẫn giữ cùng 4 mốc trên nhưng buổi chính chỉ tập rehab chân theo KTV. Nếu sau buổi chiều gối nóng/sưng hơn hoặc dáng đi xấu, bỏ phần gym kế tiếp và báo KTV nếu không lắng.</p>
       </blockquote>
       <p><strong>✅ Xong GĐ2.5 khi:</strong> đi <strong>không nạng, dáng bình thường, không đau</strong>; chịu lực 100% thoải mái; gập tiến gần ~120–130°, duỗi 0°. → Bước vào <strong>Giai đoạn 3</strong>.</p>
       <blockquote>
@@ -804,7 +794,7 @@
       <p>Phần gym dưới đây là <strong>thân trên + core nhẹ</strong>, được thiết kế để bạn có thể tập tại nhà mà không bắt chân phải làm trụ. Nó <strong>không thay cho rehab chân</strong>. Ở tuần 7 sau mổ, chỉ bắt đầu/tăng các bài đứng hoặc chịu lực khi bác sĩ/KTV đã cho phép; mốc tuần không tự động đồng nghĩa với được tập mọi bài.</p>
       <p><strong>Nguyên tắc ghép:</strong></p>
       <ol>
-      <li><strong>Rehab chân là cố định</strong>, làm trước; gym làm sau hoặc cách ít nhất 2–3 giờ.</li>
+      <li><strong>Rehab chân và gym được gộp trong cùng khung chiều</strong> vào T2/T4/T6: rehab chân trước, nghỉ chuyển tiếp 10–15 phút nếu gối ổn, rồi gym thân trên. Không mở thêm một buổi gym riêng.</li>
       <li>Trong phần gym hiện tại, <strong>không thêm squat, lunge, deadlift, hip thrust có tạ, nhảy, chạy hoặc bài đứng xoay người</strong>. Các bài chịu lực chân vẫn theo riêng chương trình KTV.</li>
       <li>Chọn tư thế <strong>nằm trên thảm, ngồi trên ghế chắc có tựa lưng hoặc hít đất dốc</strong>. Ghế không có bánh, không trượt; chân mổ thả lỏng, không dùng chân đẩy hông và không xoay trên chân trụ.</li>
       <li>Hít đất tiến theo bậc <strong>tường → mặt bàn cao cố định → mặt thấp hơn → sàn</strong>; chỉ hạ độ cao khi gối không sưng/đau, dáng đi bình thường và KTV cho phép.</li>
@@ -1227,7 +1217,6 @@ const EXERCISES = [
     highlight:{cx:100,cy:96,rx:16,ry:22}, arrows:[{d:'M100,110 L100,84'}],
     how:'Đứng vịn bàn/ghế, hai chân chịu lực đều. Nhón gót lên cao rồi hạ chậm xuống.',
     sets:'12–15 cái × 2–3 hiệp', cue:'Chỉ làm khi % chịu lực đủ và không đau.' },
-
   { id:'gym-wall-pushup', name:'Hít đất dốc — tường/bàn cao', cat:'Gym · Ngực', pose:'wallPushup',
     highlight:{cx:70,cy:72,rx:19,ry:12}, arrows:[{d:'M82,75 L104,79', both:true}],
     how:'Đặt tay lên tường hoặc mặt bàn cao, cố định; bước chân ra sau để thân thành một đường thẳng. Hạ ngực về phía điểm tựa rồi đẩy ra, không quỳ và không xoay hông.',
@@ -1293,12 +1282,10 @@ const EXERCISES = [
 /* ============================================================
    LỊCH TUẦN
    ============================================================ */
-const REHAB_WAKE = ['Bơm cổ chân 20–30 cái','Quad set (móc bàn chân) 10 cái, giữ 5–10s','Quad set (xuôi bàn chân) 10 cái, giữ 5–10s','Quad set + ép 2 mắt cá (VMO) 10 cái, giữ 5–10s','Ép duỗi 0°: kê gót, thả lỏng đùi — 8–10 phút'];
-const REHAB_MIDMORNING = ['Quad set 10 cái (1 kiểu bất kỳ)','Bơm cổ chân 20–30 cái','Canh cảm giác lực chịu chân bằng cân (theo % hiện tại)'];
+const REHAB_WAKE = ['Bơm cổ chân 20–30 cái','Quad set (chọn 1 kiểu) 10 cái, giữ 5–10s','Ép duỗi 0°: kê gót, thả lỏng đùi — 8–10 phút'];
 const REHAB_MIDDAY = ['Trượt gót gấp gối 12–15 cái × 2–3 hiệp','Di động bánh chè ~1 phút mỗi hướng','Đi lại có kiểm soát: gót → lăn bàn chân → mũi, không khập khiễng'];
 const REHAB_MAIN = ['Khởi động 5 phút: bơm cổ chân + 1 hiệp quad set + ép duỗi nhẹ','Quad set kê khăn sau đùi 10 cái × 2 hiệp','★ Squat bám bàn/ghế 8–10 cái × 2–3 hiệp','Dồn trọng lượng qua lại 10 lần mỗi bên × 2 hiệp','Mini-squat 0–45° có tay vịn 10 cái × 2–3 hiệp','Cầu mông 2 chân 12–15 cái × 3 hiệp','Nhón gót 2 chân có tay vịn 12–15 cái × 2–3 hiệp','Dạng hông nằm nghiêng 12–15 cái × 3 hiệp','Khép hông nằm nghiêng 12–15 cái × 3 hiệp','Duỗi hông nằm sấp 12–15 cái × 3 hiệp','Hamstring curl nằm sấp 10–12 cái × 2–3 hiệp','Lật ngoài cổ chân (dây) 15 cái × 3 hiệp','Cổ chân 4 hướng (dây) 15 mỗi hướng × 2 hiệp','Chườm lạnh + kê cao 15–20 phút'];
-const REHAB_EVENING = ['Quad set 10 cái (1 kiểu)','Ép duỗi 8–10 phút','Bơm cổ chân 20 cái'];
-const REHAB_NIGHT = ['Trượt gót gấp gối 12 cái × 2 hiệp','Ép duỗi 0° lần cuối ngày — 8–10 phút','Quad set nhẹ 1 hiệp','Kê cao chân nếu còn sưng'];
+const REHAB_NIGHT = ['Trượt gót gấp gối 12 cái × 2 hiệp','Ép duỗi 0° lần cuối ngày — 8–10 phút','Kê cao chân nếu còn sưng'];
 
 const GYM_PUSH = ['A1 (chọn 1) · Hít đất dốc: 2–3 hiệp × 6–12 hoặc DB floor press: 2–3 hiệp × 8–15','A2 · DB pullover: 2 hiệp × 10–15','A3 · DB triceps extension ngồi ghế: 2 hiệp × 10–15','Nghỉ 60–90s; không làm cả hít đất và floor press trong cùng buổi'];
 const GYM_PULL = ['B1 · DB prone row: 2–3 hiệp × 8–15','B2 · Prone W raise không tạ: 2 hiệp × 10–15','B3 (chọn 1) · Curl hoặc hammer curl ngồi ghế: 2 hiệp × 10–15','Nghỉ 60–90s; nằm/ngồi ổn định, không giật tạ'];
@@ -1306,18 +1293,26 @@ const GYM_SHOULDERS = ['C1 · DB shoulder press ngồi ghế: 2–3 hiệp × 8�
 
 function rehabBlocks(){
   return [
-    {time:'6:30–7:15', title:'Đánh thức', items:REHAB_WAKE.slice()},
-    {time:'9:30', title:'Nhắc nhở', items:REHAB_MIDMORNING.slice()},
-    {time:'11:30', title:'Tầm vận động', items:REHAB_MIDDAY.slice()},
+    {time:'6:30–7:00', title:'Kích hoạt nhẹ (10–15 phút)', items:REHAB_WAKE.slice()},
+    {time:'11:30', title:'Tầm vận động (10–15 phút)', items:REHAB_MIDDAY.slice()},
     {time:'15:00–16:00', title:'BUỔI CHÍNH (rehab chân)', items:REHAB_MAIN.slice()},
-    {time:'18:30', title:'Nhắc nhở', items:REHAB_EVENING.slice()},
-    {time:'21:30', title:'Trước ngủ', items:REHAB_NIGHT.slice()}
+    {time:'21:30', title:'Trước ngủ (8–10 phút)', items:REHAB_NIGHT.slice()}
   ];
 }
 
 function withGym(blocks, gymBlock){
   const b = blocks.map(function(x){return Object.assign({}, x);});
-  b.splice(4, 0, gymBlock);
+  const mainIndex = b.findIndex(function(x){return x.title.indexOf('BUỔI CHÍNH')===0;});
+  if(gymBlock.gym && mainIndex >= 0){
+    const main = b[mainIndex];
+    main.mixed = true;
+    main.time = '15:00–16:30';
+    main.title = 'BUỔI CHÍNH · REHAB CHÂN + GYM THÂN TRÊN';
+    main.note = 'Ngày gym: hoàn thành rehab chân trước, nghỉ chuyển tiếp 10–15 phút nếu gối không sưng/đau, rồi làm 3 bài thân trên. Nếu gối phản ứng, bỏ phần gym.';
+    main.items = main.items.concat(['Nghỉ chuyển tiếp 10–15 phút; nếu gối ổn, tiếp tục phần gym thân trên:']).concat(gymBlock.items.map(function(item){return 'GYM · '+item;}));
+    return b;
+  }
+  b.splice(mainIndex + 1, 0, gymBlock);
   return b;
 }
 
@@ -1377,11 +1372,11 @@ function showDay(idx, automatic){
   const day = WEEK[idx];
   document.querySelectorAll('.day-pill').forEach(function(p,i){ p.classList.toggle('is-active', i===idx); });
   document.getElementById('dayTitle').textContent = day.label;
-  document.getElementById('dayNote').textContent = 'Rehab chân cố định mỗi ngày · phần chiều thay đổi theo lịch gym';
+  document.getElementById('dayNote').textContent = 'Mỗi ngày gồm các mốc nhẹ + 1 khung chính · ngày gym gộp trong khung chiều';
 
   const tl = document.getElementById('timeline');
   tl.innerHTML = day.blocks.map(function(b){
-    const cls = b.gym ? 'is-gym' : (b.title.indexOf('NGHỈ')===0 ? 'is-rest' : '');
+    const cls = b.gym ? 'is-gym' : (b.mixed ? 'is-mixed' : (b.title.indexOf('NGHỈ')===0 ? 'is-rest' : ''));
     const note = b.note ? '<p class="block-note">'+b.note+'</p>' : '';
     const items = b.items.map(function(it){
       const caution = it.charAt(0)==='★';
