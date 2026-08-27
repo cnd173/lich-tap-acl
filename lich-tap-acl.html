@@ -103,12 +103,27 @@
     content:""; position:absolute; left:14px; right:14px; bottom:-1px; height:3px;
     background:var(--tape); border-radius:3px 3px 0 0;
   }
-  .guide-link{
-    align-self:center; margin-left:auto; padding:9px 12px; border-radius:9px;
-    color:var(--pitch-mid); font-size:12.5px; font-weight:700; text-decoration:none;
-    border:1px solid var(--hairline); background:var(--card); white-space:nowrap;
+  .guide-content{
+    max-width:900px; margin:0 auto; padding:24px 26px;
+    background:var(--card); border:1px solid var(--hairline); border-radius:var(--radius);
+    box-shadow:var(--shadow); color:var(--ink); line-height:1.65;
   }
-  .guide-link:hover{border-color:var(--pitch-mid); color:var(--pitch-dark);}
+  .guide-content h1,.guide-content h2,.guide-content h3{color:var(--pitch-dark); line-height:1.25;}
+  .guide-content h1{font-size:clamp(24px,4vw,34px); margin:0 0 18px;}
+  .guide-content h2{font-size:23px; margin:30px 0 12px; padding-top:8px; border-top:1px solid var(--hairline);}
+  .guide-content h3{font-size:17px; margin:24px 0 8px;}
+  .guide-content p{font-size:14px; margin:10px 0;}
+  .guide-content ul,.guide-content ol{padding-left:24px;}
+  .guide-content li{font-size:14px; margin:4px 0;}
+  .guide-content blockquote{
+    margin:16px 0; padding:10px 16px; border-left:4px solid var(--tape);
+    background:var(--tape-tint); color:var(--ink-soft);
+  }
+  .guide-content table{width:100%; border-collapse:collapse; display:block; overflow-x:auto; margin:14px 0; font-size:13px;}
+  .guide-content th,.guide-content td{padding:9px 10px; border:1px solid var(--hairline); text-align:left; vertical-align:top; min-width:120px;}
+  .guide-content th{background:rgba(45,106,79,0.10); color:var(--pitch-dark);}
+  .guide-content hr{border:0; border-top:1px solid var(--hairline); margin:24px 0;}
+  .guide-content strong{color:var(--pitch-dark);}
 
   main{max-width:1040px; margin:0 auto; padding:22px 20px 70px;}
   .panel{display:none;}
@@ -260,6 +275,7 @@
   }
   @media (max-width:420px){
     .ex-grid{grid-template-columns:1fr;}
+    .guide-content{padding:18px 16px;}
   }
   @media (prefers-reduced-motion:reduce){
     *{animation:none !important; transition:none !important;}
@@ -296,7 +312,7 @@
   <div class="tabs">
     <button class="tab-btn is-active" data-tab="schedule">📅 Lịch tuần</button>
     <button class="tab-btn" data-tab="library">🩹 Hướng dẫn bài tập</button>
-    <a class="guide-link" href="https://github.com/cnd173/lich-tap-acl/blob/main/lo-trinh-phuc-hoi-ACL.md" target="_blank" rel="noopener">📘 Lộ trình đầy đủ</a>
+    <button class="tab-btn" data-tab="guide">📘 Lộ trình đầy đủ</button>
   </div>
 </div>
 
@@ -325,6 +341,639 @@
   <section id="panel-library" class="panel">
     <div class="chips" id="chipRow"></div>
     <div class="ex-grid" id="exGrid"></div>
+  </section>
+
+  <!-- ================= TAB 3: FULL ROADMAP ================= -->
+  <section id="panel-guide" class="panel">
+    <article class="guide-content" id="guideContent">
+      <h1>Lộ trình phục hồi ACL → trở lại bóng đá chuyên nghiệp</h1>
+      <p><strong>Bối cảnh:</strong> Mổ tái tạo dây chằng chéo trước (ACL) bằng mảnh ghép <strong>gân cơ mác dài (peroneus longus)</strong> lấy <strong>cùng chân phải</strong> — chân được mổ, <strong>kỹ thuật all-inside</strong>. <strong>Không đụng đến sụn chêm</strong> (không khâu, không cắt). <strong>Ngày mổ: 08/07/2026.</strong> Theo cập nhật thực tế, đã <strong>đủ 6 tuần và bỏ nạng từ 19/08/2026</strong>. <strong>Vị trí thi đấu:</strong> tiền vệ trung tâm / chạy cánh.</p>
+      <blockquote>
+      <p>🔧 <strong>Về kỹ thuật all-inside:</strong> dùng đường hầm mù (socket) + cố định treo vòng chỉnh được (adjustable-loop) ở cả hai đầu, cần mảnh ghép ngắn hơn (hợp với gân cơ mác). Với kiểu cố định treo, một số bác sĩ thận trọng hơn với chịu lực sớm để bảo vệ điểm neo lúc mảnh ghép liền vào đường hầm — <strong>có thể</strong> là một phần lý do NWB 6 tuần + giới hạn gấp sớm. Càng là lý do để tuân thủ nghiêm chỉ định.</p>
+      <p>🩹 <strong>Chỉ định của bác sĩ mổ (ưu tiên cao nhất):</strong>
+      - <strong>Tuần 0–6:</strong> không chống chân (NWB), dùng nạng.
+      - <strong>Tầm vận động:</strong> tuần 0–2 gấp tối đa 90° + lấy hết duỗi (0°); sau đó <strong>tăng gập +5°/tuần</strong>.
+      - <strong>✅ Cập nhật trạng thái cá nhân:</strong> ngày mổ <strong>08/07/2026</strong>; đã <strong>bỏ nạng từ 19/08/2026</strong>, khi đủ 6 tuần sau mổ.
+        - Mức chịu lực, dáng đi và các bài đứng tiếp tục theo chỉ định mới nhất của bác sĩ/KTV.
+        - Tiếp tục <strong>gập +5°/tuần</strong>, duỗi giữ 0°.</p>
+      <p>→ Bạn đã qua mốc chuyển từ NWB sang <strong>chịu lực dần (GĐ2.5)</strong> và đã bỏ nạng. Vẫn thận trọng: chưa squat/lunge nặng, chưa đứng 1 chân hoàn toàn, chưa chạy nếu chưa được KTV/bác sĩ cho phép.</p>
+      <p>❓ <strong>Đã rõ sau cập nhật:</strong> đã bỏ nạng từ đủ 6 tuần và nhịp gập (+5°/tuần). <strong>Còn nên xác nhận:</strong> (1) đã được tập nhấc thẳng chân (SLR) chưa; (2) mức chịu lực hiện tại; (3) bác sĩ/KTV đã cho phép những bài đứng nào — với mục tiêu chuyên nghiệp, rất nên có người theo sát.</p>
+      <p>⚠️ <strong>Đọc trước khi bắt đầu.</strong> Tôi là AI, không phải bác sĩ hay KTV vật lý trị liệu. Đây là <strong>khung tham khảo dựa trên phác đồ chuẩn</strong>, không thay thế chỉ định của ê-kíp mổ và KTV đang theo dõi trực tiếp gối bạn. Hãy dùng tài liệu này để <strong>trao đổi với họ</strong>, và luôn ưu tiên chỉ định riêng của họ nếu khác với bên dưới.</p>
+      </blockquote>
+      <hr />
+      <h2>Hai nguyên tắc quan trọng nhất</h2>
+      <p><strong>1. Tiến theo TIÊU CHÍ, không theo lịch.</strong> Mốc thời gian bên dưới chỉ là ước lượng. Bạn chỉ chuyển sang giai đoạn kế tiếp khi <strong>đạt đủ tiêu chí thoát (exit criteria)</strong> của giai đoạn hiện tại, dù có đến sớm hay muộn hơn lịch. Chạy quá nhanh là nguyên nhân hàng đầu gây đứt lại mảnh ghép.</p>
+      <p><strong>2. Điểm đặc thù của gân cơ mác: phải chăm cả "nơi cho gân" ở cổ chân.</strong> Khác với gân kheo, mảnh ghép này lấy ở mặt ngoài cẳng chân/mắt cá ngoài. Vết lấy gân thường ít biến chứng, nhưng bạn cần chủ động phục hồi <strong>sức mạnh lật ngoài bàn chân (eversion)</strong> và <strong>thăng bằng cổ chân</strong> song song với gối, nếu không cổ chân yếu sẽ thành mắt xích lỏng khi bạn đổi hướng, sút bóng.</p>
+      <hr />
+      <h2>📝 Ghi chú sau review chuyên môn (giả lập) — cần xác nhận với ê-kíp thật</h2>
+      <p><strong>Từ góc bác sĩ phẫu thuật:</strong>
+      - <strong>Gấp gối:</strong> giữ ≤ 90° cho tới khi bác sĩ tái khám và cho phép — không tự nong qua 90° (đã sửa trong toàn tài liệu).
+      - <strong>Cấm bài duỗi gối chuỗi mở có kháng lực</strong> (máy đá đùi 90°→0°) trong ~3–4 tháng đầu — căng ACL mạnh ở đoạn gần duỗi hết. Ưu tiên bài chuỗi đóng (squat, leg press) khi tới GĐ tập sức mạnh.
+      - <strong>Không xoay/vặn trên chân trụ</strong> cho tới khi được "clear".
+      - <strong>Xác nhận</strong> có làm thêm thủ thuật dây chằng ngoài (LET/ALL) không — nếu có, phác đồ sẽ khác.
+      - <strong>Báo bác sĩ</strong> nếu tê bì mặt ngoài cẳng chân/mu chân hoặc yếu lật ngoài kéo dài (thần kinh mác nông gần vùng lấy gân).</p>
+      <p><strong>Từ góc bác sĩ phục hồi chức năng / KTV:</strong>
+      - <strong>Kích thích điện cơ (NMES)</strong> lên cơ đùi trước trong GĐ không chịu lực — chống "cơ đùi ngủ quên", dùng kèm quad set nếu có máy.
+      - <strong>Tập hạn chế dòng máu (BFR)</strong> tải nhẹ để giữ khối cơ khi chưa tải nặng được — cần KTV có kinh nghiệm hướng dẫn.
+      - <strong>Đo khách quan ở các cửa:</strong> lực đẳng động (isokinetic) cho sức mạnh, force plate/thảm cho test nhảy. Trước chạy: sức mạnh đùi ~≥ 70–80%; trước cắt hướng/thi đấu: ≥ 90% + chất lượng động tác. Đo vòng đùi theo dõi teo cơ.
+      - <strong>Tràn dịch/sưng là "đèn giao thông" số một</strong> — sưng sau tập = quá tải, lùi lại (quan trọng hơn cả đau).
+      - <strong>Lợi thế của bạn:</strong> gân kheo và cơ chế duỗi gối còn nguyên (không lấy gân kheo/bánh chè) → hai nhóm này thường hồi phục mượt hơn; <strong>điểm canh riêng vẫn là cổ chân</strong>.
+      - <strong>Nền tảng liền mô:</strong> ngủ đủ, đủ đạm, quản lý tải — đưa vào kế hoạch, không phải chuyện phụ.</p>
+      <hr />
+      <h2>Bản đồ tổng thể 7 giai đoạn</h2>
+      <table>
+      <thead>
+      <tr>
+      <th>GĐ</th>
+      <th>Thời gian ước lượng</th>
+      <th>Trọng tâm</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>1</td>
+      <td>Tuần 0–2 (đã qua)</td>
+      <td>Bảo vệ, hết sưng, duỗi gối hết, kích hoạt cơ đùi trước</td>
+      </tr>
+      <tr>
+      <td>2</td>
+      <td>Tuần 2–5 (đã qua)</td>
+      <td>Không chịu lực (NWB) — chống sưng, giữ cơ đùi, tầm vận động, giữ thể lực</td>
+      </tr>
+      <tr>
+      <td>2.5</td>
+      <td><strong>Tuần 5–7 (đang ở cuối giai đoạn; đã bỏ nạng ở tuần 6)</strong></td>
+      <td><strong>Chịu lực dần, bỏ nạng từ đủ 6 tuần</strong>, tập lại dáng đi, khởi động sức mạnh đứng nhẹ</td>
+      </tr>
+      <tr>
+      <td>3</td>
+      <td>Tuần 6–12</td>
+      <td>Tăng sức mạnh, cảm thụ bản thể, đạp xe — <strong>chưa chạy</strong></td>
+      </tr>
+      <tr>
+      <td>4</td>
+      <td>Tháng 3–5</td>
+      <td>Sức mạnh nặng, tập chạy lại, plyometric nhẹ</td>
+      </tr>
+      <tr>
+      <td>5</td>
+      <td>Tháng 5–7</td>
+      <td>Plyometric nâng cao, đổi hướng, khởi động chuyên biệt</td>
+      </tr>
+      <tr>
+      <td>6</td>
+      <td>Tháng 7–9</td>
+      <td>Bóng chuyên biệt, đối kháng nhẹ, đá sân nhỏ</td>
+      </tr>
+      <tr>
+      <td>7</td>
+      <td>Tháng 9–12</td>
+      <td>Test trở lại thi đấu, tập cùng đội, thi đấu</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>Trở lại <strong>bóng đá chuyên nghiệp</strong> thường rơi vào <strong>9–12 tháng</strong>, quyết định bằng test chứ không bằng lịch.</p>
+      <hr />
+      <h2>GIAI ĐOẠN 1 — Tuần 0–2 (bạn đã qua)</h2>
+      <p>Ghi lại để bạn tự đối chiếu xem nền tảng đã đủ chưa. Trước khi rời hẳn GĐ1, nên có: <strong>duỗi gối 0° hoàn toàn</strong> (thẳng bằng chân lành), sưng giảm rõ, <strong>kích hoạt được cơ đùi trước</strong> (nhấc thẳng chân không bị "trễ" gối), vết mổ khô sạch.</p>
+      <p>Nếu <strong>chưa</strong> duỗi hết 0° — đây là ưu tiên số 1 tuần này, quan trọng hơn mọi bài khác. Mất duỗi sớm rất khó lấy lại về sau.</p>
+      <hr />
+      <h2>GIAI ĐOẠN 2 — Tuần 2–5 · KHÔNG CHỊU LỰC (NWB) · <em>(đã qua)</em></h2>
+      <blockquote>
+      <p>Giữ lại để tham khảo. Nếu gối còn sưng hoặc cơ đùi chưa "thức" hẳn, các bài nhóm này vẫn làm song song ở GĐ2.5.</p>
+      <p><strong>Ràng buộc bao trùm của GĐ2:</strong> không dồn trọng lượng lên chân mổ, dùng nạng, cho tới khi bác sĩ cho phép — mốc thực tế của bạn là đủ 6 tuần. <strong>Không nôn nóng bỏ nạng "thử một chút"</strong> khi chưa có chỉ định — đây là lúc mảnh ghép dễ tổn thương nhất.</p>
+      </blockquote>
+      <p><strong>Mục tiêu (không cần chịu lực vẫn làm được):</strong> kiểm soát sưng hết cỡ, giữ cơ đùi trước "thức", giữ/lấy tầm vận động <strong>trong biên độ bác sĩ cho phép</strong>, chăm nơi lấy gân ở cổ chân, và <strong>giữ thể lực phần còn lại của cơ thể</strong> để khi được chịu lực bạn không bắt đầu từ số 0.</p>
+      <h3>Nhịp một ngày điển hình (GĐ2 – NWB)</h3>
+      <p>Xem <strong>lịch chi tiết theo giờ</strong> ở cuối phần này (mục 🕐 "Lịch một ngày chi tiết"). Tổng quan: rải <strong>gồng cơ đùi + ép duỗi + bơm cổ chân</strong> nhiều lần trong ngày, một <strong>buổi chính</strong> vào đầu giờ chiều, và <strong>chườm lạnh/kê cao</strong> sau tập.
+      - <strong>Nhắc mỗi ngày:</strong> để ý sưng. Sưng tăng sau buổi tập = làm hơi quá, hôm sau giảm tải.</p>
+      <h3>Nội dung tập</h3>
+      <p><strong>Gần như luôn an toàn (không dồn trọng lượng):</strong>
+      - <strong>Gồng cơ đùi trước tĩnh (quad sets)</strong> — quan trọng nhất, làm nhiều lần trong ngày để cơ đùi không teo/ngủ quên.
+      - <strong>Ép duỗi 0° (lấy hết duỗi)</strong> — bác sĩ dặn rõ phải lấy hết duỗi, nên đây là ưu tiên: kê gót cao để trọng lực duỗi thẳng gối, ép nhẹ đều.
+      - Bơm cổ chân, di động xương bánh chè (trượt nhẹ lên–xuống–ngang) chống dính.
+      - <strong>Lật ngoài bàn chân</strong> có dây kháng lực nhẹ (chăm gân cơ mác) — làm ở tư thế ngồi/nằm.
+      - Kiểm soát sưng: chườm lạnh, kê cao.
+      - Giữ thể lực: thân trên, cơ lõi (core), chân lành, máy quay tay (arm ergometer) nếu có.</p>
+      <p><strong>Tầm gấp — theo giới hạn của bác sĩ:</strong>
+      - Tuần 0–2 đã giữ ≤ 90°. <strong>Sau tuần 2: vẫn giữ ≤ 90° cho tới khi bác sĩ xác nhận cho tăng.</strong> Khi được phép mới nong thêm từ từ (trượt gót lấy tầm), mỗi ngày nhích một chút, <strong>không đau, không ép mạnh</strong>; hướng tới ~120–130° vào cuối GĐ NWB.
+      - <strong>Bắt buộc hỏi bác sĩ nhịp tăng cụ thể</strong> (câu 3 ở đầu tài liệu) — kiểu cố định treo cần thời gian mảnh ghép bám đường hầm, nên đây là mốc chờ xác nhận, không tự quyết.</p>
+      <p><strong>Chỉ làm sau khi bác sĩ xác nhận:</strong>
+      - <strong>Nhấc thẳng chân (SLR)</strong> + tập hông (dạng/khép/duỗi) tư thế nằm — nếu đã kiểm soát được cơ đùi, không "trễ gối".</p>
+      <p><strong>Tránh trong GĐ này (để dành sau tuần 6):</strong>
+      - Mọi bài đứng chịu lực: squat, lunge, step-up, nhón gót đứng, đứng thăng bằng 1 chân, tập dáng đi.
+      - Xe đạp tại chỗ (chân vẫn tì bàn đạp) — trừ khi bác sĩ đồng ý.</p>
+      <h3>✅ Tiêu chí thoát GĐ2</h3>
+      <ul>
+      <li><strong>Bác sĩ cho phép bắt đầu chịu lực</strong> (mốc bắt buộc).</li>
+      <li>Hết/gần hết sưng; kiểm soát tốt cơ đùi trước (nhấc thẳng chân không trễ gối, nếu đã được tập).</li>
+      <li>Duỗi 0° và gấp gối đạt mức bác sĩ cho phép; vết mổ + vết lấy gân lành tốt.</li>
+      </ul>
+      <h3>📋 Chương trình tập chi tiết mỗi ngày (GĐ2 – NWB)</h3>
+      <blockquote>
+      <p>Các con số dưới là <strong>mức khởi điểm điển hình</strong>, không phải luật cứng. Nguyên tắc vàng: <strong>không đau khi tập, không sưng thêm sau tập</strong>. Sưng/đau tăng vào hôm sau = giảm bớt số lần/set. Bài đánh dấu <strong>(*)</strong> cần bác sĩ xác nhận trước (đặc biệt SLR). Tempo chung: nhấc 1–2 giây, <strong>hạ chậm 3 giây</strong> (kiểm soát lệch tâm). Nghỉ 30–60 giây giữa các set.</p>
+      </blockquote>
+      <p><strong>Nhóm 1 — Làm nhiều lần trong ngày (mỗi 2–3 giờ lúc thức):</strong></p>
+      <table>
+      <thead>
+      <tr>
+      <th>Bài</th>
+      <th>Cách làm</th>
+      <th>Liều</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Gồng cơ đùi (quad set)</td>
+      <td>Nằm/ngồi chân duỗi thẳng, gồng đùi ép khoeo xuống mặt giường, thấy bánh chè kéo lên.</td>
+      <td>Giữ 5–8 giây × 10–15 cái, <strong>4–6 lần/ngày</strong></td>
+      </tr>
+      <tr>
+      <td>Ép duỗi 0° (gót kê cao)</td>
+      <td>Kê gót lên khăn cuộn/gối cho cẳng chân treo, đùi thả lỏng để gối tự duỗi thẳng. Có thể đặt vật ~1kg lên đùi ngay trên gối để ép nhẹ.</td>
+      <td>Giữ 8–10 phút, <strong>3–4 lần/ngày</strong></td>
+      </tr>
+      <tr>
+      <td>Bơm cổ chân</td>
+      <td>Gập–duỗi cổ chân hết tầm liên tục (chống ứ máu).</td>
+      <td>20–30 cái, <strong>nhiều lần/ngày</strong></td>
+      </tr>
+      </tbody>
+      </table>
+      <p><strong>Nhóm 2 — Buổi tầm vận động (2–3 lần/ngày, ~10–15 phút):</strong></p>
+      <table>
+      <thead>
+      <tr>
+      <th>Bài</th>
+      <th>Cách làm</th>
+      <th>Liều</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Trượt gót gấp gối</td>
+      <td>Nằm ngửa, kéo gót trượt về phía mông tới ngưỡng căng (<strong>không đau</strong>), giữ 5s ở cuối tầm rồi trượt về. Dùng khăn/dây vòng bàn chân kéo hỗ trợ. <strong>Giữ ≤ 90° cho tới khi bác sĩ cho phép</strong>, sau đó mới nong thêm từ từ.</td>
+      <td>10–15 cái × 2–3 set</td>
+      </tr>
+      <tr>
+      <td>Di động bánh chè</td>
+      <td>Ngón tay đẩy nhẹ bánh chè lên–xuống–trái–phải.</td>
+      <td>1–2 phút mỗi hướng</td>
+      </tr>
+      </tbody>
+      </table>
+      <p><strong>Nhóm 3 — Buổi chính (1 lần/ngày, 30–45 phút).</strong> Khởi động: bơm cổ chân + 1 lượt quad set.</p>
+      <table>
+      <thead>
+      <tr>
+      <th>Bài</th>
+      <th>Cách làm</th>
+      <th>Liều</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td><strong>(*)</strong> Nhấc thẳng chân (SLR)</td>
+      <td>Nằm ngửa, chân lành co, <strong>chân mổ gồng đùi khoá thẳng trước</strong>, nhấc lên ~30–40cm, giữ 2s, hạ chậm 3s. Gối luôn thẳng, <strong>không được trễ gối</strong>.</td>
+      <td>10–15 cái × 3 set</td>
+      </tr>
+      <tr>
+      <td>Dạng hông nằm nghiêng</td>
+      <td>Nằm nghiêng, chân mổ ở trên, nhấc thẳng lên ~30°, hạ chậm.</td>
+      <td>12–15 × 3</td>
+      </tr>
+      <tr>
+      <td>Khép hông</td>
+      <td>Nằm nghiêng chân mổ ở dưới, chân trên gác ra trước, nhấc chân dưới lên.</td>
+      <td>12–15 × 3</td>
+      </tr>
+      <tr>
+      <td>Duỗi hông nằm sấp</td>
+      <td>Nằm sấp, giữ gối thẳng, nhấc cả chân ra sau bằng cơ mông.</td>
+      <td>12–15 × 3</td>
+      </tr>
+      <tr>
+      <td>Lật ngoài cổ chân (dây)</td>
+      <td>Ngồi, dây kháng lực vòng bàn chân, đẩy bàn chân <strong>ra ngoài</strong> chống dây rồi về chậm (chăm gân cơ mác).</td>
+      <td>15 × 3</td>
+      </tr>
+      <tr>
+      <td>Cổ chân 4 hướng (dây)</td>
+      <td>Gập lên / đạp xuống / lật trong / lật ngoài, nhẹ nhàng.</td>
+      <td>15 mỗi hướng × 2</td>
+      </tr>
+      </tbody>
+      </table>
+      <p><strong>Nhóm 4 — Thể lực &amp; phần còn lại (mỗi ngày hoặc gần như, 20–30 phút):</strong>
+      - <strong>Thân trên:</strong> tạ tay/dây — đẩy ngực, kéo lưng (row), cuốn tay, đẩy vai. 3–4 bài × 3 set × 10–15 cái. Chân mổ nghỉ hoàn toàn.
+      - <strong>Cơ lõi (không tải chân):</strong> dead bug 3×10 mỗi bên; plank trước 3×20–30 giây; Pallof press ngồi 3×10 mỗi bên; gập bụng nhẹ.
+      - <strong>Tim mạch:</strong> máy quay tay (arm bike) 10–20 phút nếu có; hoặc làm chuỗi thân trên/cơ lõi liên hoàn để giữ nhịp tim.</p>
+      <p><strong>Nhóm 5 — Sau tập / khi sưng:</strong> chườm lạnh + kê cao 15–20 phút.</p>
+      <p><strong>🕐 Lịch một ngày chi tiết (bám giờ giấc của bạn — quan trọng là </strong>giãn cách<strong> đủ, không phải đúng phút):</strong></p>
+      <p><strong>① ~6:30–7:15 · Đánh thức (25–30′) — làm ngay khi ngủ dậy, còn trên giường</strong>
+      - Bơm cổ chân 20–30 cái.
+      - Gồng cơ đùi (quad set): 10–15 cái, mỗi cái giữ 5–8 giây.
+      - Ép duỗi 0°: kê gót, thả lỏng đùi <strong>8–10 phút</strong> (tranh thủ lúc ăn sáng/xem điện thoại).
+      - Trượt gót gấp gối: 12 cái × 2 hiệp (<strong>giữ ≤ 90°</strong>), giữ 5s ở cuối tầm.
+      - Di động bánh chè: ~1 phút mỗi hướng.</p>
+      <p><strong>② ~9:30 · Nhắc nhở ngắn (8–10′)</strong>
+      - Quad set: 10–15 cái.
+      - Bơm cổ chân 20–30 cái.
+      - (nếu tiện) ép duỗi 5–8 phút.</p>
+      <p><strong>③ ~11:30 · Tầm vận động (10–15′)</strong>
+      - Trượt gót gấp gối: 12–15 cái × 2–3 hiệp (≤ 90°).
+      - Di động bánh chè ~1 phút mỗi hướng.
+      - Quad set 1 hiệp.</p>
+      <p><strong>④ ~15:00–16:00 · BUỔI CHÍNH (45–60′) — buổi quan trọng nhất trong ngày</strong>
+      - <em>Khởi động (5′):</em> bơm cổ chân + quad set 1 hiệp + ép duỗi nhẹ.
+      - <em>Sức mạnh chân (không tải), nghỉ 45–60s giữa hiệp:</em>
+        - <strong>(*)</strong> Nhấc thẳng chân (SLR): 12 cái × 3 hiệp — <em>chỉ khi bác sĩ đồng ý.</em>
+        - Dạng hông nằm nghiêng: 12–15 × 3.
+        - Khép hông: 12–15 × 3.
+        - Duỗi hông nằm sấp: 12–15 × 3.
+        - Lật ngoài cổ chân (dây): 15 × 3.
+        - Cổ chân 4 hướng (dây): 15 mỗi hướng × 2.
+      - <em>Thân trên + cơ lõi (15–20′):</em> 3–4 bài thân trên (đẩy ngực, kéo lưng, đẩy vai, cuốn tay) × 3 × 10–15; dead bug 3×10/bên; plank trước 3×20–30s; Pallof ngồi 3×10/bên.
+      - <em>Tim mạch (10–15′):</em> máy quay tay, hoặc chuỗi thân trên/cơ lõi liên hoàn giữ nhịp tim.
+      - <em>Kết:</em> <strong>chườm lạnh + kê cao 15–20 phút.</strong></p>
+      <p><strong>⑤ ~18:30 · Nhắc nhở (8–10′)</strong>
+      - Quad set 1 hiệp.
+      - Ép duỗi 8–10 phút.
+      - Bơm cổ chân 20 cái.</p>
+      <p><strong>⑥ ~21:30 · Trước ngủ (12–15′)</strong>
+      - Trượt gót gấp gối: 12 × 2 (≤ 90°).
+      - Ép duỗi 0° lần cuối ngày: 8–10 phút.
+      - Quad set 1 hiệp nhẹ.
+      - Kê cao chân khi ngủ nếu còn sưng.</p>
+      <p><strong>Tổng trong ngày:</strong> quad set ~6 lần · ép duỗi ~4 lần · tầm vận động ~3 lần · 1 buổi chính · chườm lạnh sau buổi chính (và bất cứ khi nào sưng).</p>
+      <blockquote>
+      <p><strong>Ngày nhẹ (1–2 ngày/tuần):</strong> giữ nguyên các mục ①②③⑤⑥ (cơ đùi, duỗi, tầm vận động, bơm cổ chân) nhưng ở buổi chính <strong>bỏ phần sức mạnh chân</strong>, chỉ giữ thân trên/cơ lõi nhẹ — cho gối nghỉ hồi. Cơ đùi + duỗi + tầm vận động thì <strong>không nghỉ ngày nào</strong>.</p>
+      </blockquote>
+      <hr />
+      <h2>GIAI ĐOẠN 2.5 — Chuyển tiếp chịu lực · Tuần 5–7 · <strong>ĐÃ BỎ NẠNG TỪ TUẦN 6</strong></h2>
+      <p><strong>Trạng thái cập nhật:</strong> mổ ngày <strong>08/07/2026</strong>; đã <strong>bỏ nạng từ 19/08/2026</strong>, khi đủ 6 tuần. Mức chịu lực, dáng đi và các bài đứng tiếp tục theo chỉ định mới nhất của bác sĩ/KTV; gập <strong>+5°/tuần</strong>; duỗi giữ 0°.</p>
+      <p><strong>Mục tiêu:</strong> củng cố <strong>dáng đi chuẩn</strong>, kiểm soát sưng và khởi động các bài đứng nhẹ theo tiêu chí — chuẩn bị vào chuỗi sức mạnh ở GĐ3.</p>
+      <h3>Cách canh "40% trọng lượng" cho đúng</h3>
+      <ul>
+      <li><strong>Mẹo cái cân:</strong> đặt chân mổ lên cân, ấn xuống tới khi kim chỉ ~40% cân nặng (VD 70kg → ~28kg), giữ vài giây để <strong>ghi nhớ cảm giác lực</strong>. Lặp lại vài lần/ngày cho quen, rồi tái tạo đúng mức đó khi đi nạng. Đừng đoán "chừng chừng".</li>
+      <li>Mỗi vài ngày, khi bác sĩ/KTV đồng ý, <strong>tăng % dần</strong> (40 → 50 → 75 → 100%) trong giai đoạn chuyển tiếp; đây là ghi chú cho giai đoạn trước khi bỏ nạng, không phải mốc bắt buộc cho hiện tại.</li>
+      </ul>
+      <h3>Tập lại dáng đi (trong giới hạn % cho phép)</h3>
+      <ul>
+      <li>Cho chân mổ <strong>đặt gót → lăn bàn chân → mũi</strong> theo nhịp bình thường, chỉ giới hạn ở mức lực cho phép.</li>
+      <li>Đi <strong>đều, không khập khiễng, không nhấc/lắc hông</strong>, không "khóa" gối. Đi chậm mà đúng hơn là đi nhanh mà lệch.</li>
+      <li>Soi gương hoặc quay video để tự sửa dáng.</li>
+      </ul>
+      <h3>Bài tập thêm ở GĐ này (ngoài các bài NWB vẫn giữ)</h3>
+      <ul>
+      <li><strong>Dồn trọng lượng qua lại</strong> giữa 2 chân trong giới hạn bác sĩ/KTV cho phép (đứng có tay vịn) — củng cố kiểm soát chịu lực.</li>
+      <li><strong>Mini-squat 2 chân biên độ nhỏ (0–45°)</strong> có tay vịn, chia lực nhẹ sang chân mổ khi % tăng dần.</li>
+      <li><strong>Cầu mông (bridge) 2 chân</strong> — giờ được làm vì đã cho chịu lực một phần.</li>
+      <li><strong>Nhón gót 2 chân</strong> có tay vịn (khi % đủ, không đau).</li>
+      <li>Giữ nguyên: ép duỗi 0°, quad set, hông/cổ chân, chườm lạnh.</li>
+      <li><strong>Xe đạp tại chỗ</strong> kháng lực rất nhẹ khi gập đủ (~110°) — hỏi bác sĩ trước.</li>
+      </ul>
+      <h3>Bài KTV đã kê ở tuần 5 (làm theo KTV là chính)</h3>
+      <p>Bạn đã sang vật lý trị liệu — <strong>ưu tiên làm theo KTV</strong>; các bài dưới đây gộp lại cho gọn, tránh trùng với lịch trên.</p>
+      <table>
+      <thead>
+      <tr>
+      <th>Bài (KTV kê)</th>
+      <th>Thực chất là gì</th>
+      <th>Cách làm đúng</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Móc / xuôi bàn chân + gồng đùi, kê khăn</td>
+      <td>Quad set ở 2 vị trí cổ chân</td>
+      <td>Giữ gồng 5–10s, cảm nhận đùi trong sát gối cứng lại, thả 2s</td>
+      </tr>
+      <tr>
+      <td>Móc bàn chân + ép 2 mắt cá trong vào nhau</td>
+      <td>Quad set + co cơ khép → kích hoạt <strong>VMO</strong> (cơ rộng trong)</td>
+      <td>Gồng đùi đồng thời ép nhẹ hai chân vào nhau, giữ 5–10s</td>
+      </tr>
+      <tr>
+      <td>Nằm kê khăn sau đùi, gồng cơ đùi (không duỗi)</td>
+      <td>Quad set qua gối hơi gập</td>
+      <td>Chỉ <strong>gồng</strong>, không đá duỗi kháng lực (đúng ý bác sĩ)</td>
+      </tr>
+      <tr>
+      <td>Nằm nghiêng ép chân mổ (dưới) xuống</td>
+      <td>Khép hông (adductor)</td>
+      <td>= "khép hông" trong lịch — gộp làm một</td>
+      </tr>
+      <tr>
+      <td>Nằm sấp gập gối đưa gót về mông</td>
+      <td>Gập gối cơ <strong>gân kheo</strong> (hamstring curl)</td>
+      <td>Chậm, kiểm soát; lợi thế vì bạn không lấy gân kheo</td>
+      </tr>
+      <tr>
+      <td>Squat bám bàn/ghế, xuống dần</td>
+      <td>Squat chuỗi đóng có tựa</td>
+      <td>Chia đều 2 chân · gối theo mũi chân, <strong>không đổ vào trong</strong> · chỉ xuống mức không đau</td>
+      </tr>
+      </tbody>
+      </table>
+      <blockquote>
+      <p><strong>Đừng chồng tất cả bài (của tôi + 2 KTV) lên nhau.</strong> Để KTV điều phối tổng tải; nếu thấy nhiều bài trùng thì gộp. Vẫn canh <strong>sưng</strong> làm đèn tín hiệu: tăng bài mà gối sưng/ấm lên = lùi lại.</p>
+      </blockquote>
+      <h3>Vẫn CHƯA làm</h3>
+      <ul>
+      <li>Squat/lunge chịu tải nặng, đứng thăng bằng <strong>1 chân hoàn toàn</strong>, bước lên bục (step-up) chịu lực đầy, chạy — chờ đủ tiêu chí GĐ3 và được KTV/bác sĩ xác nhận.</li>
+      </ul>
+      <h3>📋 Lịch tập chi tiết mỗi ngày (GĐ2.5 — tuần 5–7, sau mốc bỏ nạng)</h3>
+      <blockquote>
+      <p>Nguyên tắc như cũ: <strong>không đau khi tập, không sưng thêm sau tập.</strong> Tempo: hạ/thả chậm 3 giây. Nghỉ 45–60s giữa hiệp. Bài đánh dấu <strong>(*)</strong> cần KTV xác nhận đã cho làm.</p>
+      </blockquote>
+      <p><strong>① ~6:30–7:15 · Đánh thức (20–25′) — trên giường</strong>
+      - Bơm cổ chân 20–30 cái.
+      - Quad set (móc bàn chân + gồng): 10 cái, giữ 5–10s.
+      - Quad set (xuôi bàn chân + gồng): 10 cái, giữ 5–10s.
+      - Quad set + ép 2 mắt cá vào nhau (VMO): 10 cái, giữ 5–10s.
+      - Ép duỗi 0°: kê gót, thả lỏng đùi, <strong>8–10 phút</strong>.</p>
+      <p><strong>② ~9:30 · Nhắc ngắn (8–10′)</strong>
+      - Quad set (1 kiểu bất kỳ trong 3 kiểu trên): 10 cái.
+      - Bơm cổ chân 20–30 cái.
+      - Cân canh lực 40% (hoặc mức hiện tại): ấn thử vài lần cho quen cảm giác.</p>
+      <p><strong>③ ~11:30 · Tầm vận động (10–15′)</strong>
+      - Trượt gót gấp gối: 12–15 cái × 2–3 hiệp (mục tiêu tiến dần 110→120°+, theo nhịp +5°/tuần).
+      - Di động bánh chè ~1 phút mỗi hướng.
+      - Đi lại có kiểm soát trong nhà theo đúng % chịu lực cho phép, chú ý dáng đi (gót→lăn bàn chân→mũi, không khập khiễng).</p>
+      <p><strong>④ ~15:00–16:00 · BUỔI CHÍNH (50–60′)</strong>
+      - <em>Khởi động (5′):</em> bơm cổ chân + 1 hiệp quad set + ép duỗi nhẹ.
+      - <em>Kích hoạt cơ đùi (từ KTV):</em>
+        - Quad set kê khăn sau đùi (gối hơi gập, không duỗi): 10 cái × 2 hiệp, giữ 5–10s.
+      - <em>Sức mạnh chuỗi đóng (mới, theo % chịu lực cho phép):</em>
+        - <strong>(*)</strong> Squat bám bàn/ghế, xuống dần: 8–10 cái × 2–3 hiệp — chia đều 2 chân, gối theo mũi chân, chỉ xuống mức không đau.
+        - Dồn trọng lượng qua lại (có tay vịn): 10 lần mỗi bên × 2.
+        - Mini-squat 0–45° có tay vịn: 10 × 2–3 (khi squat bám ghế đã ổn).
+        - Cầu mông 2 chân: 12–15 × 3.
+        - Nhón gót 2 chân có tay vịn: 12–15 × 2–3 (khi % đủ, không đau).
+      - <em>Hông &amp; gân kheo:</em>
+        - Dạng hông nằm nghiêng: 12–15 × 3.
+        - Nằm nghiêng ép chân mổ (dưới) xuống — khép hông: 12–15 × 3.
+        - Duỗi hông nằm sấp: 12–15 × 3.
+        - <strong>Nằm sấp gập gối (hamstring curl):</strong> 10–12 × 2–3, chậm có kiểm soát.
+      - <em>Cổ chân:</em>
+        - Lật ngoài cổ chân (dây): 15 × 3.
+        - Cổ chân 4 hướng (dây): 15 mỗi hướng × 2.
+      - <em>Thân trên + cơ lõi (10–15′):</em> 3–4 bài thân trên × 3 × 10–15; dead bug 3×10/bên; plank 3×20–30s.
+      - <em>Tim mạch (10′):</em> xe đạp tại chỗ kháng lực rất nhẹ nếu gập đủ ~110° và KTV đồng ý, hoặc máy quay tay.
+      - <em>Kết:</em> <strong>chườm lạnh + kê cao 15–20 phút.</strong></p>
+      <p><strong>⑤ ~18:30 · Nhắc nhở (8–10′)</strong>
+      - Quad set (1 kiểu): 10 cái.
+      - Ép duỗi 8–10 phút.
+      - Bơm cổ chân 20 cái.</p>
+      <p><strong>⑥ ~21:30 · Trước ngủ (12–15′)</strong>
+      - Trượt gót gấp gối: 12 × 2.
+      - Ép duỗi 0° lần cuối ngày: 8–10 phút.
+      - Quad set nhẹ 1 hiệp.
+      - Kê cao chân nếu còn sưng.</p>
+      <p><strong>Tổng ngày:</strong> quad set (3 kiểu xen kẽ) ~5–6 lần · ép duỗi ~4 lần · tầm vận động ~3 lần · 1 buổi chính có squat/cầu mông/hamstring curl.</p>
+      <blockquote>
+      <p><strong>Ngày nhẹ (1–2 ngày/tuần):</strong> giữ ①②③⑤⑥ nguyên vẹn, buổi chính bỏ phần squat/mini-squat/nhón gót (phần chịu lực mới, dễ gây phản ứng), chỉ giữ quad set + hông + cổ chân + thân trên/cơ lõi nhẹ.</p>
+      </blockquote>
+      <p><strong>✅ Xong GĐ2.5 khi:</strong> đi <strong>không nạng, dáng bình thường, không đau</strong>; chịu lực 100% thoải mái; gập tiến gần ~120–130°, duỗi 0°. → Bước vào <strong>Giai đoạn 3</strong>.</p>
+      <blockquote>
+      <p>📌 Các Giai đoạn 3–7 giữ nguyên nội dung và <strong>tiêu chí</strong>, chỉ dời mốc thời gian theo tiến độ thực tế. Luôn tiến theo tiêu chí, không theo lịch.</p>
+      </blockquote>
+      <hr />
+      <h2>🏋️ Kết hợp với lịch tập gym thân trên (bóng đá tạm nghỉ 1 năm)</h2>
+      <p><strong>Lịch gym cũ:</strong> T2 Ngực/Vai/Tay sau · T3 Lưng/Tay trước nhẹ · T4 đá bóng · T5 Chân/Mông/Tay trước nặng · T6 đá bóng · T7 Forearms/Calves/Abs · CN đá bóng.</p>
+      <p><strong>Nguyên tắc ghép:</strong>
+      1. <strong>Rehab chân là cố định, làm mỗi ngày không trừ ngày nào</strong> (buổi chính theo lịch rehab của từng giai đoạn) — không thay bằng bài gym khác.
+      2. <strong>Bỏ hẳn phần chân/mông/bắp chân kiểu gym có tải</strong> (squat nặng, leg press, deadlift, hip thrust tạ, máy nhón gót có tải) cho tới khi KTV/bác sĩ cho phép ở giai đoạn sau — chân đã có bài riêng trong rehab, thêm vào là quá tải. Mông (bridge bodyweight) và nhón gót (bodyweight) đã có sẵn trong rehab, không cần thêm bản có tạ.
+      3. <strong>Tay, ngực, lưng, vai, forearms, abs (không xoay/vặn hông mạnh)</strong> — tập bình thường như cũ.
+      4. <strong>Thứ tự trong ngày:</strong> làm rehab chân trước (cần tỉnh táo, kỹ thuật chính xác), gym thân trên sau hoặc cách vài giờ.
+      5. <strong>3 ngày đá bóng cũ được giải phóng</strong> → dùng 1 ngày làm <strong>nghỉ hoàn toàn</strong>, còn lại linh hoạt cho cardio nhẹ/gym phụ.</p>
+      <p><strong>Lịch tuần đề xuất:</strong></p>
+      <table>
+      <thead>
+      <tr>
+      <th>Ngày</th>
+      <th>Gym thân trên</th>
+      <th>Ghi chú</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>Thứ 2</td>
+      <td>Ngực, Vai, Tay sau</td>
+      <td>Như cũ</td>
+      </tr>
+      <tr>
+      <td>Thứ 3</td>
+      <td>Lưng, Tay trước nhẹ</td>
+      <td>Như cũ</td>
+      </tr>
+      <tr>
+      <td>Thứ 4</td>
+      <td>Cardio nhẹ thân trên (tay quay) hoặc nghỉ tích cực</td>
+      <td><em>(trước là đá bóng)</em></td>
+      </tr>
+      <tr>
+      <td>Thứ 5</td>
+      <td>Tay trước nặng + vai/lưng phụ</td>
+      <td><strong>Bỏ phần chân/mông kiểu gym</strong></td>
+      </tr>
+      <tr>
+      <td>Thứ 6</td>
+      <td>Ngực/vai nhẹ, hoặc gộp Forearms/Abs</td>
+      <td><em>(trước là đá bóng)</em></td>
+      </tr>
+      <tr>
+      <td>Thứ 7</td>
+      <td>Forearms, Abs/Core</td>
+      <td>Bỏ <strong>bắp chân tải nặng</strong></td>
+      </tr>
+      <tr>
+      <td>Chủ nhật</td>
+      <td><strong>NGHỈ HOÀN TOÀN</strong></td>
+      <td><em>(trước là đá bóng)</em>; chỉ rehab nhẹ</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>→ <strong>5 buổi gym thân trên/tuần + 1 ngày cardio nhẹ + 1 ngày nghỉ hẳn</strong>, rehab chân chạy nền mỗi ngày.</p>
+      <p><strong>Lưu ý khi tập gym sau mốc bỏ nạng:</strong>
+      - Ưu tiên bài <strong>ngồi/có tựa</strong> nếu dáng đi chưa ổn hoặc chưa kiểm soát tốt chân mổ khi đứng.
+      - Core tránh xoay/vặn hông mạnh hoặc nâng chân nặng (bỏ Russian twist, leg raise nặng) — dùng plank, dead bug.
+      - <strong>Tín hiệu chung:</strong> gối sưng/ấm hơn dù không đổi bài chân → tổng tải cả ngày (gym + rehab) hơi nhiều, giảm bớt gym hôm đó, không phải giảm rehab.</p>
+      <blockquote>
+      <p>Khi các giai đoạn sau cho phép squat/hip thrust có tải, chạy, v.v. — phần chân/mông kiểu gym sẽ <strong>quay lại dần theo tiêu chí KTV cho</strong>, ghép tiếp vào lịch này.</p>
+      </blockquote>
+      <hr />
+      <h2>GIAI ĐOẠN 3 — Tuần 6–12</h2>
+      <p><strong>Mục tiêu:</strong> xây nền sức mạnh thật sự, cảm thụ bản thể tốt, thể lực nền — <strong>vẫn CHƯA chạy</strong>.</p>
+      <h3>Nhịp một ngày điển hình (GĐ3)</h3>
+      <ul>
+      <li><strong>Khởi động:</strong> xe đạp 8–10′ + tầm vận động.</li>
+      <li><strong>Chính (60–75′):</strong> sức mạnh 2 chân → chuyển dần sang 1 chân; thăng bằng động; cổ chân.</li>
+      <li><strong>Kết:</strong> giãn cơ, chườm lạnh nếu cần.</li>
+      </ul>
+      <h3>Cấu trúc tuần</h3>
+      <ul>
+      <li><strong>Sức mạnh: 3–4 buổi/tuần</strong> (xen ngày để cơ hồi phục).</li>
+      <li><strong>Thể lực nền không va đập: 2–3 buổi</strong> (xe đạp, bơi khi vết mổ kín hẳn, máy elip khi cho phép).</li>
+      <li>Thăng bằng/cảm thụ bản thể: lồng vào mỗi buổi.</li>
+      </ul>
+      <h3>Nội dung tập</h3>
+      <blockquote>
+      <p>🚫 <strong>Chưa dùng máy đá đùi (duỗi chuỗi mở có kháng lực 90°→0°)</strong> — để dành sau ~3–4 tháng. Giai đoạn này ưu tiên <strong>chuỗi đóng</strong>.</p>
+      </blockquote>
+      <ul>
+      <li>Squat, leg press, cầu mông 1 chân, step-up, lunge trong biên độ kiểm soát; tăng tải từ từ.</li>
+      <li>Chuyển trọng tâm sang <strong>bài 1 chân</strong> (nền tảng để sau này chịu được đổi hướng).</li>
+      <li>Gân kheo, mông, bắp chân, và <strong>duy trì cổ chân lật ngoài</strong>.</li>
+      <li>Cảm thụ bản thể nâng cấp: đứng 1 chân trên đệm mềm, bắt bóng khi giữ thăng bằng.</li>
+      <li>Thể lực: đạp xe tăng dần cường độ; <strong>chưa chạy bộ</strong>.</li>
+      </ul>
+      <h3>✅ Tiêu chí thoát GĐ3</h3>
+      <ul>
+      <li>Tầm vận động <strong>bằng chân lành hoàn toàn</strong>.</li>
+      <li>Không sưng, không đau khi tập.</li>
+      <li>Sức mạnh đùi/gân kheo bên mổ đạt khoảng <strong>70–80%</strong> so với chân lành (KTV đo được thì tốt).</li>
+      <li>Kiểm soát 1 chân tốt (squat 1 chân không đổ gối vào trong / không lệch hông).</li>
+      </ul>
+      <hr />
+      <h2>GIAI ĐOẠN 4 — Tháng 3–5</h2>
+      <p><strong>Mục tiêu:</strong> sức mạnh nặng, <strong>tập chạy lại theo lộ trình</strong>, plyometric nhẹ. Đây là giai đoạn mảnh ghép còn đang "dây-chằng-hóa" (ligamentization) và <strong>yếu tương đối</strong> — đừng nóng.</p>
+      <h3>Điều kiện được BẮT ĐẦU CHẠY (tiêu chí trước khi chạy)</h3>
+      <p>Chạy lại <strong>không tính theo ngày</strong> mà theo mốc chức năng — khi đạt đủ:
+      - Tầm vận động đầy đủ, <strong>không đau, không tràn dịch/sưng</strong>.
+      - Điểm IKDC chủ quan <strong>&gt; 90/100</strong>.
+      - Các test nhảy 1 chân (single-leg hop) đạt <strong>≥ 90%</strong> so với chân lành.
+      - Squat 1 chân/step-down <strong>không đổ gối vào trong</strong> (không tăng valgus), hông không lệch (Trendelenburg âm).
+      - Tỉ lệ sức mạnh đùi trước/gân kheo hợp lý, đủ theo đánh giá của KTV.</p>
+      <p>Thường rơi vào khoảng <strong>tuần 12–16</strong>, nhưng cứ bám tiêu chí.</p>
+      <h3>Lộ trình chạy (khi đã đạt điều kiện trên)</h3>
+      <p>Bắt đầu <strong>rất nhẹ, xen đi–chạy</strong>, trên mặt phẳng:
+      - Tuần đầu chạy: xen kẽ đi 2′ / chạy nhẹ 1′, tổng 15–20′, <strong>cách ngày</strong>.
+      - Tăng dần thời lượng chạy trước, rồi mới tăng tốc độ; luôn tăng <strong>một biến số mỗi lần</strong>.
+      - Theo dõi phản ứng sau 24h: sưng/đau tăng = lùi một bậc.</p>
+      <h3>Nhịp tuần (GĐ4)</h3>
+      <ul>
+      <li><strong>Sức mạnh nặng: 3 buổi</strong> (squat, deadlift/hip hinge, đơn chân — tải tăng).</li>
+      <li><strong>Chạy: 2–3 buổi cách ngày</strong> theo lộ trình trên.</li>
+      <li><strong>Plyometric nhẹ 1–2 buổi:</strong> nhảy 2 chân biên độ thấp, tiếp đất "mềm" đúng kỹ thuật (kiểm soát gối, không đổ vào trong) trước khi lên 1 chân.</li>
+      </ul>
+      <h3>✅ Tiêu chí thoát GĐ4</h3>
+      <ul>
+      <li>Chạy thẳng liên tục 20–30′ thoải mái, không phản ứng sưng đau.</li>
+      <li>Sức mạnh bên mổ đạt <strong>~80–90%</strong> chân lành.</li>
+      <li>Tiếp đất nhảy 2 chân kiểm soát tốt, cơ học đúng.</li>
+      </ul>
+      <hr />
+      <h2>GIAI ĐOẠN 5 — Tháng 5–7</h2>
+      <p><strong>Mục tiêu:</strong> plyometric nâng cao, <strong>đổi hướng (change of direction)</strong>, khởi động chuyên biệt bóng đá ở mức kiểm soát. Bắt đầu áp dụng mô hình <strong>"Control–Chaos" (Kiểm soát → Hỗn loạn)</strong> dùng cho bóng đá: khởi từ chuyển động <strong>báo trước, có kiểm soát</strong>, tiến dần tới <strong>bất ngờ, tốc độ cao</strong>.</p>
+      <h3>Nội dung</h3>
+      <ul>
+      <li><strong>Plyometric:</strong> nhảy 1 chân, nhảy sâu (drop jump) biên độ tăng dần, bounding — luôn ưu tiên chất lượng tiếp đất.</li>
+      <li><strong>Đổi hướng có báo trước:</strong> chạy zíc-zắc góc rộng → góc hẹp dần; cắt bóng, dừng–đổi hướng theo hiệu lệnh biết trước.</li>
+      <li><strong>Tăng tốc/giảm tốc</strong> tuyến tính; chạy nước rút tăng dần % sức.</li>
+      <li><strong>Chuyên biệt bóng nhẹ:</strong> chuyền, dẫn bóng tốc độ thấp, sút nhẹ (chú ý cổ chân bên lấy gân khi trụ/sút).</li>
+      <li>Duy trì sức mạnh nặng 2–3 buổi/tuần.</li>
+      </ul>
+      <h3>Nhịp tuần (GĐ5)</h3>
+      <ul>
+      <li>2–3 buổi sức mạnh + power.</li>
+      <li>2–3 buổi trên sân: plyo/đổi hướng/tăng tốc + kỹ thuật bóng.</li>
+      <li>Xen ngày hồi phục; theo dõi tải để tránh quá sức.</li>
+      </ul>
+      <h3>✅ Tiêu chí thoát GĐ5</h3>
+      <ul>
+      <li>Đổi hướng có báo trước ở tốc độ khá, cơ học gối tốt, không đau/sưng.</li>
+      <li>Sức mạnh &amp; các test nhảy đạt <strong>≥ 90%</strong> chân lành.</li>
+      <li>Chạy nước rút gần tối đa không phản ứng xấu.</li>
+      </ul>
+      <hr />
+      <h2>GIAI ĐOẠN 6 — Tháng 7–9</h2>
+      <p><strong>Mục tiêu:</strong> bóng đá chuyên biệt cường độ cao, <strong>phản ứng bất ngờ (unanticipated)</strong>, đối kháng nhẹ, đá sân nhỏ. Đây là các pha "hỗn loạn vừa → cao" của mô hình Control–Chaos: chuyển động <strong>biến hóa, tự phát, không báo trước</strong> — phản ánh đúng bản chất pivot của bóng đá.</p>
+      <h3>Nội dung</h3>
+      <ul>
+      <li>Đổi hướng <strong>theo phản xạ/hiệu lệnh bất ngờ</strong>, phản ứng với đối phương/bóng.</li>
+      <li><strong>Đá sân nhỏ (small-sided games):</strong> bắt đầu 1v1, 3v3, tăng dần số người và không gian.</li>
+      <li>Tình huống chuyên biệt vị trí của bạn (tranh chấp, tắc bóng nhẹ, không chiến nếu phù hợp).</li>
+      <li>Sút bóng lực mạnh dần; test lại sức mạnh cổ chân bên lấy gân dưới tải sút.</li>
+      <li>Duy trì sức mạnh/power nền.</li>
+      </ul>
+      <h3>Nhịp tuần (GĐ6)</h3>
+      <ul>
+      <li>Tăng dần <strong>khối lượng chạy tốc độ cao (high-speed running)</strong> tiệm cận yêu cầu thi đấu — theo dõi GPS nếu có.</li>
+      <li>Đan xen kỹ–chiến thuật với đội ở mức được phép, vẫn có buổi phòng gym.</li>
+      </ul>
+      <h3>✅ Tiêu chí thoát GĐ6</h3>
+      <ul>
+      <li>Chịu được buổi tập cường độ cao, phản xạ bất ngờ, không phản ứng sưng/đau sau đó.</li>
+      <li>Khối lượng chạy tốc độ cao tiệm cận nhu cầu thi đấu.</li>
+      <li>Tự tin về gối trong tình huống thật (yếu tố tâm lý — xem dưới).</li>
+      </ul>
+      <hr />
+      <h2>GIAI ĐOẠN 7 — Tháng 9–12 · Trở lại thi đấu</h2>
+      <p><strong>Mục tiêu:</strong> vượt <strong>bộ test trở lại thi đấu (RTS)</strong>, tập đầy đủ với đội, trở lại thi đấu theo bậc.</p>
+      <h3>Bộ test RTS (thường cần đạt trước khi được "clear")</h3>
+      <p>Đánh giá qua <strong>4 cửa</strong>:
+      1. <strong>Sức mạnh</strong> — đùi trước &amp; gân kheo, chỉ số đối xứng chi (LSI) <strong>≥ 90%</strong>, tỉ lệ gân kheo/đùi hợp lý (nhiều nơi yêu cầu H/Q <strong>≥ 90%</strong> cho VĐV chuyên nghiệp).
+      2. <strong>Test nhảy chức năng</strong> (single hop, triple hop, crossover hop, 6m timed) — LSI <strong>≥ 90%</strong>, và <strong>chất lượng</strong> động tác, không chỉ khoảng cách.
+      3. <strong>Nhanh nhẹn/đổi hướng</strong> dưới áp lực và tình huống bất ngờ.
+      4. <strong>Sẵn sàng tâm lý</strong> — thang <strong>ACL-RSI</strong> (nhiều nơi lấy mốc IKDC &amp; ACL-RSI ~≥ 90).</p>
+      <blockquote>
+      <p>Ngưỡng ≥ 90% là mức hay dùng cho VĐV chuyên nghiệp; ê-kíp của bạn có thể đặt cao hơn (một số nơi ưu tiên đủ <strong>9 tháng + đạt test</strong> để giảm nguy cơ tái đứt).</p>
+      </blockquote>
+      <h3>Trở lại theo bậc (đừng vào thẳng trận đấu)</h3>
+      <ol>
+      <li>Tập đầy đủ với đội, không đối kháng hạn chế → 2) tập có đối kháng đầy đủ → 3) vào sân từng phần trong trận giao hữu → 4) tăng phút thi đấu dần → 5) thi đấu đầy đủ.</li>
+      </ol>
+      <h3>✅ Đủ điều kiện trở lại thi đấu</h3>
+      <ul>
+      <li>Vượt cả 4 cửa test, được ê-kíp mổ + KTV "clear".</li>
+      <li>Hoàn tất khối lượng tập full với đội không phản ứng xấu.</li>
+      <li>Bản thân <strong>tự tin</strong> với gối trong tình huống trận đấu.</li>
+      </ul>
+      <hr />
+      <h2>Cá nhân hoá theo vị trí: tiền vệ trung tâm / chạy cánh</h2>
+      <p>Bạn chơi cả hai vai nên cần <strong>kết hợp</strong>: nền thể lực khối lượng lớn của tiền vệ trung tâm (cày quãng đường nhiều nhất sân, lặp lại nỗ lực liên tục) + tốc độ và cắt hướng vận tốc cao của cánh (nước rút, 1v1, rê bóng). Dưới đây là cách "nhuộm màu" các giai đoạn 4–7 theo vị trí — vẫn tuân thủ mọi tiêu chí thoát của từng giai đoạn.</p>
+      <blockquote>
+      <p>⚠️ <strong>Chân mổ (phải) của bạn — thuận chân phải, chân trụ khi sút là chân trái, mục tiêu đá cả 2 chân.</strong> Chân phải gánh 3 vai, rủi ro khác nhau, xây theo thứ tự:
+      1. <strong>Chân sút (vai chính) — rủi ro trung bình.</strong> Vung–duỗi nhanh + kiểm soát lệch tâm khi thu chân. Đưa lại từ từ: chuyền → sút nhẹ → tăng lực dần. Không sút mạnh sớm.
+      2. <strong>Chân đạp khi cắt sang TRÁI — rủi ro CAO NHẤT.</strong> Để đổi hướng sang trái phải đạp/trụ trên chân phải → đúng tình huống tải ACL lớn nhất, lại rơi vào chân mổ. Xây <strong>sau cùng, chậm nhất, kỹ nhất</strong>: báo trước → phản xạ bất ngờ, tốc độ tăng dần.
+      3. <strong>Chân trụ tương lai khi luyện chân trái — tải mới cần xây thêm.</strong> Khi tập sút/tạt chân trái, chân phải thành chân trụ (tải xoáy + dồn lực). Xem như <strong>tiến trình riêng, tăng dần</strong>, không vào lực mạnh ngay. Chỉ bắt đầu khi chân mổ đã vững ở vai 1 và 2.</p>
+      </blockquote>
+      <p><strong>GĐ4 — chạy lại:</strong>
+      - <em>Tiền vệ TT:</em> ưu tiên <strong>nền ưa khí + khả năng lặp lại nỗ lực</strong> (bạn là người cày nhiều nhất).
+      - <em>Cánh:</em> đảm bảo tiến trình chạy dẫn tới <strong>chạy tốc độ cao</strong> đủ sớm, không dừng ở chạy đều.</p>
+      <p><strong>GĐ5 — đổi hướng + tốc độ:</strong>
+      - <em>Cánh:</em> cơ học <strong>tăng tốc tối đa</strong>, tiến trình nước rút lên tốc độ đỉnh, <strong>cắt hướng ở tốc độ tăng dần</strong>, kiểm soát 1 chân khi cắt.
+      - <em>Tiền vệ TT:</em> <strong>giảm tốc + xoay người trong không gian hẹp</strong>, nhận bóng nửa người/quay người, chuỗi tăng–giảm tốc lặp lại.
+      - <em>Cả hai:</em> đưa <strong>chân phải vào vai chân trụ/chân đạp</strong> tăng dần, có kiểm soát.</p>
+      <p><strong>GĐ6 — bóng chuyên biệt + hỗn loạn + sân nhỏ:</strong>
+      - <em>Tiền vệ TT:</em> rondo, <strong>nhận bóng dưới áp lực + quan sát 360°</strong>, phối hợp một–hai chạm, tắc bóng/che bóng, chạy con thoi box-to-box.
+      - <em>Cánh:</em> <strong>1v1 công và thủ</strong>, rê bóng tốc độ, qua người rồi giảm tốc gấp. <strong>Sút chân phải (chân mổ):</strong> đưa lại từ từ, chuyền → sút nhẹ → tăng lực. <strong>Tạt chân phải</strong> trụ trên chân trái (ít lo cho gối). <strong>Luyện chân trái (đá 2 chân):</strong> bắt đầu muộn hơn — lúc này chân phải thành chân trụ, tăng tải xoáy dần.
+      - <strong>Cắt hướng sang trái (đạp chân mổ):</strong> tách riêng, xây chậm nhất trong tất cả — báo trước trước, rồi mới phản xạ, rồi mới tăng tốc.
+      - <em>Cả hai:</em> chuyển từ đổi hướng <strong>báo trước</strong> → <strong>phản xạ bất ngờ</strong> theo đối phương/bóng.</p>
+      <p><strong>GĐ7 — test + trở lại theo vị trí:</strong>
+      - Dùng <strong>GPS</strong> nếu có: <em>Cánh</em> cần đạt <strong>tốc độ chạy tối đa</strong> và <strong>khối lượng chạy tốc độ cao (HSR)</strong> gần mức thi đấu; <em>Tiền vệ TT</em> cần <strong>tổng quãng đường + số lần tăng/giảm tốc + lặp lại nước rút</strong> gần mức thi đấu.
+      - <strong>Kỹ năng dưới mệt:</strong> tạt/sút cuối buổi tập khi đã mỏi (<em>cánh</em>); tầm chuyền ngắn–dài dưới áp lực (<em>tiền vệ TT</em>).
+      - Chỉ "clear" khi chịu được <strong>buổi mô phỏng đúng đòi hỏi vị trí</strong> mà gối không phản ứng xấu.</p>
+      <hr />
+      <h2>Sau khi trở lại: phòng tái đứt (bắt buộc, lâu dài)</h2>
+      <p>Nguy cơ tái tổn thương cao nhất trong <strong>năm đầu</strong> sau khi trở lại. Duy trì mãi:
+      - <strong>Chương trình phòng ngừa</strong> (kiểu FIFA 11+): sức mạnh, thăng bằng, cơ học tiếp đất/đổi hướng — 2–3 buổi/tuần lồng vào khởi động.
+      - Duy trì sức mạnh 1 chân và đối xứng 2 chân; tiếp tục <strong>giữ sức mạnh cổ chân bên lấy gân</strong>.
+      - Test lại định kỳ; không bỏ bài chỉ vì "đã khỏi".</p>
+      <hr />
+      <h2>Bảng cảnh báo — dừng và báo KTV/bác sĩ ngay nếu:</h2>
+      <ul>
+      <li>Gối <strong>sưng trở lại</strong> sau buổi tập và không hết sau nghỉ.</li>
+      <li><strong>Đau nhói</strong> trong khớp, cảm giác <strong>kẹt/khóa gối</strong> hoặc <strong>lỏng/trượt (giving way)</strong>.</li>
+      <li>Mất tầm vận động đã có (đặc biệt <strong>mất duỗi</strong>).</li>
+      <li>Cổ chân bên lấy gân đau/yếu kéo dài khi trụ, đổi hướng, sút.</li>
+      </ul>
+      <hr />
+      <h3>Ghi nhớ một dòng</h3>
+      <p>Bạn đã qua <strong>GĐ2 – không chịu lực</strong> và đã <strong>bỏ nạng từ 19/08/2026</strong>, khi đủ 6 tuần sau mổ. Việc ưu tiên hiện tại là: <strong>giữ duỗi 0°, tập cơ đùi và tầm vận động theo chỉ định, củng cố dáng đi, kiểm soát sưng, và chỉ tăng tải theo tiêu chí của KTV/bác sĩ</strong> — không chạy hoặc tập nặng chỉ vì đã bỏ nạng. Nếu được, hãy tiếp tục có KTV vật lý trị liệu đồng hành — đây là mục tiêu chuyên nghiệp, không nên tự đi một mình.</p>
+    </article>
   </section>
 
 </main>
