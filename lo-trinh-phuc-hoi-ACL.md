@@ -317,14 +317,14 @@ Phần gym dưới đây là **thân trên + core nhẹ**, được thiết kế
 | Ngày | Buổi tại nhà | Bài chính |
 |---|---|---|
 | Thứ 2 | **A — Ngực + tay sau** | Floor press, squeeze press, pullover, triceps extension |
-| Thứ 3 | **B — Lưng + tay trước** | Prone row, pullover, curl, hammer curl |
-| Thứ 4 | **Nhẹ / hồi phục** | Seated punch không tạ 12–15 phút hoặc nghỉ |
-| Thứ 5 | **C — Vai + tay** | Shoulder press tựa tường, W raise, curl, triceps extension |
-| Thứ 6 | **D — Upper nhẹ** | Floor press, prone row, pullover, dead bug; giảm 1 hiệp |
-| Thứ 7 | **Tùy chọn** | Tay + core nhẹ 20–25 phút nếu gối yên |
-| Chủ nhật | **Nghỉ gym** | Chỉ rehab nhẹ theo KTV |
+| Thứ 3 | **Hồi phục** | Không gym; chỉ rehab chân theo lịch KTV |
+| Thứ 4 | **B — Lưng + tay trước** | Prone row, pullover, curl, hammer curl |
+| Thứ 5 | **Hồi phục** | Không gym; chỉ rehab chân theo lịch KTV |
+| Thứ 6 | **C — Vai + tay** | Shoulder press tựa tường, W raise, curl, triceps extension |
+| Thứ 7 | **Hồi phục** | Không gym; chỉ rehab chân theo lịch KTV |
+| Chủ nhật | **Nghỉ gym** | Không thêm bài; ưu tiên hồi phục và theo dõi sưng |
 
-→ **4 buổi gym chính + 1 buổi tùy chọn + 1 ngày hồi phục + 1 ngày nghỉ**, trong khi rehab chân vẫn chạy nền theo lịch riêng.
+→ **3 buổi gym chính + 3 ngày không gym + 1 ngày nghỉ gym**, trong khi rehab chân vẫn chạy nền theo lịch riêng.
 
 ### Hướng dẫn bài tập gym
 
