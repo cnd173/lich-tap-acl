@@ -89,6 +89,7 @@
   }
   .tabs{
     max-width:1040px; margin:0 auto; display:flex; gap:4px; padding:10px 20px 0;
+    align-items:stretch; flex-wrap:wrap;
   }
   .tab-btn{
     appearance:none; border:none; background:none; cursor:pointer;
@@ -102,6 +103,12 @@
     content:""; position:absolute; left:14px; right:14px; bottom:-1px; height:3px;
     background:var(--tape); border-radius:3px 3px 0 0;
   }
+  .guide-link{
+    align-self:center; margin-left:auto; padding:9px 12px; border-radius:9px;
+    color:var(--pitch-mid); font-size:12.5px; font-weight:700; text-decoration:none;
+    border:1px solid var(--hairline); background:var(--card); white-space:nowrap;
+  }
+  .guide-link:hover{border-color:var(--pitch-mid); color:var(--pitch-dark);}
 
   main{max-width:1040px; margin:0 auto; padding:22px 20px 70px;}
   .panel{display:none;}
@@ -271,13 +278,14 @@
 
 <header class="top">
   <div class="top-inner">
-    <div class="eyebrow"><span class="dot"></span> GĐ2.5 · TUẦN 5–7 · CHỊU LỰC 40% → 100%</div>
+    <div class="eyebrow"><span class="dot"></span> GĐ2.5 · TUẦN 5–7 · ĐÃ QUA MỐC BỎ NẠNG</div>
     <h1 class="page-title display">Lịch phục hồi ACL &amp; hướng dẫn bài tập</h1>
-    <p class="page-sub">Ghép lịch rehab hằng ngày với lịch gym thân trên. Vị trí thi đấu: tiền vệ trung tâm / chạy cánh · Chân mổ: phải · Mảnh ghép: gân cơ mác (kỹ thuật all-inside).</p>
+    <p class="page-sub">Ghép lịch rehab hằng ngày với lịch gym thân trên. Vị trí thi đấu: tiền vệ trung tâm / chạy cánh · Chân mổ: phải · Mảnh ghép: gân cơ mác (kỹ thuật all-inside) · Mổ ngày 08/07/2026 · đã bỏ nạng từ đủ 6 tuần (19/08/2026).</p>
     <div class="meta-row">
+      <span class="meta-chip">Mổ: 08/07/2026</span>
       <span class="meta-chip">Gập hiện tại: 100–110°, +5°/tuần</span>
       <span class="meta-chip">Duỗi: giữ 0° tuyệt đối</span>
-      <span class="meta-chip">Bỏ nạng dự kiến: ~tuần 7</span>
+      <span class="meta-chip">Đã bỏ nạng: đủ 6 tuần (19/08/2026)</span>
       <span class="meta-chip">Nghỉ đá bóng: 1 năm</span>
     </div>
     <p class="disclaimer">Đây là tài liệu tham khảo tổng hợp từ trao đổi trước đó, không thay thế chỉ định trực tiếp của bác sĩ mổ và KTV vật lý trị liệu. Luôn ưu tiên hướng dẫn của họ nếu có khác biệt, và dừng lại nếu gối sưng/đau tăng.</p>
@@ -288,6 +296,7 @@
   <div class="tabs">
     <button class="tab-btn is-active" data-tab="schedule">📅 Lịch tuần</button>
     <button class="tab-btn" data-tab="library">🩹 Hướng dẫn bài tập</button>
+    <a class="guide-link" href="https://github.com/cnd173/lich-tap-acl/blob/main/lo-trinh-phuc-hoi-ACL.md" target="_blank" rel="noopener">📘 Lộ trình đầy đủ</a>
   </div>
 </div>
 
@@ -539,7 +548,7 @@ function withGym(blocks, gymBlock){
 const WEEK = [
   { code:'T2', label:'Thứ 2', tagType:'gym', tag:'Gym', blocks: withGym(rehabBlocks(), {
       time:'17:00–18:15', title:'GYM: Ngực · Vai · Tay sau', gym:true,
-      note:'Tập theo bài quen thuộc của bạn.', items:['Ưu tiên bài ngồi/có tựa nếu còn dùng nạng','Không cần chỉnh gì thêm cho phần này']
+      note:'Tập theo bài quen thuộc của bạn.', items:['Ưu tiên bài ngồi/có tựa nếu dáng đi chưa ổn','Không cần chỉnh gì thêm cho phần này']
     }) },
   { code:'T3', label:'Thứ 3', tagType:'gym', tag:'Gym', blocks: withGym(rehabBlocks(), {
       time:'17:00–18:00', title:'GYM: Lưng · Tay trước nhẹ', gym:true,
