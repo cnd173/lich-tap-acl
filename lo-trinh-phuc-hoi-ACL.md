@@ -238,24 +238,17 @@ Bạn đã sang vật lý trị liệu — **ưu tiên làm theo KTV**; các bà
 
 > Nguyên tắc như cũ: **không đau khi tập, không sưng thêm sau tập.** Tempo: hạ/thả chậm 3 giây. Nghỉ 45–60s giữa hiệp. Bài đánh dấu **(\*)** cần KTV xác nhận đã cho làm.
 
-**① ~6:30–7:15 · Đánh thức (20–25′) — trên giường**
+**① ~6:30–7:00 · Kích hoạt nhẹ (10–15′)**
 - Bơm cổ chân 20–30 cái.
-- Quad set (móc bàn chân + gồng): 10 cái, giữ 5–10s.
-- Quad set (xuôi bàn chân + gồng): 10 cái, giữ 5–10s.
-- Quad set + ép 2 mắt cá vào nhau (VMO): 10 cái, giữ 5–10s.
-- Ép duỗi 0°: kê gót, thả lỏng đùi, **8–10 phút**.
+- Quad set (chọn 1 kiểu): 10 cái, giữ 5–10s.
+- Ép duỗi 0°: kê gót, thả lỏng đùi, **8–10 phút** (có thể tranh thủ lúc ăn sáng).
 
-**② ~9:30 · Nhắc ngắn (8–10′)**
-- Quad set (1 kiểu bất kỳ trong 3 kiểu trên): 10 cái.
-- Bơm cổ chân 20–30 cái.
-- Cân canh lực 40% (hoặc mức hiện tại): ấn thử vài lần cho quen cảm giác.
-
-**③ ~11:30 · Tầm vận động (10–15′)**
+**② ~11:30 · Tầm vận động (10–15′)**
 - Trượt gót gấp gối: 12–15 cái × 2–3 hiệp (mục tiêu tiến dần 110→120°+, theo nhịp +5°/tuần).
 - Di động bánh chè ~1 phút mỗi hướng.
 - Đi lại có kiểm soát trong nhà theo đúng % chịu lực cho phép, chú ý dáng đi (gót→lăn bàn chân→mũi, không khập khiễng).
 
-**④ ~15:00–16:00 · BUỔI CHÍNH (50–60′)**
+**③ ~15:00–16:30 · BUỔI CHÍNH (rehab chân + gym nếu là ngày gym)**
 - *Khởi động (5′):* bơm cổ chân + 1 hiệp quad set + ép duỗi nhẹ.
 - *Kích hoạt cơ đùi (từ KTV):*
   - Quad set kê khăn sau đùi (gối hơi gập, không duỗi): 10 cái × 2 hiệp, giữ 5–10s.
@@ -273,24 +266,17 @@ Bạn đã sang vật lý trị liệu — **ưu tiên làm theo KTV**; các bà
 - *Cổ chân:*
   - Lật ngoài cổ chân (dây): 15 × 3.
   - Cổ chân 4 hướng (dây): 15 mỗi hướng × 2.
-- *Thân trên + cơ lõi (10–15′):* 3–4 bài thân trên × 3 × 10–15; dead bug 3×10/bên; plank 3×20–30s.
-- *Tim mạch (10′):* xe đạp tại chỗ kháng lực rất nhẹ nếu gập đủ ~110° và KTV đồng ý, hoặc máy quay tay.
+- **Ngày gym T2/T4/T6:** nghỉ chuyển tiếp 10–15 phút nếu gối không sưng/đau, sau đó làm đúng 3 bài gym ở phần bên dưới; không mở thêm một buổi riêng.
 - *Kết:* **chườm lạnh + kê cao 15–20 phút.**
 
-**⑤ ~18:30 · Nhắc nhở (8–10′)**
-- Quad set (1 kiểu): 10 cái.
-- Ép duỗi 8–10 phút.
-- Bơm cổ chân 20 cái.
-
-**⑥ ~21:30 · Trước ngủ (12–15′)**
+**④ ~21:30 · Trước ngủ (8–10′)**
 - Trượt gót gấp gối: 12 × 2.
 - Ép duỗi 0° lần cuối ngày: 8–10 phút.
-- Quad set nhẹ 1 hiệp.
 - Kê cao chân nếu còn sưng.
 
-**Tổng ngày:** quad set (3 kiểu xen kẽ) ~5–6 lần · ép duỗi ~4 lần · tầm vận động ~3 lần · 1 buổi chính có squat/cầu mông/hamstring curl.
+**Tổng ngày:** 2 mốc rehab nhẹ + 1 khung chính + 1 mốc tối rất nhẹ. Ngày gym chỉ có **một lần bắt đầu tập chính vào buổi chiều**, vì gym được gộp ngay sau rehab chân.
 
-> **Ngày nhẹ (1–2 ngày/tuần):** giữ ①②③⑤⑥ nguyên vẹn, buổi chính bỏ phần squat/mini-squat/nhón gót (phần chịu lực mới, dễ gây phản ứng), chỉ giữ quad set + hông + cổ chân + thân trên/cơ lõi nhẹ.
+> **Ngày không gym (T3/T5/T7):** vẫn giữ cùng 4 mốc trên nhưng buổi chính chỉ tập rehab chân theo KTV. Nếu sau buổi chiều gối nóng/sưng hơn hoặc dáng đi xấu, bỏ phần gym kế tiếp và báo KTV nếu không lắng.
 
 
 
@@ -307,7 +293,7 @@ Phần gym dưới đây là **thân trên + core nhẹ**, được thiết kế
 Mỗi buổi chỉ làm **3 bài chính trong khoảng 20–30 phút**. Phần bodyweight là bài chính; tạ dùng vừa đủ để bổ sung, không cần cố dùng cả hai quả 5 kg ở mọi bài.
 
 **Nguyên tắc ghép:**
-1. **Rehab chân là cố định**, làm trước; gym làm sau hoặc cách ít nhất 2–3 giờ.
+1. **Rehab chân và gym được gộp trong cùng khung chiều** vào T2/T4/T6: rehab chân trước, nghỉ chuyển tiếp 10–15 phút nếu gối ổn, rồi gym thân trên. Không mở thêm một buổi gym riêng.
 2. Trong phần gym hiện tại, **không thêm squat, lunge, deadlift, hip thrust có tạ, nhảy, chạy hoặc bài đứng xoay người**. Các bài chịu lực chân vẫn theo riêng chương trình KTV.
 3. Chọn tư thế **nằm trên thảm, ngồi trên ghế chắc có tựa lưng hoặc hít đất dốc**. Ghế không có bánh, không trượt; chân mổ thả lỏng, không dùng chân đẩy hông và không xoay trên chân trụ. Vùng màu cam trong hình là nhóm cơ chính đang được tác động.
 4. Hít đất tiến theo bậc **tường → mặt bàn cao cố định → mặt thấp hơn → sàn**; chỉ hạ độ cao khi gối không sưng/đau, dáng đi bình thường và KTV cho phép.
