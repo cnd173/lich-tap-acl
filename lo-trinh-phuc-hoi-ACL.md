@@ -326,6 +326,14 @@ Phần gym dưới đây là **thân trên + core nhẹ**, được thiết kế
 
 → **3 buổi gym chính + 3 ngày không gym + 1 ngày nghỉ gym**, trong khi rehab chân vẫn chạy nền theo lịch riêng.
 
+### Hình minh họa theo buổi
+
+![Buổi A — ngực và tay sau](assets/gym-push.jpg)
+
+![Buổi B — lưng và tay trước](assets/gym-pull.jpg)
+
+![Buổi C — vai, tay sau và core](assets/gym-shoulders-core.jpg)
+
 ### Hướng dẫn bài tập gym
 
 **1. DB Floor Press — đẩy ngực trên thảm**
