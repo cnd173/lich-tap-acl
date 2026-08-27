@@ -127,6 +127,79 @@
   .guide-content hr{border:0; border-top:1px solid var(--hairline); margin:24px 0;}
   .guide-content strong{color:var(--pitch-dark);}
 
+  /* ---------- Visual roadmap ---------- */
+  .roadmap-overview{
+    margin:0 0 26px; padding:20px; color:var(--chalk); border-radius:18px;
+    background:
+      radial-gradient(circle at 88% 12%, rgba(232,163,61,0.24), transparent 30%),
+      linear-gradient(135deg, var(--pitch-dark), var(--pitch-mid));
+    box-shadow:0 14px 34px rgba(15,46,31,0.20); overflow:hidden;
+  }
+  .roadmap-head{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .roadmap-kicker{font-size:10.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--tape);}
+  .roadmap-overview h2{margin:4px 0 4px; padding:0; border:0; color:#fff; font-size:clamp(21px,3.6vw,30px);}
+  .roadmap-lead{margin:0; max-width:620px; color:rgba(243,245,240,0.76); font-size:13px; line-height:1.55;}
+  .roadmap-current{
+    flex:0 0 auto; min-width:150px; padding:10px 12px; border:1px solid rgba(255,255,255,0.20);
+    border-radius:12px; background:rgba(255,255,255,0.09); text-align:right;
+  }
+  .roadmap-current small{display:block; color:rgba(243,245,240,0.68); font-size:10px; text-transform:uppercase; letter-spacing:.08em;}
+  .roadmap-current strong{display:block; color:var(--tape); font-size:17px; margin-top:2px;}
+  .roadmap-track{
+    display:grid; grid-template-columns:repeat(8,minmax(112px,1fr)); gap:8px; margin:22px 0 16px;
+    overflow-x:auto; padding-bottom:4px;
+  }
+  .roadmap-node{
+    position:relative; min-width:112px; padding:10px 10px 11px; color:rgba(243,245,240,0.76);
+    border:1px solid rgba(255,255,255,0.15); border-radius:12px; background:rgba(255,255,255,0.06);
+    text-decoration:none; transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .roadmap-node:hover{transform:translateY(-2px); background:rgba(255,255,255,0.12);}
+  .roadmap-node::after{content:""; position:absolute; top:25px; right:-9px; width:10px; height:2px; background:rgba(255,255,255,0.26);}
+  .roadmap-node:last-child::after{display:none;}
+  .roadmap-node.is-past{opacity:.72;}
+  .roadmap-node.is-current{background:rgba(232,163,61,0.20); border-color:var(--tape); color:#fff; box-shadow:0 0 0 2px rgba(232,163,61,0.16);}
+  .roadmap-node.is-current .roadmap-dot{background:var(--tape); color:var(--pitch-dark);}
+  .roadmap-node.is-current .roadmap-node-status{color:var(--tape);}
+  .roadmap-dot{display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:rgba(243,245,240,0.16); color:#fff; font-family:'Anton'; font-size:15px; margin-bottom:8px;}
+  .roadmap-node b{display:block; font-size:12.5px; color:#fff; line-height:1.2;}
+  .roadmap-node small{display:block; margin-top:4px; font-size:10.5px; line-height:1.35; color:inherit;}
+  .roadmap-node-status{display:block; margin-top:7px; color:rgba(243,245,240,0.56); font-size:9.5px; font-weight:800; letter-spacing:.05em; text-transform:uppercase;}
+  .roadmap-foot{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:rgba(243,245,240,0.70); font-size:11.5px; line-height:1.45;}
+  .roadmap-foot span{display:inline-flex; align-items:center; gap:6px;}
+  .roadmap-foot i{display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--tape);}
+  .roadmap-foot i.is-muted{background:rgba(243,245,240,0.35);}
+  .roadmap-gates{display:grid; grid-template-columns:repeat(3,1fr); gap:9px; margin:15px 0 0;}
+  .roadmap-gate{padding:11px 12px; border:1px solid rgba(255,255,255,0.14); border-radius:11px; background:rgba(0,0,0,0.10);}
+  .roadmap-gate strong{display:block; color:var(--tape); font-family:'Anton'; font-size:22px; line-height:1;}
+  .roadmap-gate b{display:block; margin-top:5px; color:#fff; font-size:12px;}
+  .roadmap-gate span{display:block; margin-top:3px; color:rgba(243,245,240,0.66); font-size:11px; line-height:1.4;}
+  .guide-content .roadmap-table{margin-top:12px;}
+  .roadmap-table tbody tr:nth-child(1),.roadmap-table tbody tr:nth-child(2){background:rgba(45,106,79,0.035);}
+  .roadmap-table tbody tr:nth-child(3){background:var(--tape-tint);}
+  .roadmap-table tbody tr:nth-child(3) td{font-weight:700;}
+  .guide-content h2.stage-title{
+    position:relative; margin-top:34px; padding:14px 16px 12px 58px; border:1px solid var(--hairline);
+    border-left:4px solid var(--pitch-mid); border-radius:13px; background:rgba(45,106,79,0.06); font-size:21px;
+  }
+  .guide-content h2.stage-title::before{
+    content:attr(data-step); position:absolute; left:14px; top:50%; transform:translateY(-50%);
+    display:grid; place-items:center; width:30px; height:30px; border-radius:50%;
+    background:var(--pitch-mid); color:#fff; font-family:'Anton'; font-size:15px;
+  }
+  .guide-content h2.stage-title.stage-current{border-color:rgba(185,121,28,0.42); border-left-color:var(--tape); background:var(--tape-tint);}
+  .guide-content h2.stage-title.stage-current::before{background:var(--tape); color:var(--pitch-dark);}
+  .guide-content h2.stage-title.stage-past{border-left-color:var(--pitch-mid);}
+  .guide-content h2.stage-title.stage-future{border-left-color:var(--hairline); background:rgba(21,36,32,0.025);}
+  .guide-content h2.stage-title.stage-future::before{background:var(--ink-faint);}
+  @media (max-width:700px){
+    .roadmap-overview{padding:16px;}
+    .roadmap-track{display:flex; gap:8px; margin-right:-6px;}
+    .roadmap-node{flex:0 0 126px;}
+    .roadmap-gates{grid-template-columns:1fr;}
+    .roadmap-current{text-align:left; min-width:0; width:100%;}
+  }
+
   main{max-width:1040px; margin:0 auto; padding:22px 20px 70px;}
   .panel{display:none;}
   .panel.is-active{display:block; animation:fadeIn .25s ease;}
@@ -444,8 +517,38 @@
       - <strong>Lợi thế của bạn:</strong> gân kheo và cơ chế duỗi gối còn nguyên (không lấy gân kheo/bánh chè) → hai nhóm này thường hồi phục mượt hơn; <strong>điểm canh riêng vẫn là cổ chân</strong>.
       - <strong>Nền tảng liền mô:</strong> ngủ đủ, đủ đạm, quản lý tải — đưa vào kế hoạch, không phải chuyện phụ.</p>
       <hr />
+      <div class="roadmap-overview" aria-labelledby="roadmap-overview-title">
+        <div class="roadmap-head">
+          <div>
+            <div class="roadmap-kicker">ROADMAP 12 THÁNG · 7 GIAI ĐOẠN + 1 MỐC CHUYỂN TIẾP</div>
+            <h2 id="roadmap-overview-title">Từ bảo vệ gối đến trở lại sân</h2>
+            <p class="roadmap-lead">Mỗi chặng có một mục tiêu và một “cửa” để đi tiếp. Mốc hôm nay được tự tính từ ngày mổ 08/07/2026; thời gian chỉ là bản đồ, còn tiêu chí và phản ứng của gối mới quyết định tốc độ.</p>
+          </div>
+          <div class="roadmap-current"><small>Trạng thái hiện tại</small><strong id="roadmapCurrent">Đang ở GĐ2.5</strong></div>
+        </div>
+        <nav class="roadmap-track" aria-label="Các giai đoạn phục hồi">
+          <a class="roadmap-node" data-stage="1" href="#stage-1"><span class="roadmap-dot">1</span><b>GĐ1</b><small>Bảo vệ</small><span class="roadmap-node-status">—</span></a>
+          <a class="roadmap-node" data-stage="2" href="#stage-2"><span class="roadmap-dot">2</span><b>GĐ2</b><small>NWB · ROM</small><span class="roadmap-node-status">—</span></a>
+          <a class="roadmap-node" data-stage="2.5" href="#stage-2-5"><span class="roadmap-dot">2.5</span><b>GĐ2.5</b><small>Chịu lực dần</small><span class="roadmap-node-status">—</span></a>
+          <a class="roadmap-node" data-stage="3" href="#stage-3"><span class="roadmap-dot">3</span><b>GĐ3</b><small>Sức mạnh</small><span class="roadmap-node-status">—</span></a>
+          <a class="roadmap-node" data-stage="4" href="#stage-4"><span class="roadmap-dot">4</span><b>GĐ4</b><small>Chạy lại</small><span class="roadmap-node-status">—</span></a>
+          <a class="roadmap-node" data-stage="5" href="#stage-5"><span class="roadmap-dot">5</span><b>GĐ5</b><small>Đổi hướng</small><span class="roadmap-node-status">—</span></a>
+          <a class="roadmap-node" data-stage="6" href="#stage-6"><span class="roadmap-dot">6</span><b>GĐ6</b><small>Sân nhỏ</small><span class="roadmap-node-status">—</span></a>
+          <a class="roadmap-node" data-stage="7" href="#stage-7"><span class="roadmap-dot">7</span><b>GĐ7</b><small>RTS</small><span class="roadmap-node-status">—</span></a>
+        </nav>
+        <div class="roadmap-foot">
+          <span><i></i> Đang ở đây</span>
+          <span><i class="is-muted"></i> Đã qua / sắp tới</span>
+          <span>→ Bấm từng mốc để nhảy tới phần chi tiết</span>
+        </div>
+        <div class="roadmap-gates">
+          <div class="roadmap-gate"><strong>01</strong><b>Ổn định</b><span>Duỗi 0°, kiểm soát sưng và dáng đi.</span></div>
+          <div class="roadmap-gate"><strong>02</strong><b>Xây sức mạnh</b><span>Đạt ROM, lực và kiểm soát một chân theo KTV.</span></div>
+          <div class="roadmap-gate"><strong>03</strong><b>Trở lại bóng đá</b><span>Chạy → đổi hướng → test RTS, không nhảy cóc.</span></div>
+        </div>
+      </div>
       <h2>Bản đồ tổng thể 7 giai đoạn</h2>
-      <table>
+      <table class="roadmap-table">
       <thead>
       <tr>
       <th>GĐ</th>
@@ -498,11 +601,11 @@
       </table>
       <p>Trở lại <strong>bóng đá chuyên nghiệp</strong> thường rơi vào <strong>9–12 tháng</strong>, quyết định bằng test chứ không bằng lịch.</p>
       <hr />
-      <h2>GIAI ĐOẠN 1 — Tuần 0–2 (bạn đã qua)</h2>
+      <h2 id="stage-1" class="stage-title stage-past" data-stage="1" data-step="01">GIAI ĐOẠN 1 — Tuần 0–2 (bạn đã qua)</h2>
       <p>Ghi lại để bạn tự đối chiếu xem nền tảng đã đủ chưa. Trước khi rời hẳn GĐ1, nên có: <strong>duỗi gối 0° hoàn toàn</strong> (thẳng bằng chân lành), sưng giảm rõ, <strong>kích hoạt được cơ đùi trước</strong> (nhấc thẳng chân không bị "trễ" gối), vết mổ khô sạch.</p>
       <p>Nếu <strong>chưa</strong> duỗi hết 0° — đây là ưu tiên số 1 tuần này, quan trọng hơn mọi bài khác. Mất duỗi sớm rất khó lấy lại về sau.</p>
       <hr />
-      <h2>GIAI ĐOẠN 2 — Tuần 2–5 · KHÔNG CHỊU LỰC (NWB) · <em>(đã qua)</em></h2>
+      <h2 id="stage-2" class="stage-title stage-past" data-stage="2" data-step="02">GIAI ĐOẠN 2 — Tuần 2–5 · KHÔNG CHỊU LỰC (NWB) · <em>(đã qua)</em></h2>
       <blockquote>
       <p>Giữ lại để tham khảo. Nếu gối còn sưng hoặc cơ đùi chưa "thức" hẳn, các bài nhóm này vẫn làm song song ở GĐ2.5.</p>
       <p><strong>Ràng buộc bao trùm của GĐ2:</strong> không dồn trọng lượng lên chân mổ, dùng nạng, cho tới khi bác sĩ cho phép — mốc thực tế của bạn là đủ 6 tuần. <strong>Không nôn nóng bỏ nạng "thử một chút"</strong> khi chưa có chỉ định — đây là lúc mảnh ghép dễ tổn thương nhất.</p>
@@ -674,7 +777,7 @@
       <p><strong>Ngày nhẹ (1–2 ngày/tuần):</strong> giữ nguyên các mục ①②③⑤⑥ (cơ đùi, duỗi, tầm vận động, bơm cổ chân) nhưng ở buổi chính <strong>bỏ phần sức mạnh chân</strong>, chỉ giữ thân trên/cơ lõi nhẹ — cho gối nghỉ hồi. Cơ đùi + duỗi + tầm vận động thì <strong>không nghỉ ngày nào</strong>.</p>
       </blockquote>
       <hr />
-      <h2>GIAI ĐOẠN 2.5 — Chuyển tiếp chịu lực · Tuần 5–7 · <strong>ĐÃ BỎ NẠNG TỪ TUẦN 6</strong></h2>
+      <h2 id="stage-2-5" class="stage-title stage-current" data-stage="2.5" data-step="2.5">GIAI ĐOẠN 2.5 — Chuyển tiếp chịu lực · Tuần 5–7 · <strong>ĐÃ BỎ NẠNG TỪ TUẦN 6</strong></h2>
       <p><strong>Trạng thái cập nhật:</strong> mổ ngày <strong>08/07/2026</strong>; đã <strong>bỏ nạng từ 19/08/2026</strong>, khi đủ 6 tuần. Mức chịu lực, dáng đi và các bài đứng tiếp tục theo chỉ định mới nhất của bác sĩ/KTV; gập <strong>+5°/tuần</strong>; duỗi giữ 0°.</p>
       <p><strong>Mục tiêu:</strong> củng cố <strong>dáng đi chuẩn</strong>, kiểm soát sưng và khởi động các bài đứng nhẹ theo tiêu chí — chuẩn bị vào chuỗi sức mạnh ở GĐ3.</p>
       <h3>Cách canh "40% trọng lượng" cho đúng</h3>
@@ -850,7 +953,7 @@
       <p>Khi các giai đoạn sau cho phép squat/hip thrust có tải, chạy, v.v. — phần chân/mông kiểu gym sẽ <strong>quay lại dần theo tiêu chí KTV cho</strong>, không tự thêm chỉ vì đã bỏ nạng.</p>
       </blockquote>
       <hr />
-      <h2>GIAI ĐOẠN 3 — Tuần 6–12</h2>
+      <h2 id="stage-3" class="stage-title stage-future" data-stage="3" data-step="03">GIAI ĐOẠN 3 — Tuần 6–12</h2>
       <p><strong>Mục tiêu:</strong> xây nền sức mạnh thật sự, cảm thụ bản thể tốt, thể lực nền — <strong>vẫn CHƯA chạy</strong>.</p>
       <h3>Nhịp một ngày điển hình (GĐ3)</h3>
       <ul>
@@ -883,7 +986,7 @@
       <li>Kiểm soát 1 chân tốt (squat 1 chân không đổ gối vào trong / không lệch hông).</li>
       </ul>
       <hr />
-      <h2>GIAI ĐOẠN 4 — Tháng 3–5</h2>
+      <h2 id="stage-4" class="stage-title stage-future" data-stage="4" data-step="04">GIAI ĐOẠN 4 — Tháng 3–5</h2>
       <p><strong>Mục tiêu:</strong> sức mạnh nặng, <strong>tập chạy lại theo lộ trình</strong>, plyometric nhẹ. Đây là giai đoạn mảnh ghép còn đang "dây-chằng-hóa" (ligamentization) và <strong>yếu tương đối</strong> — đừng nóng.</p>
       <h3>Điều kiện được BẮT ĐẦU CHẠY (tiêu chí trước khi chạy)</h3>
       <p>Chạy lại <strong>không tính theo ngày</strong> mà theo mốc chức năng — khi đạt đủ:
@@ -911,7 +1014,7 @@
       <li>Tiếp đất nhảy 2 chân kiểm soát tốt, cơ học đúng.</li>
       </ul>
       <hr />
-      <h2>GIAI ĐOẠN 5 — Tháng 5–7</h2>
+      <h2 id="stage-5" class="stage-title stage-future" data-stage="5" data-step="05">GIAI ĐOẠN 5 — Tháng 5–7</h2>
       <p><strong>Mục tiêu:</strong> plyometric nâng cao, <strong>đổi hướng (change of direction)</strong>, khởi động chuyên biệt bóng đá ở mức kiểm soát. Bắt đầu áp dụng mô hình <strong>"Control–Chaos" (Kiểm soát → Hỗn loạn)</strong> dùng cho bóng đá: khởi từ chuyển động <strong>báo trước, có kiểm soát</strong>, tiến dần tới <strong>bất ngờ, tốc độ cao</strong>.</p>
       <h3>Nội dung</h3>
       <ul>
@@ -934,7 +1037,7 @@
       <li>Chạy nước rút gần tối đa không phản ứng xấu.</li>
       </ul>
       <hr />
-      <h2>GIAI ĐOẠN 6 — Tháng 7–9</h2>
+      <h2 id="stage-6" class="stage-title stage-future" data-stage="6" data-step="06">GIAI ĐOẠN 6 — Tháng 7–9</h2>
       <p><strong>Mục tiêu:</strong> bóng đá chuyên biệt cường độ cao, <strong>phản ứng bất ngờ (unanticipated)</strong>, đối kháng nhẹ, đá sân nhỏ. Đây là các pha "hỗn loạn vừa → cao" của mô hình Control–Chaos: chuyển động <strong>biến hóa, tự phát, không báo trước</strong> — phản ánh đúng bản chất pivot của bóng đá.</p>
       <h3>Nội dung</h3>
       <ul>
@@ -956,7 +1059,7 @@
       <li>Tự tin về gối trong tình huống thật (yếu tố tâm lý — xem dưới).</li>
       </ul>
       <hr />
-      <h2>GIAI ĐOẠN 7 — Tháng 9–12 · Trở lại thi đấu</h2>
+      <h2 id="stage-7" class="stage-title stage-future" data-stage="7" data-step="07">GIAI ĐOẠN 7 — Tháng 9–12 · Trở lại thi đấu</h2>
       <p><strong>Mục tiêu:</strong> vượt <strong>bộ test trở lại thi đấu (RTS)</strong>, tập đầy đủ với đội, trở lại thi đấu theo bậc.</p>
       <h3>Bộ test RTS (thường cần đạt trước khi được "clear")</h3>
       <p>Đánh giá qua <strong>4 cửa</strong>:
@@ -1408,6 +1511,49 @@ function refreshTodayMarker(){
   if(autoSelectedDay) showDay(todayIndex, true);
 }
 
+const ROADMAP_ORDER = ['1','2','2.5','3','4','5','6','7'];
+
+function getRoadmapStage(){
+  const surgery = new Date(2026, 6, 8);
+  const today = new Date();
+  surgery.setHours(0,0,0,0);
+  today.setHours(0,0,0,0);
+  const days = Math.max(0, Math.floor((today - surgery) / 86400000));
+  const weeks = days / 7;
+  let stage = '7';
+  if(weeks < 2) stage = '1';
+  else if(weeks < 5) stage = '2';
+  else if(weeks < 8) stage = '2.5';
+  else if(weeks < 12) stage = '3';
+  else if(weeks < 20) stage = '4';
+  else if(weeks < 28) stage = '5';
+  else if(weeks < 36) stage = '6';
+  return {stage:stage, weeks:Math.floor(weeks)};
+}
+
+function refreshRoadmap(){
+  const current = getRoadmapStage();
+  const currentIndex = ROADMAP_ORDER.indexOf(current.stage);
+  document.querySelectorAll('.roadmap-node').forEach(function(node){
+    const index = ROADMAP_ORDER.indexOf(node.dataset.stage);
+    const isCurrent = node.dataset.stage === current.stage;
+    node.classList.toggle('is-current', isCurrent);
+    node.classList.toggle('is-past', index < currentIndex);
+    if(isCurrent) node.setAttribute('aria-current','step');
+    else node.removeAttribute('aria-current');
+    const status = node.querySelector('.roadmap-node-status');
+    if(status) status.textContent = isCurrent ? 'Đang ở đây' : (index < currentIndex ? 'Đã qua' : (index === currentIndex + 1 ? 'Tiếp theo' : 'Sắp tới'));
+  });
+  document.querySelectorAll('.stage-title').forEach(function(title){
+    const index = ROADMAP_ORDER.indexOf(title.dataset.stage);
+    title.classList.toggle('stage-current', title.dataset.stage === current.stage);
+    title.classList.toggle('stage-past', index < currentIndex);
+    title.classList.toggle('stage-future', index > currentIndex);
+  });
+  const currentLabel = document.getElementById('roadmapCurrent');
+  if(currentLabel) currentLabel.textContent = 'Đang ở GĐ'+current.stage+' · ≈ '+current.weeks+' tuần';
+}
+
 function renderChips(){
   const cats = ['Tất cả'].concat(Array.from(new Set(EXERCISES.map(function(e){return e.cat;}))));
   const row = document.getElementById('chipRow');
@@ -1463,7 +1609,9 @@ renderDayPills();
 showDay(getTodayIndex(), true);
 renderChips();
 renderExercises();
+refreshRoadmap();
 window.setInterval(refreshTodayMarker, 60000);
+window.setInterval(refreshRoadmap, 3600000);
 </script>
 </body>
 </html>
