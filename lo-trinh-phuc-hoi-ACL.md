@@ -300,37 +300,84 @@ Bạn đã sang vật lý trị liệu — **ưu tiên làm theo KTV**; các bà
 
 ---
 
-## 🏋️ Kết hợp với lịch tập gym thân trên (bóng đá tạm nghỉ 1 năm)
+## 🏋️ Lịch tập gym tại nhà — chỉ có thảm và 2 tạ 5 kg
 
-**Lịch gym cũ:** T2 Ngực/Vai/Tay sau · T3 Lưng/Tay trước nhẹ · T4 đá bóng · T5 Chân/Mông/Tay trước nặng · T6 đá bóng · T7 Forearms/Calves/Abs · CN đá bóng.
+Phần gym dưới đây là **thân trên + core nhẹ**, được thiết kế để bạn có thể tập tại nhà mà không bắt chân phải làm trụ. Nó **không thay cho rehab chân**. Ở tuần 7 sau mổ, chỉ bắt đầu/tăng các bài đứng hoặc chịu lực khi bác sĩ/KTV đã cho phép; mốc tuần không tự động đồng nghĩa với được tập mọi bài.
 
 **Nguyên tắc ghép:**
-1. **Rehab chân là cố định, làm mỗi ngày không trừ ngày nào** (buổi chính theo lịch rehab của từng giai đoạn) — không thay bằng bài gym khác.
-2. **Bỏ hẳn phần chân/mông/bắp chân kiểu gym có tải** (squat nặng, leg press, deadlift, hip thrust tạ, máy nhón gót có tải) cho tới khi KTV/bác sĩ cho phép ở giai đoạn sau — chân đã có bài riêng trong rehab, thêm vào là quá tải. Mông (bridge bodyweight) và nhón gót (bodyweight) đã có sẵn trong rehab, không cần thêm bản có tạ.
-3. **Tay, ngực, lưng, vai, forearms, abs (không xoay/vặn hông mạnh)** — tập bình thường như cũ.
-4. **Thứ tự trong ngày:** làm rehab chân trước (cần tỉnh táo, kỹ thuật chính xác), gym thân trên sau hoặc cách vài giờ.
-5. **3 ngày đá bóng cũ được giải phóng** → dùng 1 ngày làm **nghỉ hoàn toàn**, còn lại linh hoạt cho cardio nhẹ/gym phụ.
+1. **Rehab chân là cố định**, làm trước; gym làm sau hoặc cách ít nhất 2–3 giờ.
+2. Trong phần gym hiện tại, **không thêm squat, lunge, deadlift, hip thrust có tạ, nhảy, chạy hoặc bài đứng xoay người**. Các bài chịu lực chân vẫn theo riêng chương trình KTV.
+3. Chọn tư thế **nằm trên thảm hoặc ngồi tựa tường**. Chân mổ thả lỏng, không dùng chân đẩy hông, không xoay trên chân trụ.
+4. Mức gắng sức khoảng **RPE 6–7/10**, luôn còn dư 3–4 lần lặp. Hạ tạ trong 2–3 giây, không quăng tạ; nghỉ 60–90 giây giữa hiệp.
+5. Nếu 5 kg quá nặng ở bài vai/tay: dùng **1 tạ**, giảm số lần hoặc đổi sang bài không tạ. Không cần cố dùng cả hai tạ trong mọi bài.
+6. Gối sưng/ấm hơn, đau tăng, mất duỗi hoặc dáng đi xấu sau buổi → **bỏ buổi gym kế tiếp**, kê cao/chườm lạnh theo hướng dẫn và báo KTV nếu không lắng.
 
 **Lịch tuần đề xuất:**
 
-| Ngày | Gym thân trên | Ghi chú |
+| Ngày | Buổi tại nhà | Bài chính |
 |---|---|---|
-| Thứ 2 | Ngực, Vai, Tay sau | Như cũ |
-| Thứ 3 | Lưng, Tay trước nhẹ | Như cũ |
-| Thứ 4 | Cardio nhẹ thân trên (tay quay) hoặc nghỉ tích cực | *(trước là đá bóng)* |
-| Thứ 5 | Tay trước nặng + vai/lưng phụ | **Bỏ phần chân/mông kiểu gym** |
-| Thứ 6 | Ngực/vai nhẹ, hoặc gộp Forearms/Abs | *(trước là đá bóng)* |
-| Thứ 7 | Forearms, Abs/Core | Bỏ **bắp chân tải nặng** |
-| Chủ nhật | **NGHỈ HOÀN TOÀN** | *(trước là đá bóng)*; chỉ rehab nhẹ |
+| Thứ 2 | **A — Ngực + tay sau** | Floor press, squeeze press, pullover, triceps extension |
+| Thứ 3 | **B — Lưng + tay trước** | Prone row, pullover, curl, hammer curl |
+| Thứ 4 | **Nhẹ / hồi phục** | Seated punch không tạ 12–15 phút hoặc nghỉ |
+| Thứ 5 | **C — Vai + tay** | Shoulder press tựa tường, W raise, curl, triceps extension |
+| Thứ 6 | **D — Upper nhẹ** | Floor press, prone row, pullover, dead bug; giảm 1 hiệp |
+| Thứ 7 | **Tùy chọn** | Tay + core nhẹ 20–25 phút nếu gối yên |
+| Chủ nhật | **Nghỉ gym** | Chỉ rehab nhẹ theo KTV |
 
-→ **5 buổi gym thân trên/tuần + 1 ngày cardio nhẹ + 1 ngày nghỉ hẳn**, rehab chân chạy nền mỗi ngày.
+→ **4 buổi gym chính + 1 buổi tùy chọn + 1 ngày hồi phục + 1 ngày nghỉ**, trong khi rehab chân vẫn chạy nền theo lịch riêng.
 
-**Lưu ý khi tập gym sau mốc bỏ nạng:**
-- Ưu tiên bài **ngồi/có tựa** nếu dáng đi chưa ổn hoặc chưa kiểm soát tốt chân mổ khi đứng.
-- Core tránh xoay/vặn hông mạnh hoặc nâng chân nặng (bỏ Russian twist, leg raise nặng) — dùng plank, dead bug.
-- **Tín hiệu chung:** gối sưng/ấm hơn dù không đổi bài chân → tổng tải cả ngày (gym + rehab) hơi nhiều, giảm bớt gym hôm đó, không phải giảm rehab.
+### Hướng dẫn bài tập gym
 
-> Khi các giai đoạn sau cho phép squat/hip thrust có tải, chạy, v.v. — phần chân/mông kiểu gym sẽ **quay lại dần theo tiêu chí KTV cho**, ghép tiếp vào lịch này.
+**1. DB Floor Press — đẩy ngực trên thảm**
+- Nằm ngửa, co gối ở mức thoải mái, bàn chân đặt nhẹ trên thảm. Mỗi tay giữ một tạ; khuỷu mở khoảng 30–45° so với thân.
+- Hạ khuỷu xuống chạm sàn nhẹ, giữ cổ tay thẳng; đẩy tạ lên trên ngực. Không dùng chân đạp sàn để nâng hông.
+- **3–4 hiệp × 8–15 cái**, nghỉ 60–90 giây.
+
+**2. DB Squeeze Press — ép hai tạ**
+- Nằm ngửa, ép hai quả tạ chạm nhau trên ngực. Vừa giữ lực ép vừa hạ tạ chậm, sau đó đẩy lên.
+- Vai không nhún lên tai; chân mổ chỉ đặt thoải mái.
+- **3 hiệp × 10–15 cái**, nghỉ 60–90 giây.
+
+**3. DB Pullover — kéo tạ qua đầu**
+- Nằm ngửa, hai tay giữ một đầu tạ ở trên ngực. Khuỷu hơi cong.
+- Đưa tạ ra sau đầu đến khi vai căng vừa phải rồi kéo về trên ngực. Không ưỡn lưng; dừng nếu vai đau.
+- **3 hiệp × 10–15 cái**, nghỉ 60–90 giây.
+
+**4. DB Prone Row — kéo lưng nằm sấp**
+- Nằm sấp, trán tựa khăn mỏng, hai tay duỗi xuống cầm tạ.
+- Kéo khuỷu về phía hông, siết bả vai 1 giây rồi hạ tạ trong 2–3 giây. Cổ trung lập, không giật tạ và không nhấc hông.
+- **4 hiệp × 8–15 cái**, nghỉ 60–90 giây.
+
+**5. Prone W Raise — chữ W không tạ**
+- Nằm sấp, gập khuỷu tạo chữ W. Nhấc khuỷu và bàn tay khỏi thảm một chút, kéo bả vai xuống–về sau rồi hạ.
+- Không cần tạ; tập trung vào kiểm soát vai.
+- **3 hiệp × 10–15 cái**, nghỉ 45–60 giây.
+
+**6. DB Shoulder Press — đẩy vai tựa tường**
+- Ngồi trên thảm, lưng tựa tường, chân mổ thả lỏng và không dùng để đẩy. Giữ tạ ngang vai, lòng bàn tay hướng vào nhau.
+- Đẩy tạ lên, không khóa giật khuỷu; hạ chậm. Nếu ngồi không vững hoặc 5 kg quá nặng, dùng một tạ bằng hai tay hoặc bỏ bài.
+- **3 hiệp × 8–12 cái**, nghỉ 75–90 giây.
+
+**7. Curl và Hammer Curl — tay trước ngồi**
+- Ngồi tựa tường. Với **curl**, lòng bàn tay hướng lên; với **hammer curl**, lòng bàn tay hướng vào nhau.
+- Cuốn tạ bằng khuỷu, giữ bắp tay sát thân, không ngả người lấy đà; hạ chậm.
+- Mỗi bài **3 hiệp × 10–15 cái**, nghỉ 60 giây. Có thể luân phiên từng tay.
+
+**8. DB Triceps Extension — tay sau nằm**
+- Nằm ngửa, giữ một tạ ở trên ngực. Gập khuỷu đưa tạ gần trán hoặc sau đầu trong biên độ thoải mái, rồi duỗi khuỷu đưa tạ lên.
+- Chỉ cẳng tay chuyển động; khuỷu không xòe rộng.
+- **3 hiệp × 10–15 cái**, nghỉ 60–90 giây.
+
+**9. Dead bug — core trên thảm**
+- Nằm ngửa, gồng nhẹ bụng và giữ lưng dưới gần sát thảm. Duỗi tay đối bên với chân theo đúng mức KTV cho phép rồi trở về.
+- Không để lưng ưỡn. Nếu gối khó chịu, chỉ làm phần tay hoặc đổi sang gồng bụng tĩnh.
+- **3 hiệp × 6–10 mỗi bên**, nghỉ 45–60 giây.
+
+**10. Seated punch — cardio nhẹ khi ngồi**
+- Ngồi tựa tường, chân mổ thả lỏng. Đấm thẳng luân phiên ở tốc độ vừa, thu tay về bảo vệ mặt; không đứng và không xoay hông.
+- **30 giây làm / 30 giây nghỉ × 8–10 vòng**. Dừng nếu gối phản ứng hoặc bạn phải dùng chân giữ thăng bằng.
+
+> Khi các giai đoạn sau cho phép squat/hip thrust có tải, chạy, v.v. — phần chân/mông kiểu gym sẽ **quay lại dần theo tiêu chí KTV cho**, không tự thêm chỉ vì đã bỏ nạng.
 
 ---
 
